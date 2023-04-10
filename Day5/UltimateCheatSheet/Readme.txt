@@ -1,1 +1,1 @@
-Developed by Docker Captains
+Developed by Docker Captains from DockerLabs
