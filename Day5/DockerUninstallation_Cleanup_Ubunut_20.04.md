@@ -3,9 +3,9 @@
 
 #Removal of Docker installation module, in case module selected during ubuntu 20.04_LTS installation:
 
-snap remove docker
+	snap remove docker
 
-snap remove --purge docker
+	snap remove --purge docker
 
 *****************************************************************************************************
 ##Second Approach : -
