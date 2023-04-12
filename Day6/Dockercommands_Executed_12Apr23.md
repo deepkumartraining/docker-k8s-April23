@@ -158,7 +158,6 @@
             docker ps
             docker attach dadcc41e3e20
             docker exec -it dadcc41e3e20 /bin/bash
-            docker containerls
             docker container ls
             grep docker | awk '{print substr($0, index($0, $2))}'
             history | grep docker | awk '{print substr($0, index($0, $2))}'
