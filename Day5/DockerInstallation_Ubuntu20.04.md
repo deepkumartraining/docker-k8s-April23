@@ -1,26 +1,38 @@
-Docker Installation from Official Community Support page
+#Docker Installation from Official Community Support page
 
 ***********************************************************************************
 
-Docker Installation Steps
+#Docker Installation Steps
 
-First, update your existing list of packages:
+
+#First, update your existing list of packages:
+
 	sudo apt update
 
-Next, install a few prerequisite packages which let apt use packages over HTTPS:
+
+#Next, install a few prerequisite packages which let apt use packages over HTTPS:
+
 	sudo apt install apt-transport-https ca-certificates curl software-properties-common
 
-Then add the GPG key for the official Docker repository to your system:
+
+#Then add the GPG key for the official Docker repository to your system:
+
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-Add the Docker repository to APT sources:
+
+#Add the Docker repository to APT sources:
+
 	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 
-This will also update our package database with the Docker packages from the newly added repo.
-Make sure you are about to install from the Docker repo instead of the default Ubuntu repo:
+
+#This will also update our package database with the Docker packages from the newly added repo.
+
+#Make sure you are about to install from the Docker repo instead of the default Ubuntu repo:
+
 	sudo apt-cache policy docker-ce
 
-You’ll see output like this, although the version number for Docker may be different:
+
+#You’ll see output like this, although the version number for Docker may be different:
 
 docker-ce:
   Installed: (none)
@@ -31,14 +43,17 @@ docker-ce:
 		
 Notice that docker-ce is not installed, but the candidate for installation is from the Docker repository for Ubuntu 20.04 (focal).
 
-Finally, install Docker:
+#Finally, install Docker:
+
 	sudo apt install docker-ce
 	
 	
-Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it’s running:
+#Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it’s running:
+
 	sudo systemctl status docker
 	
-The output should be similar to the following, showing that the service is active and running:
+#The output should be similar to the following, showing that the service is active and running:
+
 
 Output
 ● docker.service - Docker Application Container Engine
@@ -52,9 +67,8 @@ TriggeredBy: ● docker.socket
      CGroup: /system.slice/docker.service
              └─24321 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
 			 
-*****
-Installing Docker now gives you not just the Docker service (daemon) but also the docker command line utility, or the Docker client. We’ll explore how to use the docker command later in this tutorial.
-*****
+#Installing Docker now gives you not just the Docker service (daemon) but also the docker command line utility, or the Docker client. 
+We’ll explore how to use the docker command later in this tutorial.
 -------------------------------------------------------------------------
 #Step 2 — Executing the Docker Command Without Sudo (Optional)
 
@@ -66,22 +80,23 @@ docker: Cannot connect to the Docker daemon. Is the docker daemon running on thi
 See 'docker run --help'.
 
 
-If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
+#If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
 
 	sudo usermod -aG docker ${USER}
 	
-To apply the new group membership, log out of the server and back in, or type the following:
+#To apply the new group membership, log out of the server and back in, or type the following:
 
 	su - ${USER}
 	
-You will be prompted to enter your user’s password to continue.
+#You will be prompted to enter your user’s password to continue.
 Confirm that your user is now added to the docker group by typing:	
 	groups
 	
 Output
 sammy sudo docker
 
-If you need to add a user to the docker group that you’re not logged in as, declare that username explicitly using:
-	sudo usermod -aG docker username
+#If you need to add a user to the docker group that you’re not logged in as, declare that username explicitly using:
+
+sudo usermod -aG docker username
 	
-############################################################################################################################
+##########################################################################################################
