@@ -1,7 +1,7 @@
 
 #First Approach : -
 
-##Removal of Docker installation module, in case module selected during ubuntu 20.04_LTS installation
+##Removal of Docker installation module, in case module selected during ubuntu 20.04_LTS installation:
 
 snap remove docker
 
