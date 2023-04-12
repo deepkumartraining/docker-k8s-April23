@@ -67,36 +67,3 @@ TriggeredBy: ● docker.socket
      CGroup: /system.slice/docker.service
              └─24321 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
 			 
-#Installing Docker now gives you not just the Docker service (daemon) but also the docker command line utility, or the Docker client. 
-We’ll explore how to use the docker command later in this tutorial.
--------------------------------------------------------------------------
-#Step 2 — Executing the Docker Command Without Sudo (Optional)
-
-By default, the docker command can only be run the root user or by a user in the docker group, which is automatically created during Docker’s installation process. If you attempt to run the docker command without prefixing it with sudo or without being in the docker group, you’ll get an output like this:
-
-
-Output
-docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?.
-See 'docker run --help'.
-
-
-#If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
-
-	sudo usermod -aG docker ${USER}
-	
-#To apply the new group membership, log out of the server and back in, or type the following:
-
-	su - ${USER}
-	
-#You will be prompted to enter your user’s password to continue.
-Confirm that your user is now added to the docker group by typing:	
-	groups
-	
-Output
-sammy sudo docker
-
-#If you need to add a user to the docker group that you’re not logged in as, declare that username explicitly using:
-
-sudo usermod -aG docker username
-	
-##########################################################################################################
