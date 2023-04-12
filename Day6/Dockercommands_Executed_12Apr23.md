@@ -30,8 +30,6 @@
             docker ps -a
             docker search nodejs
             docker run nodejs
-            docker run redis
-            history | grep docker
             docker run kodecloud/webapp
             history docker login
             history | grep -i docker
