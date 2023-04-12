@@ -85,35 +85,35 @@ docker network ls
 docker ps -l
 docker start dadcc41e3e20
 docker ps
-docker ps
-docker container ls
-docker attach dadcc41e3e20
-docker ps
-docker ps
-docker ps -a
-docker start dadcc41e3e20
-docker ps
-docker exec -it dadcc41e3e20 /bin/bash
-docker ps -a
-docker images
-history | grep "docker commit"
-docker login
-docker ps
-history | grep docker | awk '{print substr($0, index($0, $3))}'
-history | grep docker | awk '{print substr($0, index($0, $2))}'
-docker container ls
-docker pull node
-git clone https://github.com/olliefr/docker-gs-ping
-rm -rf docker-gs-ping/
-mkdir dockerwork
-cd dockerwork/
-git clone https://github.com/olliefr/docker-gs-ping
-cd docker-gs-ping/
-cd docker-gs-ping/
-cd dockerwork/
-cd docker-gs-ping/
-docker build
-docker ps -a
+  docker ps
+  docker container ls
+  docker attach dadcc41e3e20
+  docker ps
+  docker ps
+  docker ps -a
+  docker start dadcc41e3e20
+  docker ps
+  docker exec -it dadcc41e3e20 /bin/bash
+  docker ps -a
+  docker images
+  history | grep "docker commit"
+  docker login
+  docker ps
+  history | grep docker | awk '{print substr($0, index($0, $3))}'
+  history | grep docker | awk '{print substr($0, index($0, $2))}'
+  docker container ls
+  docker pull node
+  git clone https://github.com/olliefr/docker-gs-ping
+  rm -rf docker-gs-ping/
+  mkdir dockerwork
+  cd dockerwork/
+  git clone https://github.com/olliefr/docker-gs-ping
+  cd docker-gs-ping/
+  cd docker-gs-ping/
+  cd dockerwork/
+  cd docker-gs-ping/
+  docker build
+  docker ps -a
 docker images
 docker build --tag docker-gs-ping
 docker build --tag docker-gs-ping .
