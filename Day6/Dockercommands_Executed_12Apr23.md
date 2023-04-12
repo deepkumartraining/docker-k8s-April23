@@ -1,5 +1,5 @@
 ##Docker Commands executed during Demo on 12th April 23:
-    docker --version
+docker --version
     docker info
     systemctl enable docker
     docker info
