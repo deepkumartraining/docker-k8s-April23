@@ -28,4 +28,13 @@ docker service create \
 
 #tmpfs mounts
 docker run -d -it --name tmptest --tmpfs /app nginx:latest
+
+#Multi Stage Build
+Multi Stage build - https://docs.docker.com/build/building/multi-stage/
+    Name Your build Stage
+    Stop At Specific Build Stage
+    External Image as Stage
+    Previous Stage as a new Stage
+    Usage of Builderkit
+    Difference b/w legacy build and BuilderKit
 ```
