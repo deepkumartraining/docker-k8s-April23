@@ -11,7 +11,7 @@ Individual Container Build
 Links
 
 Execute in GUI channel
-Reference of Voting App - https://github.com/dockersamples/example-voting-app
+Reference of Voting App - https://github.com/deepkumartraining/example-voting-app.git
 
 Need to install lightdm
 
