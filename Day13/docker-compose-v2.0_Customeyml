@@ -1,0 +1,48 @@
+version: "2"
+services:
+  redis:
+    image: redis:latest
+    labels:
+     - "com.example.description=redis"
+    ports: ["6379"]
+    networks:
+      - back-tier
+  db:
+    image: postgres:14
+    ports: ["5432"]
+    labels:
+     - "com.example.description=Postgres Database"
+    networks:
+      - back-tier 
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - /tmp:/var/lib/postgresql/data
+  vote-app:
+    buils: ./vote
+    image: vote-app:latest
+    labels:
+     - "com.example.description=Vote-app"
+    ports:
+      - 5000:80
+    networks:
+      - front-tier
+      - back-tier
+  worker-app:
+    image: worker-app:latest
+    labels:
+     - "com.example.description=Worker-app"  
+    networks:
+      - back-tier
+  result-app:
+    image: result-app:latest
+    ports:
+      - 5001:80
+    networks:
+      - front-tier
+      - back-tier
+networks:
+  front-tier:
+  back-tier:
