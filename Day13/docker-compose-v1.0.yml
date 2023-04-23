@@ -1,0 +1,27 @@
+redis:
+  image: redis
+voting-app:
+  image: voting-app:latest
+  ports:
+    - 5000:80
+  links:
+    - redis
+db:
+  image: postgres:14
+  environment:
+    POSTGRES_USER: 'postgres'
+    POSTGRES_PASSWORD: 'postgres'
+    PGDATA: /var/lib/postgresql/data/pgdata
+  volumes:
+    - /tmp:/var/lib/postgresql/data
+worker-app:
+  image: worker-app:latest  
+  links:
+    - db
+    - redis
+result-app:
+  image: result-app:latest
+  ports:
+    - 5001:80
+  links:
+    - db
