@@ -1,0 +1,14 @@
+version: "2"
+services:
+  redis:
+    image: redis
+  db:
+    image: postgres:14
+  vote-app:
+    image: voting-app:latest
+    ports:
+      - 5000:80
+  worker-app:
+    image: worker-app:latest
+  result-app:
+    image: result-app:latest
