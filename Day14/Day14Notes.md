@@ -8,6 +8,7 @@ docker compose develop in stack manner - inline towards docker swarm mode
 
 Some examples from docker official docs
 https://docs.docker.com/compose/gettingstarted/
+https://docs.docker.com/compose/samples-for-compose/
 docker compose rebuild
 docker compose one off commands
 environment variables with docker compose - https://docs.docker.com/compose/environment-variables/set-environment-variables/
