@@ -1,0 +1,46 @@
+version: "3"
+services:
+  redis:
+    image: redis:latest
+    ports:
+     - "6379"
+    volumes:
+      - redis:/data    
+  db:
+    image: postgres:14
+    ports:
+     - "5432"     
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+      #PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres-data:/var/lib/postgresql/data 
+      #- /tmp:/var/lib/postgresql/data 
+  vote-app:
+    build: ./vote
+    image: vote-app:latest
+    command: 
+    - python 
+    - app.py
+    ports:
+      - "5000:80"
+    depends_on:
+      - "redis"
+  worker-app:
+    image: worker-app:latest
+    depends_on:
+      - "redis"
+      - "db"     
+  result-app:
+    image: result-app:latest
+    command: 
+    - nodemon 
+    - server.js
+    ports:
+      - "5001:80"
+    depends_on:
+      - db
+volumes:
+  postgres-data: {}
+  redis: {}

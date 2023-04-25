@@ -21,7 +21,7 @@ services:
     volumes:
       - /tmp:/var/lib/postgresql/data
   vote-app:
-    buils: ./vote
+    build: ./vote
     image: vote-app:latest
     labels:
      - "com.example.description=Vote-app"

@@ -29,8 +29,7 @@ services:
       placement:
         constraints: [node.role == manager] 
   vote-app:
-    buils: ./vote
-    image: vote-app:latest
+    image: voting-app:latest
     ports:
       - 5000:80
     networks:
