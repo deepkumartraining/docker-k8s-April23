@@ -19,4 +19,8 @@ nodejs example with docker-compose - https://docs.docker.com/language/nodejs/dev
 
 compose file description in detail  - https://docs.docker.com/compose/compose-file/03-compose-file/
 
+docker-compose examples:
+
+https://github.com/docker/awesome-compose
+
 ```
