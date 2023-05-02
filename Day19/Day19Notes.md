@@ -57,7 +57,7 @@ Commands Execute:
 ------------------------------Executed on Docker Lab-----------------------------
 
 docker swarm init --advertise-addr 192.168.0.18
-docker swarm join --token SWMTKN-1-3gy6m9oxuqm2nn0268umwa1p4d8flr58ucccxlmruq9htz8p1d-0twbrre6udrwhvarhvqiy3gur 192.168.0.18:2377
+docker swarm join --token <Token> 192.168.0.18:2377
 docker node promote node2 -- Promote to Manager
 docker node demote node2 -- Demote to worker from Manager
 docker node update --label-add managernode1  node1
