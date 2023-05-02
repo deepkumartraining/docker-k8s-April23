@@ -1,68 +1,84 @@
-#Day 18
+#Day 19
 ****************************************************************************************************
 ```
-#Configure Host Only Adapter
+Queries:
 
-Enable second network adapter in Virtual Box 
+Why we should not deploy tasks/service on manager node?
+why we have more managers and less workers?
+what is the market share of Docker Swarm in terms of production implementation?
+what are the benefits and lesson learning from Docker Swarm Implementation?
 
-1) Go To Machine -> Setting -> Network -> Adapter 2
-	- Enable Network Adapter
-	- Attached to -  Host-Only Adapter
-	- Click on Advanced
-		- Adapter Type - Leave for Default
-		- Promiscuous Mode - Allow All
-Apply setting
+Response on Open Queries:
 
-2) Select target VM -> Go To File -> Tools -> Network Manager -> Properties
-	- Adapter - Configure Adapter Automatically
-	- DHCP Server - leave it as Default
+Docker Share Market Share
+	https://discovery.hgdata.com/product/docker-swarm
 
-Login to VM
-	- Go to - cd /etc/netplan
-	- Edit yaml file - only single file available
-	- provide configuration
-		- enp0s8:
-			dhcp: true
-			
-	- Execute command
-		netplan apply
-	- Reboot VM
+Docker Swarm Rocks: 
+	https://dockerswarm.rocks/
 
-Post reboot - Check for host-only-network
-	- It should start with 198.162.56.XX
+Some more installation steps:
+	https://www.aquasec.com/cloud-native-academy/docker-container/docker-swarm/
+	https://www.ibm.com/docs/ru/planning-analytics/2.0.0?topic=swarm-create-docker
+
+Docker Swarm Setup and Installation on Cloud - AWS - Instances:
+	https://medium.com/analytics-vidhya/docker-swarm-creating-deploying-services-a0da071339d3
 
 
-#Check connectivity between VMs (Nodes) Prior to Swarm Creation
-	Below is my machines reference
-	- from Manager node - ping 192.168.56.xx
-	- From Worker Nodes - ping 192.168.56.xx
+Docker VS K8S:
+	https://circleci.com/blog/docker-swarm-vs-kubernetes/
+	https://www.freecodecamp.org/news/kubernetes-vs-docker-swarm-what-is-the-difference/	
 
-Refer video for setup - https://www.youtube.com/watch?v=PEL0e51oeaE
-
-#Docker Swarm Commands
-
-Initiate Docker Swarm
-	docker swarm init --advertise-addr 192.168.56.102
-
-#Docker Join commands for worker
-	docker swarm join --token SWMTKN-1-<Runtime Token> 192.168.xx.xx:2377
-
-#Docker Join commands for manager
-	docker swarm join-token manager
+Some lesson learnt from Docker Swarm Implementation;
+	https://www.bugsnag.com/blog/container-orchestration-with-docker-swarm-mode
 
 
-Manager modes
-	- Leader
-	- Reachable - can be promoted to leader
-	- Unavailable - New manager via docker swarm Join or promote your one of worker node to Manager
+Example of running services on Docker Swarm:
+	https://semaphoreci.com/community/tutorials/running-applications-on-a-docker-swarm-mode-cluster
+	https://www.techrepublic.com/article/how-to-deploy-service-docker-swarm-cluster/
 
+Play with Docker Lab example
+	https://dockerlabs.collabnix.com/intermediate/workshop/getting-started-with-swarm.html
 
-#Node type/mode updates
-	- docker node promote node-3 node-2
-	- docker node demote node-3 node-2
-	- docker node update --role manager ubuntuslave (Promoting worker to be manager)
-	- docker node update --role worker ubuntuslave (Demoting from Manager to Worker)
-	
-	
+Docker Lab:
+	https://labs.play-with-docker.com/p/ch7ipgae69v00096ja8g#ch7ipgae_ch7ipmg1k7jg0099he10
+
+Docker Swarm Admin Guide:
+	https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disaster
+
+docker service CLI reference: 
+	https://docs.docker.com/engine/reference/commandline/service/
+
+running services on docker swarm:
+https://www.cloudbees.com/blog/running-services-within-docker-swarm
+
+Commands Execute:
+
+------------------------------Executed on Docker Lab-----------------------------
+
+docker swarm init --advertise-addr 192.168.0.18
+docker swarm join --token SWMTKN-1-3gy6m9oxuqm2nn0268umwa1p4d8flr58ucccxlmruq9htz8p1d-0twbrre6udrwhvarhvqiy3gur 192.168.0.18:2377
+docker node promote node2 -- Promote to Manager
+docker node demote node2 -- Demote to worker from Manager
+docker node update --label-add managernode1  node1
+docker node update --label-add managernode2  node2
+docker node ls
+docker node inspect node1
+docker service create --name my_web nginx
+docker service ls
+docker service ps my_web
+docker service rm dreamy_poitras
+docker service update --replicas 5 redis
+docker service create --name myredis redis
+---Drain manager node
+docker node update --availability drain node1
+docker node update --availability drain node2
+docker node inspect node1 --format "{{ .ManagerStatus.Reachability }}"
+docker service update --replicas 3 --constraint node.labels!=managernode1 redis
+---placement costraints
+docker service update --replicas 3 --constraint-add node.role==worker redis
+docker service update --replicas 3 --constraint-add node.role!=manager redis
+docker service update --replicas 9 redis
+docker service create --name redis --replicas 2 --publish 6379:6379 redis
+
 Refer all links from ppt
 ```
