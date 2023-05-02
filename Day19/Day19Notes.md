@@ -38,6 +38,7 @@ Example of running services on Docker Swarm:
 
 Play with Docker Lab example
 	https://dockerlabs.collabnix.com/intermediate/workshop/getting-started-with-swarm.html
+	https://medium.com/developers-stacks/play-with-docker-playground-8e659919e3a4
 
 Docker Lab:
 	https://labs.play-with-docker.com/p/ch7ipgae69v00096ja8g#ch7ipgae_ch7ipmg1k7jg0099he10
