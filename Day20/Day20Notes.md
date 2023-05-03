@@ -1,68 +1,50 @@
-#Day 18
+#Day 20
 ****************************************************************************************************
 ```
-#Configure Host Only Adapter
+---Docker Swarm details
 
-Enable second network adapter in Virtual Box 
+Commands executed on Docker Swarm:
 
-1) Go To Machine -> Setting -> Network -> Adapter 2
-	- Enable Network Adapter
-	- Attached to -  Host-Only Adapter
-	- Click on Advanced
-		- Adapter Type - Leave for Default
-		- Promiscuous Mode - Allow All
-Apply setting
+Identify tokens which used for Token  
+	docker swarm join-token manager -q
 
-2) Select target VM -> Go To File -> Tools -> Network Manager -> Properties
-	- Adapter - Configure Adapter Automatically
-	- DHCP Server - leave it as Default
+docker swarm join --token <RuntimeToken> 192.168.0.7:2377
+docker node ls
+vim docker-stack.yml
+docker stack deploy -c docker-stack.yml voting-app
+docker stack ls
+docker stack services voting-app
+docker stack services voting-app
+docker stack ps voting-app
+history | awk '{print substr($0, index($0, $2))}'
 
-Login to VM
-	- Go to - cd /etc/netplan
-	- Edit yaml file - only single file available
-	- provide configuration
-		- enp0s8:
-			dhcp: true
-			
-	- Execute command
-		netplan apply
-	- Reboot VM
+#---Updating with some more advance configuration
+docker stack ls
+docker stack ps voting-app
+vim docker-stack-v1.yml
+docker stack ls
+docker stack deploy -c docker-stack-v1.yml voting-app
+docker node ls
+docker stack ls
+docker stack ps voting-app
+docker stack ls
+docker stack ps voting-app
+docker stack ps voting-app | grep shutdown
+docker stack ps voting-app | grep -i shutdown
+docker stack ps voting-app | grep -i running
+clear
+docker stack ls
+docker stack ps voting-app
+docker stack ps voting-app | grep -i running
+history | awk '{print substr($0, index($0, $2))}'
 
-Post reboot - Check for host-only-network
-	- It should start with 198.162.56.XX
+update configuration and deploy
+docker stack deploy -c docker-stack-v1.yml voting-app
+docker stack ps voting-app | grep -i running
 
-
-#Check connectivity between VMs (Nodes) Prior to Swarm Creation
-	Below is my machines reference
-	- from Manager node - ping 192.168.56.xx
-	- From Worker Nodes - ping 192.168.56.xx
-
-Refer video for setup - https://www.youtube.com/watch?v=PEL0e51oeaE
-
-#Docker Swarm Commands
-
-Initiate Docker Swarm
-	docker swarm init --advertise-addr 192.168.56.102
-
-#Docker Join commands for worker
-	docker swarm join --token SWMTKN-1-<Runtime Token> 192.168.xx.xx:2377
-
-#Docker Join commands for manager
-	docker swarm join-token manager
-
-
-Manager modes
-	- Leader
-	- Reachable - can be promoted to leader
-	- Unavailable - New manager via docker swarm Join or promote your one of worker node to Manager
-
-
-#Node type/mode updates
-	- docker node promote node-3 node-2
-	- docker node demote node-3 node-2
-	- docker node update --role manager ubuntuslave (Promoting worker to be manager)
-	- docker node update --role worker ubuntuslave (Demoting from Manager to Worker)
-	
-	
+vim docker-stack-wordpress.yml
+docker stack deploy -c docker-stack-wordpress.yml wordpress
+docker stack ls
+docker stack ps wordpress
 Refer all links from ppt
 ```
