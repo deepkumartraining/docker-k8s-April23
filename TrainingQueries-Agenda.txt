@@ -734,19 +734,22 @@ docker stack ps wordpress
 Day 21
 *****************************************************************************
 
+Recap - Docker, Docker Compose, Docker Swarm
 Kubernetes - Intro/Overview
+
+
+Day 22
+*****************************************************************************
+
 Kubernetes vs Docker Swarm
 	- https://circleci.com/blog/docker-swarm-vs-kubernetes/
+	
 	- https://www.freecodecamp.org/news/kubernetes-vs-docker-swarm-what-is-the-difference/
 Kubernetes Architecture
 -- High Level Design
 -- Low Level Design
 Kubernetes Market Share
 	https://newsletter.cote.io/p/kubernetes-marketshare-across-cloud
-
-
-Day 22
-*****************************************************************************
 Kubernetes Components
 Kubernetes Objects
 Kubernetes Key Concepts
