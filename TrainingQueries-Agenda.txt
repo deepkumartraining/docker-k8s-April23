@@ -1,0 +1,753 @@
+
+Day 1 
+**************************************************************************
+Agenda
+Cover background
+Linux Basics
+Know and feel and Around Docker
+Docker Architecture
+
+Oracle Virtual Box - https://www.virtualbox.org/wiki/Downloads
+Ubuntu Official Image - https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso
+
+Day 2
+***************************************************************************
+Oracle Virtual Box latest version
+Ubuntu machine setup - 20.04
+Linux commands
+
+Virtual Playgrounds for containerization
+
+Docker - https://labs.play-with-docker.com/#
+K8S - https://killercoda.com/login
+
+Virtual Box creation - for no cost
+Instance Creation in AWS/VM Creation in GCP
+
+Docker Pricing - https://www.docker.com/pricing/#:~:text=*Docker%20Desktop%20is%20free%20to,than%20%2410%20million%20in%20revenue.
+https://docs.docker.com/desktop/install/windows-install/
+
+
+Email id: deep.training23@gmail.com
+Git Hub Account: https://github.com/deepkumartraining/docker-k8s-April23
+Group Creation: VisualPath Operation team will take care
+
+Also, needs to plan for linux
+
+Package updates/Repository mapping/package manager cheetsheet - https://www.cyberciti.biz/tips/linux-debian-package-management-cheat-sheet.html
+Host based routing
+Loopback
+Internet connectivity
+Common commands
+
+ssh connectivity tool
+https://mobaxterm.mobatek.net/
+https://winsshterm.blogspot.com/
+
+https://medium.com/@me.sanjeev3d/play-with-docker-6129b894f7f
+
+https://www.cyberciti.biz/faq/star-stop-restart-apache2-webserver/
+
+https://www.cyberciti.biz/tips/linux-debian-package-management-cheat-sheet.html
+
+https://www.cyberciti.biz/faq/unix-linux-check-if-port-is-in-use-command/
+
+
+dpkg understanding
+
+
+apt remove <package name>
+dpkg -l | grep <package name>
+dpkg -P <package name>
+dpkg -s <package name>
+ls -l /usr/bin/telnet
+dpkg -S <package name>
+
+
+Day 3
+********************************************************************************
+
+Any Newcomer - Intro
+Any query from previous session
+SSH connectivity tools
+Package manager
+Quick reference/cheat sheets
+ Installation walkthrough
+Most used/common commands in Linux
+
+Docker Networking
+
+https://packages.ubuntu.com/focal/telnet
+
+
+Play with Linux platform
+
+Day 4
+*************************************************************************************
+Queries from Previous session
+Application pattern – Use Cases
+Architecture walkthrough
+Docker introduction
+Docker Engine
+Docker Architecture
+Docker core components
+Docker standalone containers
+
+
+
+Day 5
+************************************************************************************
+Docker installation from scratch
+
+Cleanup may require if someone install docker as part of ubuntu installation  of 20.04
+
+Play with docker
+docker taging standards
+Need of docker compose
+Docker compose architecture
+Play with Docker Compose
+
+Day 6
+************************************************************************************
+Need of Docker Swarm
+Container Orchestration
+Docker Swarm Architecture
+Play with Docker Swarm
+
+Day 7  
+***********************************************************************************
+Any query from previous session
+Docker Commit – Image customization
+DockerHub integration
+Docker push to registry
+Dockerfile example/explanation
+Dockerfile writeup
+Dockerfile Build & Push to registry
+
+
+Day 8
+*****************************************************************************************
+DockerFile
+Node-docker
+Java-docker
+DOcker push to registry
+Docker Tag
+Docker port expose/publish
+CMD vs Entrypoint
+
+
+Day 9
+******************************************************************************************
+Docker Volume
+Docker Logging and tracing
+DockerFile Multi Stage Build
+Need of DockerCompose
+
+Commands
+docker volume create dockerpoc
+docker volume ls
+docker volume inspect dockerpoc
+Mount - 
+docker run -it -v dockerpoc:/insidecontainer --name my-container-01 ubuntu/<imageid>
+Test with persistent data and multiple container
+docker run -it -v dockerpoc:/insidecontainer --name my-container-02 ubuntu/<imageid>
+
+Docker logs <container id>
+docker logs --tail 100 <container id>
+docker logs --follow 1m <container-id>
+
+docker run -it -v dockerpoc:/insidecontainer --name volumepoc 08d22c0ceb15
+
+Example with Mysql - https://www.freecodecamp.org/news/docker-mount-volume-guide-how-to-mount-a-local-directory/
+
+docker volume rm <Volume>
+
+Remove all unused volume in case no container connected
+
+docker volume prune
+
+Mount with -v and --mount
+
+
+systemctl status lightdm
+service lightdm status
+
+docker run --volumes-from  dockervolumepoc:insidecontainer3 
+
+docker run --volumes-from some-volume docker-image-name:tag
+docker run -d --volumes-from dockerpoc node-docker:latest
+
+docker exec baee9b3f82b3 sh -c 'ls -altr'
+ll /insideubuntu2
+
+
+Day 10
+*******************************************************************************
+
+share running container with same volume
+--volume & --mount
+
+
+Same drive mount to multiple containers
+#First Container
+docker run -it --volume dockerpoc:/insideubuntu1 --name dockervolumepoc ubuntu
+#Second Container
+docker run -it --volume dockerpoc:/insideubuntu2 --name dockervolumepoc2 ubuntu
+
+
+Mount drive from running container
+docker run -d --volumes-from <Source-container-name> <ImageName>:<tag>
+docker run -d --volumes-from dockervolumepoc deepkumartraining/node-docker:latest
+
+docker exec baee9b3f82b3 sh -c 'ls -altr /'
+docker exec baee9b3f82b3 sh -c 'ls -altr /insideubuntu1'
+
+
+#--mount
+docker service create \
+    --mount 'type=volume,src=<VOLUME-NAME>,dst=<CONTAINER-PATH>,volume-driver=local,volume-opt=type=nfs,volume-opt=device=<nfs-server>:<nfs-path>,"volume-opt=o=addr=<nfs-address>,vers=4,soft,timeo=180,bg,tcp,rw"'
+    --name myservice \
+    <IMAGE>
+
+#tmpfs mounts
+docker run -d -it --name tmptest --tmpfs /app nginx:latest
+
+
+Multi Stage build - https://docs.docker.com/build/building/multi-stage/
+
+Docker Compose Overview - https://docs.docker.com/compose/
+
+
+Day 11 & 12
+****************************************************************************************************
+Docker Network Concepts:
+
+```
+Docker Networking Drivers
+-- Bridge Network
+-- None
+-- Host Network
+-- Overlay Network
+-- Macvlan Network
+
+Key Task:
+	Create own bridge network
+	Won't be able to create own Host network because there is only one host 
+	Won't be able to create own None Network because ther is only one is allowed
+	Overlay for clustering and internal communication of container in orchestration
+	Macvlan is used for physical MAC address assignment
+
+Commands:
+docker network create --driver bridge --subnet 182.18.0.0/16 custom_bridgenetwork
+docker network ls
+docker network inspect custom_bridgenetwork
+docker network inspect host
+docker run -d --name custom_network --network custom_bridgenetwork deepkumartraining/node-docker
+
+Key Pointers on Docker Networks:
+
+-Need to explicitly mention host & None n/w during container creation
+ 
+-All ports of the container remain hidden from the host and the host would need to use http://<container-ip>:<port> URL for HTTP communication. However, the host can use the --publish or -p flag to bind a local port with a port of the container to make things
+
+	-- Port forwarding for publishing ports
+
+Blog for quick reference: 
+	https://itnext.io/a-beginners-guide-to-networking-in-docker-ca5b822fb935
+official Docker Network link
+	https://docs.docker.com/engine/reference/commandline/network/
+
+
+```
+
+#Docker Compose:
+
+YAML understanding is must prior to Docker Compose, refer below links for reference:
+	https://www.javatpoint.com/yaml
+	https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started
+
+Docker Compose Topics:
+Overview
+Need and Use Cases
+Multi Container on Single Host
+	Web Layer - Priority 3
+	App Layer - Priority 2
+	DB layer - Priority 1
+Dockercompose.yml - example/explanation
+links/depends on
+Docker Compose Evolution/Versions/Comparisons
+	https://docs.docker.com/compose/compose-v2/
+	https://sreeninet.wordpress.com/2017/03/28/comparing-docker-compose-versions/
+
+
+
+Day 12
+****************************************************************************************************
+history | awk '{print substr($0, index($0, $4))}'
+
+
+git clone https://github.com/deepkumartraining/example-voting-app.git
+
+Voting App brief in details
+Architecture Diagram
+Individual component Image Build
+Individual Container Build
+Links
+
+Execute in GUI channel
+Reference of Voting App - https://github.com/dockersamples/example-voting-app
+
+Need to install lightdm
+
+
+Individual Command reference
+
+#Voting App 
+docker build -t voting-app .
+docker run -p 5000:80 voting-app
+
+#Redis Container start
+docker run -d --name redis redis
+
+#Voting-app start with redis reference
+docker run -dp 5000:80 --link redis:redis voting-app
+
+#Postgres container start
+
+docker run --name db -p 5432:5432 postgres:14 #Would be failing
+
+docker run -d --name db postgres:14 -e POSTGRES_PASSWORD=postgres
+docker run --name db -dp 5432:5432 -e POSTGRES_PASSWORD=postgres postgres:14
+
+#Worker-App container
+
+docker build -t worker-app .
+docker run -d --name worker-app --link redis:redis --link db:db worker-app
+
+#Result-App Container 
+docker build -t result-app .
+docker run --name result-app -p 5001:80 --link db:db result-app
+
+Test from GUI
+enable lightdm
+service lightdm status/start/restart
+systemctl status lightdm
+
+Design Walkthrough + Fitment to Docker Compose
+
+
+Day 13
+****************************************************************************************************
+
+Docker compose up
+Detach mode
+Docker compose build
+
+#Install Docker-compose from official docker page
+https://docs.docker.com/compose/install/other/
+
+curl -SL https://github.com/docker/compose/releases/download/v2.17.2/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+ll /usr/local/bin/docker-compose
+docker-compose --version
+
+
+#yaml validation
+
+apt install yamllint -y
+yamllint docker-compose.yml
+
+Problem with upgraded docker-compose version 
+--- (root) Additional property app is not allowed
+
+(root) Additional property Version is not allowed	
+
+#Problems faced with v1.0
+
+https://geshan.com.np/blog/2021/12/docker-postgres/
+
+postgresql common problem with earlier versions - https://itecnote.com/tecnote/postgresql-how-to-solve-problem-with-empty-docker-entrypoint-initdb-d-postgresql-docker/
+
+because of version compatibility, needs to downgrade to v1. < v2.0
+
+docker-compose --version
+docker-compose up
+
+
+https://github.com/deepkumartraining/release-example-voting-app
+
+https://docs.docker.com/compose/reference/
+
+docker run --name db -e POSTGRES_PASSWORD=secrect -e POSTGRES_USER=postgres postgres:14
+
+docker run --name db -v postgres-data:/var/lib/postgresql/data -e POSTGRES_USER=password -e POSTGRES_HOST_AUTH_METHOD=trust postgres:14
+volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+docker run --name db --rm -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e PGDATA=/var/lib/postgresql/data/pgdata -v /tmp:/var/lib/postgresql/data -it postgres:14
+
+Docker-compose versioning and examples : https://docs.docker.com/compose/compose-file/compose-versioning/
+
+Docker compose build 
+Docker compose with version 1.0
+Docker compose with version 2.0
+Docker compose with version 3.0
+
+
+
+
+docker-compose examples:
+
+https://github.com/docker/awesome-compose
+
+
+Day 14
+****************************************************************************************************
+
+#Continue with Docker-compose
+Docker-compose v3.0
+build in docker compose
+docker compose develop in stack manner - inline towards docker swarm mode
+
+Some examples from docker official docs
+https://docs.docker.com/compose/gettingstarted/
+docker compose rebuild
+docker compose one off commands
+environment variables with docker compose - https://docs.docker.com/compose/environment-variables/set-environment-variables/
+
+Version based differences - https://s reeninet.wordpress.com/2017/03/28/comparing-docker-compose-versions/
+
+nodejs example with docker-compose - https://docs.docker.com/language/nodejs/develop/
+
+compose file description in detail  - https://docs.docker.com/compose/compose-file/03-compose-file/
+
+
+Day 15
+****************************************************************************************************
+
+Visual Studio Code:
+
+https://code.visualstudio.com/download
+
+https://auth0.com/blog/deployment-strategies-in-kubernetes/
+
+
+Need of Container Orchestration
+Fitment of Docker Swarm
+Architecture of Docker Swarm
+Docker Swarm Setup
+docker lab playground - 
+
+Overview of Container Orchestration 
+https://www.ibm.com/topics/container-orchestration
+https://www.redhat.com/en/topics/containers/what-is-container-orchestration#:~:text=Container%20orchestration%20can%20be%20used,storage%2C%20networking%2C%20and%20security
+
+https://www.linkedin.com/pulse/top-10-container-orchestration-tools-sandeep-kumar-patel
+https://rafay.co/the-kubernetes-current/container-orchestration-tools-comparison/
+
+
+http://thesecretlivesofdata.com/raft/
+
+Day 16
+****************************************************************************************************
+
+
+#Docker Native Cluster Orchestration - Docker Swarm
+Docker Swarm Architecture
+Docker Swarm Components
+Docker Swarm Key Features
+Deep insight around Docker Swarm
+
+Deployment Strategies:
+
+https://auth0.com/blog/deployment-strategies-in-kubernetes/
+https://neptune.ai/blog/model-deployment-strategies
+
+
+Day 17
+****************************************************************************************************
+
+Docker Key Concepts
+
+flipkart.com
+
+flipkart.com/search   search-api
+flipkart.com/cart     cart-api
+flipkart.com/menu     menu-api
+flipkart.com/payment  payment-api
+
+
+ingress
+
+
+
+container(4) -> services(3) -> Ingress (2) -> Load Balancer (1)
+
+Network Load Balancer - Tesla Roadstar
+
+
+container(4) -> services(3) -> Ingress (2) -> Load Balancer (1) -> DNS (tesla)
+
+tesla/start
+tesla/health
+tesla/map
+tesla/status
+
+Ingress/ 
+
+
+nginx (Service) - 3 Replica
+
+Worker node - 3
+
+http://thesecretlivesofdata.com/raft/ 
+
+
+OSI Layer
+
+
+
+
+
+
+
+
+Run docker in swarm mode:
+https://docs.docker.com/engine/swarm/swarm-mode/
+Node join in swarm mode:
+https://docs.docker.com/engine/swarm/join-nodes/
+
+
+useful links to play with Docker Swarm
+https://dockerlabs.collabnix.com/intermediate/workshop/getting-started-with-swarm.html
+https://medium.com/developers-stacks/play-with-docker-playground-8e659919e3a4
+
+
+
+
+
+Day 18
+******************************************************************************************************************
+
+#Configure Host Only Adapter
+
+Enable second network adapter in Virtual Box 
+
+1) Go To Machine -> Setting -> Network -> Adapter 2
+	- Enable Network Adapter
+	- Attached to -  Host-Only Adapter
+	- Click on Advanced
+		- Adapter Type - Leave for Default
+		- Promiscuous Mode - Allow All
+Apply setting
+
+2) Select target VM -> Go To File -> Tools -> Network Manager -> Properties
+	- Adapter - Configure Adapter Automatically
+	- DHCP Server - leave it as Default
+
+Login to VM
+	- Go to - cd /etc/netplan
+	- Edit yaml file - only single file available
+	- provide configuration
+		- enp0s8:
+			dhcp: true
+			
+	- Execute command
+		netplan apply
+	- Reboot VM
+
+Post reboot - Check for host-only-network
+	- It should start with 198.162.56.XX
+
+
+#Check connectivity between VMs (Nodes) Prior to Swarm Creation
+	Below is my machines reference
+	- from Manager node - ping 192.168.56.xx
+	- From Worker Nodes - ping 192.168.56.xx
+
+Refer video for setup - https://www.youtube.com/watch?v=PEL0e51oeaE
+
+#Docker Swarm Commands
+
+Initiate Docker Swarm
+	docker swarm init --advertise-addr 192.168.56.102
+
+#Docker Join commands for worker
+	docker swarm join --token SWMTKN-1-<Runtime Token> 192.168.xx.xx:2377
+
+#Docker Join commands for manager
+	docker swarm join-token manager
+
+
+Manager modes
+	- Leader
+	- Reachable - can be promoted to leader
+	- Unavailable - New manager via docker swarm Join or promote your one of worker node to Manager
+
+
+#Node type/mode updates
+	- docker node promote node-3 node-2
+	- docker node demote node-3 node-2
+	- docker node update --role manager ubuntuslave (Promoting worker to be manager)
+	- docker node update --role worker ubuntuslave (Demoting from Manager to Worker)
+	
+	
+Refer all links from ppt
+	
+Open Question
+
+More Manager vs Less Worker
+Docker Swarm Production implementation
+	
+	
+Day 19
+******************************************************************************************************************
+Queries:
+
+Why we should not deploy tasks/service on manager node
+why we have more managers and less workers
+what is the market share of Docker Swarm in terms of production implementation
+what are the benefits and lesson learning from Docker Swarm Implementation
+
+Response on Open Queries:
+
+Docker Share Market Share
+	https://discovery.hgdata.com/product/docker-swarm
+
+Docker Swarm Rocks: 
+	https://dockerswarm.rocks/
+
+Some more installation steps:
+	https://www.aquasec.com/cloud-native-academy/docker-container/docker-swarm/
+	https://www.ibm.com/docs/ru/planning-analytics/2.0.0?topic=swarm-create-docker
+
+Docker Swarm Setup and Installation on Cloud - AWS - Instances:
+	https://medium.com/analytics-vidhya/docker-swarm-creating-deploying-services-a0da071339d3
+
+
+Docker VS K8S:
+	https://circleci.com/blog/docker-swarm-vs-kubernetes/
+	https://www.freecodecamp.org/news/kubernetes-vs-docker-swarm-what-is-the-difference/	
+
+Some lesson learnt from Docker Swarm Implementation;
+	https://www.bugsnag.com/blog/container-orchestration-with-docker-swarm-mode
+
+
+Example of running services on Docker Swarm:
+	https://semaphoreci.com/community/tutorials/running-applications-on-a-docker-swarm-mode-cluster
+	https://www.techrepublic.com/article/how-to-deploy-service-docker-swarm-cluster/
+
+Play with Docker Lab example
+	https://dockerlabs.collabnix.com/intermediate/workshop/getting-started-with-swarm.html
+
+Docker Lab:
+	https://labs.play-with-docker.com/p/ch7ipgae69v00096ja8g#ch7ipgae_ch7ipmg1k7jg0099he10
+
+Docker Swarm Admin Guide:
+	https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disaster
+
+docker service CLI reference: 
+	https://docs.docker.com/engine/reference/commandline/service/
+
+running services on docker swarm:
+https://www.cloudbees.com/blog/running-services-within-docker-swarm
+
+Commands Execute:
+
+------------------------------Executed on Docker Lab-----------------------------
+
+docker swarm init --advertise-addr 192.168.0.18
+docker swarm join --token SWMTKN-1-3gy6m9oxuqm2nn0268umwa1p4d8flr58ucccxlmruq9htz8p1d-0twbrre6udrwhvarhvqiy3gur 192.168.0.18:2377
+docker node promote node2 -- Promote to Manager
+docker node demote node2 -- Demote to worker from Manager
+docker node update --label-add managernode1  node1
+docker node update --label-add managernode2  node2
+docker node ls
+docker node inspect node1
+docker service create --name my_web nginx
+docker service ls
+docker service ps my_web
+docker service rm dreamy_poitras
+docker service update --replicas 5 redis
+docker service create --name myredis redis
+---Drain manager node
+docker node update --availability drain node1
+docker node update --availability drain node2
+docker node inspect node1 --format "{{ .ManagerStatus.Reachability }}"
+docker service update --replicas 3 --constraint node.labels!=managernode1 redis
+---placement costraints
+docker service update --replicas 3 --constraint-add node.role==worker redis
+docker service update --replicas 3 --constraint-add node.role!=manager redis
+docker service update --replicas 9 redis
+docker service create --name redis --replicas 2 --publish 6379:6379 redis
+
+
+Day 20
+*****************************************************************************
+Docker Swarm details
+
+Commands executed:
+
+Identify tokens which used for Token  
+	docker swarm join-token manager -q
+
+docker swarm join --token <RuntimeToken> 192.168.0.7:2377
+docker node ls
+vim docker-stack.yml
+docker stack deploy -c docker-stack.yml voting-app
+docker stack ls
+docker stack services voting-app
+docker stack services voting-app
+docker stack ps voting-app
+history | awk '{print substr($0, index($0, $2))}'
+
+#---Updating with some more advance configuration
+docker stack ls
+docker stack ps voting-app
+vim docker-stack-v1.yml
+docker stack ls
+docker stack deploy -c docker-stack-v1.yml voting-app
+docker node ls
+docker stack ls
+docker stack ps voting-app
+docker stack ls
+docker stack ps voting-app
+docker stack ps voting-app | grep shutdown
+docker stack ps voting-app | grep -i shutdown
+docker stack ps voting-app | grep -i running
+clear
+docker stack ls
+docker stack ps voting-app
+docker stack ps voting-app | grep -i running
+history | awk '{print substr($0, index($0, $2))}'
+
+update configuration and deploy
+docker stack deploy -c docker-stack-v1.yml voting-app
+docker stack ps voting-app | grep -i running
+
+vim docker-stack-wordpress.yml
+docker stack deploy -c docker-stack-wordpress.yml wordpress
+docker stack ls
+docker stack ps wordpress
+
+
+Day 21
+*****************************************************************************
+
+Kubernetes - Intro/Overview
+Kubernetes vs Docker Swarm
+	- https://circleci.com/blog/docker-swarm-vs-kubernetes/
+	- https://www.freecodecamp.org/news/kubernetes-vs-docker-swarm-what-is-the-difference/
+Kubernetes Architecture
+-- High Level Design
+-- Low Level Design
+Kubernetes Market Share
+	https://newsletter.cote.io/p/kubernetes-marketshare-across-cloud
+
+
+Day 22
+*****************************************************************************
+Kubernetes Components
+Kubernetes Objects
+Kubernetes Key Concepts
+Kubernetes Implementations
