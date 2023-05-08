@@ -8,7 +8,7 @@
 ## Need to execute on both the nodes - ControlPlane and ComputePlane
 ------------------------------------------------------------------------------------------
 ## Docker Installation for container runtime
-
+```
 apt update
 apt dist-upgrade -y
 apt-get install apt-transport-https ca-certificates curl gnupg lsb-release -y
@@ -24,13 +24,13 @@ apt-cache policy docker-ce
 apt install -y docker-ce=5:19.03.15~3-0~ubuntu-focal docker-ce-cli=5:19.03.15~3-0~ubuntu-focal containerd.io
 docker --version
 systemctl status docker
-
+```
 -------------------------------------------------------------------------------------------
 ## Kubernetes related installation on Both Nodes - Control Plan and Compute Plane
 --------------------------------------------------------------------------------------------
 
 ## Install kubernetes packages on both the nodes, before that we have to enable network module for iptables and bridges as mentioned below
-
+```
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
 br_netfilter
 EOF
@@ -43,16 +43,16 @@ EOF
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
 sudo sysctl --system
-
+```
 ## Lets create a repo for kubernetes and install kubernetes v1.21.4 version for now, since v1.22.x has issues in "kubeadm init bootstrap" command.
-
+```
 apt-get install -y apt-transport-https ca-certificates curl
 curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 apt update
 apt install -y kubeadm=1.21.4-00 kubelet=1.21.4-00 kubectl=1.21.4-00
 apt-mark hold kubelet kubeadm kubectl
-
+```
 ## Need to execute on Control plane node only
 ---------------------------------------------------------------------------------------------
 We are going to bootstrap control plane first in the cluster.
@@ -65,9 +65,9 @@ We are using calico network for kubernetes as CNI(Container Network Interface)
 
 My Control Plan internal IP - 10.xx.x.x/32 -- Change your internal IP accordingly
 ip -a
-
+```
 kubeadm init --apiserver-advertise-address=<internalIP of VM> --pod-network-cidr=192.168.0.0/16
-
+```
 ## Possible failure
 ```
 -----------------------------------------------------------------------------------------------------------------------
@@ -83,12 +83,12 @@ To see the stack trace of this error execute with --v=5 or higher
 ------------------------------------------------------------------------------------------------------------------------
 ```
 ## Perform IP forwarding for fix by enabling
-
+```
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
 Execute above code again
 kubeadm init <>
-
+```
 ## Similar to below output would be coming post complete installation, token and IP specific details are system dependent
 ```
 ------------------------------------------------------------------------------------------------------------------------
@@ -122,23 +122,24 @@ kubeadm join 10.128.0.4:6443 --token <runtime token> \
 
 -----------------------------------------------------------------------------------------------------------------------
 ## Commands for keeping kubernetes config at controller node
+```
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
-
+```
 ## Execute YAML files for calico CNI configuration to get installed on the cluster for networking.
-
+```
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/tigera-operator.yaml
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/custom-resources.yaml
-
+```
 ## Note: This is generated as per system specifications and important to join the worker node to the master.
 
 -----------------------------------------------------------------------------------------------------------------------
 ## Execute this command on computenode for joining of cluster
-
+```
 kubeadm join 10.xxx.xx.xx:6443 --token <runtime token> \
         --discovery-token-ca-cert-hash sha256:<runtime token>
-		
+```		
 
 ## Possible failure:
 -----------------------------------------------------------------------------------------------------------------------
@@ -156,35 +157,32 @@ To see the stack trace of this error execute with --v=5 or higher
 ------------------------------------------------------------------------------------------------------------------------
 
 ## Perform IP forwarding for fix by enabling
-
+```
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
 Execute above code again
 kubeadm join <>
-
+```
 ## Post success message, proceed with validation
 ------------------------------------------------------------------------------------------------------------------------
 ## validation commands
-
+```
 kubectl get nodes
 kubectl get pods --all-namespaces
 
-
+```
 ------------------------------------------------------------------------------------------------------------------------
 ## EXTRA commands for labelling of nodes
 ------------------------------------------------------------------------------------------------------------------------
 ## labeling of Nodes - Compute node
-
+```
 kubectl label node <node name> node-role.kubernetes.io/<role name>=<key - (any name)>
-
 kubectl label node computeplanenode1 node-role.kubernetes.io/compute-plane=worker1
-
 kubectl label --overwrite nodes computeplanenode1 kubernetes.io/role
-
 node-role.kubernetes.io/role=compute-plane
-
-Examples - Commands executed
-
+```
+## Examples - Commands executed
+```
 kubectl get nodes
 kubectl label node computeplanenode1 node-role.kubernetes.io/role=compute-plane, worker
 kubectl label node computeplanenode1 node-role.kubernetes.io/role=compute-plane
@@ -197,7 +195,7 @@ kubectl label --overwrite nodes computeplanenode1 kubernetes.io/role=worker1
 kubectl get nodes
 kubectl label --list nodes computeplanenode1
 kubectl label --overwrite nodes computeplanenode1 kubernetes.io/role
-
+```
 ------------------------------------------------------------------------------------------------------------------------
 
 
