@@ -5,9 +5,9 @@
 	Control Plane & Compute Plane
 	Configuration - Type: E2 Standard 2 - 2 vcpu and 8 GB RAM, Allow default svc account and all IPs
 
-# Need to execute on both the nodes - ControlPlane and ComputePlane
+## Need to execute on both the nodes - ControlPlane and ComputePlane
 ------------------------------------------------------------------------------------------
-# Docker Installation for container runtime
+## Docker Installation for container runtime
 
 apt update
 apt dist-upgrade -y
@@ -29,7 +29,7 @@ systemctl status docker
 ## Kubernetes related installation on Both Nodes - Control Plan and Compute Plane
 --------------------------------------------------------------------------------------------
 
-# Install kubernetes packages on both the nodes, before that we have to enable network module for iptables and bridges as mentioned below
+## Install kubernetes packages on both the nodes, before that we have to enable network module for iptables and bridges as mentioned below
 
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
 br_netfilter
@@ -44,7 +44,7 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 
 sudo sysctl --system
 
-#Lets create a repo for kubernetes and install kubernetes v1.21.4 version for now, since v1.22.x has issues in "kubeadm init bootstrap" command.
+## Lets create a repo for kubernetes and install kubernetes v1.21.4 version for now, since v1.22.x has issues in "kubeadm init bootstrap" command.
 
 apt-get install -y apt-transport-https ca-certificates curl
 curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
@@ -63,14 +63,15 @@ We are using calico network for kubernetes as CNI(Container Network Interface)
 
 --Bootstrap the control plane node using "kubeadm init" command as mentioned below:
 
-My Control Plan internal IP - 10.128.0.2/32 -- Change your internal IP accordingly
+My Control Plan internal IP - 10.xx.x.x/32 -- Change your internal IP accordingly
 ip -a
 
 kubeadm init --apiserver-advertise-address=<internalIP of VM> --pod-network-cidr=192.168.0.0/16
 
-#### Possible failure:
+## Possible failure
+```
 -----------------------------------------------------------------------------------------------------------------------
-kubeadm init --apiserver-advertise-address=10.128.0.2 --pod-network-cidr=192.168.0.0/16
+kubeadm init --apiserver-advertise-address=10.xx.x.x --pod-network-cidr=192.168.0.0/16
 I0507 13:47:59.076704   17121 version.go:254] remote version is much newer: v1.27.1; falling back to: stable-1.21
 [init] Using Kubernetes version: v1.21.14
 [preflight] Running pre-flight checks
@@ -80,7 +81,7 @@ error execution phase preflight: [preflight] Some fatal errors occurred:
 [preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
 To see the stack trace of this error execute with --v=5 or higher
 ------------------------------------------------------------------------------------------------------------------------
-
+```
 ## Perform IP forwarding for fix by enabling
 
 echo 1 > /proc/sys/net/ipv4/ip_forward
@@ -89,7 +90,7 @@ Execute above code again
 kubeadm init <>
 
 ## Similar to below output would be coming post complete installation, token and IP specific details are system dependent
-
+```
 ------------------------------------------------------------------------------------------------------------------------
 Your Kubernetes control-plane has initialized successfully!
 
@@ -113,19 +114,19 @@ kubeadm join 10.128.0.4:6443 --token <runtime token> \
         --discovery-token-ca-cert-hash sha256:<runtime token>
 
 -----------------------------------------------------------------------------------------------------------------------
-
+```
 ## Note:
   apiserver-advertise-address needs update with the Internal IP address of the control plane node.
   After successful completion of the command, execute below command as shown in the result as well.
   Copy the result at last which has details mentioned below to add compute plane node to the cluster.
 
 -----------------------------------------------------------------------------------------------------------------------
-# Commands for keeping kubernetes config at controller node
+## Commands for keeping kubernetes config at controller node
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-# Execute YAML files for calico CNI configuration to get installed on the cluster for networking.
+## Execute YAML files for calico CNI configuration to get installed on the cluster for networking.
 
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/tigera-operator.yaml
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/custom-resources.yaml
@@ -139,8 +140,9 @@ kubeadm join 10.xxx.xx.xx:6443 --token <runtime token> \
         --discovery-token-ca-cert-hash sha256:<runtime token>
 		
 
-#### Possible failure:
+## Possible failure:
 -----------------------------------------------------------------------------------------------------------------------
+```
 kubeadm init --apiserver-advertise-address=10.xx.xx.xx --pod-network-cidr=192.168.0.0/16
 I0507 13:47:59.076704   17121 version.go:254] remote version is much newer: v1.27.1; falling back to: stable-1.21
 [init] Using Kubernetes version: v1.21.14
@@ -150,6 +152,7 @@ error execution phase preflight: [preflight] Some fatal errors occurred:
         [ERROR FileContent--proc-sys-net-ipv4-ip_forward]: /proc/sys/net/ipv4/ip_forward contents are not set to 1
 [preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
 To see the stack trace of this error execute with --v=5 or higher
+```
 ------------------------------------------------------------------------------------------------------------------------
 
 ## Perform IP forwarding for fix by enabling
@@ -159,9 +162,9 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 Execute above code again
 kubeadm join <>
 
-# Post success message, proceed with validation
+## Post success message, proceed with validation
 ------------------------------------------------------------------------------------------------------------------------
-# validation commands
+## validation commands
 
 kubectl get nodes
 kubectl get pods --all-namespaces
@@ -170,7 +173,7 @@ kubectl get pods --all-namespaces
 ------------------------------------------------------------------------------------------------------------------------
 ## EXTRA commands for labelling of nodes
 ------------------------------------------------------------------------------------------------------------------------
-# labeling of Nodes - Compute node
+## labeling of Nodes - Compute node
 
 kubectl label node <node name> node-role.kubernetes.io/<role name>=<key - (any name)>
 
