@@ -1,13 +1,13 @@
-K8S-Cluster Prep Up - Kubeadm way
+## K8S-Cluster Prep Up - Kubeadm way
 ------------------------------------------------------------------------------------------
-Pre-Requisite VMs
+## Pre-Requisite VMs
 
 	Control Plane & Compute Plane
 	Configuration - Type: E2 Standard 2 - 2 vcpu and 8 GB RAM, Allow default svc account and all IPs
 
-#Need to execute on both the nodes - ControlPlane and ComputePlane
+# Need to execute on both the nodes - ControlPlane and ComputePlane
 ------------------------------------------------------------------------------------------
-#Docker Installation for container runtime
+# Docker Installation for container runtime
 
 apt update
 apt dist-upgrade -y
@@ -26,10 +26,10 @@ docker --version
 systemctl status docker
 
 -------------------------------------------------------------------------------------------
-Kubernetes related installation on Both Nodes - Control Plan and Compute Plane
+## Kubernetes related installation on Both Nodes - Control Plan and Compute Plane
 --------------------------------------------------------------------------------------------
 
-#Install kubernetes packages on both the nodes, before that we have to enable network module for iptables and bridges as mentioned below
+# Install kubernetes packages on both the nodes, before that we have to enable network module for iptables and bridges as mentioned below
 
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
 br_netfilter
@@ -53,7 +53,7 @@ apt update
 apt install -y kubeadm=1.21.4-00 kubelet=1.21.4-00 kubectl=1.21.4-00
 apt-mark hold kubelet kubeadm kubectl
 
-##Need to execute on Control plane node only
+## Need to execute on Control plane node only
 ---------------------------------------------------------------------------------------------
 We are going to bootstrap control plane first in the cluster.
 These node now will be control plane node for the entire cluster.
@@ -68,7 +68,7 @@ ip -a
 
 kubeadm init --apiserver-advertise-address=<internalIP of VM> --pod-network-cidr=192.168.0.0/16
 
-####Possible failure:
+#### Possible failure:
 -----------------------------------------------------------------------------------------------------------------------
 kubeadm init --apiserver-advertise-address=10.128.0.2 --pod-network-cidr=192.168.0.0/16
 I0507 13:47:59.076704   17121 version.go:254] remote version is much newer: v1.27.1; falling back to: stable-1.21
@@ -81,14 +81,14 @@ error execution phase preflight: [preflight] Some fatal errors occurred:
 To see the stack trace of this error execute with --v=5 or higher
 ------------------------------------------------------------------------------------------------------------------------
 
-Perform IP forwarding for fix by enabling
+## Perform IP forwarding for fix by enabling
 
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
 Execute above code again
 kubeadm init <>
 
-#Similar to below output would be coming post complete installation, token and IP specific details are system dependent
+## Similar to below output would be coming post complete installation, token and IP specific details are system dependent
 
 ------------------------------------------------------------------------------------------------------------------------
 Your Kubernetes control-plane has initialized successfully!
@@ -114,32 +114,32 @@ kubeadm join 10.128.0.4:6443 --token <runtime token> \
 
 -----------------------------------------------------------------------------------------------------------------------
 
-Note:
---apiserver-advertise-address needs update with the Internal IP address of the control plane node.
---After successful completion of the command, execute below command as shown in the result as well.
---Copy the result at last which has details mentioned below to add compute plane node to the cluster.
+## Note:
+  apiserver-advertise-address needs update with the Internal IP address of the control plane node.
+  After successful completion of the command, execute below command as shown in the result as well.
+  Copy the result at last which has details mentioned below to add compute plane node to the cluster.
 
 -----------------------------------------------------------------------------------------------------------------------
-
+# Commands for keeping kubernetes config at controller node
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-#Execute YAML files for calico CNI configuration to get installed on the cluster for networking.
+# Execute YAML files for calico CNI configuration to get installed on the cluster for networking.
 
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/tigera-operator.yaml
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/custom-resources.yaml
 
-Note: This is generated as per system specifications and important to join the worker node to the master.
+## Note: This is generated as per system specifications and important to join the worker node to the master.
 
 -----------------------------------------------------------------------------------------------------------------------
-##Execute this command on computenode for joining of cluster
+## Execute this command on computenode for joining of cluster
 
 kubeadm join 10.xxx.xx.xx:6443 --token <runtime token> \
         --discovery-token-ca-cert-hash sha256:<runtime token>
 		
 
-####Possible failure:
+#### Possible failure:
 -----------------------------------------------------------------------------------------------------------------------
 kubeadm init --apiserver-advertise-address=10.xx.xx.xx --pod-network-cidr=192.168.0.0/16
 I0507 13:47:59.076704   17121 version.go:254] remote version is much newer: v1.27.1; falling back to: stable-1.21
@@ -152,25 +152,25 @@ error execution phase preflight: [preflight] Some fatal errors occurred:
 To see the stack trace of this error execute with --v=5 or higher
 ------------------------------------------------------------------------------------------------------------------------
 
-Perform IP forwarding for fix by enabling
+## Perform IP forwarding for fix by enabling
 
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
 Execute above code again
 kubeadm join <>
 
-#Post success message, proceed with validation
+# Post success message, proceed with validation
 ------------------------------------------------------------------------------------------------------------------------
-#validation commands
+# validation commands
 
 kubectl get nodes
 kubectl get pods --all-namespaces
 
 
 ------------------------------------------------------------------------------------------------------------------------
-EXTRA commands for labelling of nodes
+## EXTRA commands for labelling of nodes
 ------------------------------------------------------------------------------------------------------------------------
-#labeling of Nodes - Compute node
+# labeling of Nodes - Compute node
 
 kubectl label node <node name> node-role.kubernetes.io/<role name>=<key - (any name)>
 
