@@ -2,14 +2,6 @@
 ****************************************************************************************************
 ```
 Refer Agenda from Day 21 PPT
+Recap - Docker, Docker Compose and Docker Swarm
 Kubernetes - Intro/Overview
-Kubernetes vs Docker Swarm
-	- https://circleci.com/blog/docker-swarm-vs-kubernetes/
-	- https://www.freecodecamp.org/news/kubernetes-vs-docker-swarm-what-is-the-difference/
-Kubernetes Architecture
--- High Level Design
--- Low Level Design
-Kubernetes Market Share
-	https://newsletter.cote.io/p/kubernetes-marketshare-across-cloud
-
 ```

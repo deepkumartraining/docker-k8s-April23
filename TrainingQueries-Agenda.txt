@@ -743,7 +743,6 @@ Day 22
 
 Kubernetes vs Docker Swarm
 	- https://circleci.com/blog/docker-swarm-vs-kubernetes/
-	
 	- https://www.freecodecamp.org/news/kubernetes-vs-docker-swarm-what-is-the-difference/
 Kubernetes Architecture
 -- High Level Design
@@ -754,3 +753,64 @@ Kubernetes Components
 Kubernetes Objects
 Kubernetes Key Concepts
 Kubernetes Implementations
+
+
+Day 23
+*****************************************************************************
+
+GCP Free Tier Account - https://www.youtube.com/watch?v=KcHx5dXaDtk
+
+https://console.cloud.google.com/
+
+Kubernete cluster setup
+Setup accounts in GCP
+	Setup costing
+	Free credit of $300 USD
+Kubernetes Orchestration setup - GKE Cluster setup 
+	Automated way to setup the cluster by using Gcloud commands
+	Automated way to setup the cluster by using Terraform - IAC
+	Minimum Configuration
+		Control Plane
+		1 Node Plane
+Kubernetes Orchestration setup - Kubeadm way
+	Create two instances
+		One for Control plane - Configuration:
+		One for Data Plane/Node pool - Configuration:
+		
+	Installation by using Kubeadm commands
+	
+Points to cover
+--Kubernetes version
+Calico Network - CNI
+containerd-io installation
+
+
+Day 24
+*****************************************************************************
+
+CNI Providers - 
+https://kubernetes.io/docs/concepts/cluster-administration/addons/#networking-and-network-policy
+https://kubevious.io/blog/post/comparing-kubernetes-container-network-interface-cni-providers
+
+CNCF - Cloud Native Computing Foundation
+
+https://www.cncf.io/
+
+Kubernetes cluster setup - continue
+
+GKE Cluster setup
+Brief about Kubernetes resources
+Start with pods understanding
+
+Agenda for next level of discussions
+understanding of PODS
+
+
+
+Open Question:
+Kubernetes version and Dockerd based version implemnetation
+ContainerD usage instead of dockerd post v1.24
+
+
+Day 25
+*****************************************************************************
