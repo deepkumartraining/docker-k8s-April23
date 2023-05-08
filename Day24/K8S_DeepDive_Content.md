@@ -18,7 +18,7 @@ kubernetes Deep Dive:
 	Docker Engine/containerd/cri-etc.,
 
 2) Deployment of kubernets cluster using microk8s(ubuntu),minikube,kubeadm
-	Three nodes (1 for controller and 2 for compute nodes)
+	Three nodes (1 for controller and 1 for compute nodes)
 
 3) POD object creation using single container and multi-container
 	Understanding common networking and common storage in POD (shared namespaces)
