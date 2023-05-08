@@ -44,7 +44,7 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 
 sudo sysctl --system
 ```
-## Lets create a repo for kubernetes and install kubernetes v1.21.4 version for now, since v1.22.x has issues in "kubeadm init bootstrap" command.
+## Create a repo for kubernetes and install kubernetes v1.21.4 version for now, since v1.22.x has issues in "kubeadm init bootstrap" command.
 ```
 apt-get install -y apt-transport-https ca-certificates curl
 curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
