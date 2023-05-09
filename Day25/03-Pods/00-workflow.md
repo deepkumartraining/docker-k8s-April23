@@ -162,7 +162,7 @@ spec:
 ## For Multi-container POD that needs to work together, please refer "02-multi-container.yaml" file.
 - This examples shows how a POD will share storage/volume and uses common network namespace of POD running with multiple containers.
 - Both the containers in the example will use only network namespace of a POD, for which containers will communicate on localhost.
-- ![multi-container POD](./02-multi-container.yaml)
+- [multi-container POD](./02-multi-container.yaml)
 
 ## How to create initContainers in a POD, refer "03-pod-initContainers.yaml" file
 - initContainers helps to initialize tasks that are necessary for main containers to run without any issue.
