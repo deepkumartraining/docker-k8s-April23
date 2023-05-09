@@ -814,3 +814,5 @@ ContainerD usage instead of dockerd post v1.24
 
 Day 25
 *****************************************************************************
+
+Understanding of Pods concepts in detail
