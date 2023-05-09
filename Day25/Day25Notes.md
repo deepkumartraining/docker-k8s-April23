@@ -1,5 +1,5 @@
 ## Day 25
-## *************************************************************************************
+*************************************************************************************
 
 ## References:
 - [Complete-Notes](https://github.com/deepkumartraining/docker-k8s-April23/blob/main/TrainingQueries-Agenda.txt)
