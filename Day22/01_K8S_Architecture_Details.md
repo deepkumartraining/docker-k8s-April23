@@ -1,22 +1,20 @@
-# Day 20
-****************************************************************************************************
+# Kubernetes architecture items in details
+************************************************************************************************
 ```
-Kubernetes vs Docker Swarm
-	- https://circleci.com/blog/docker-swarm-vs-kubernetes/
-	- https://www.freecodecamp.org/news/kubernetes-vs-docker-swarm-what-is-the-difference/
-Kubernetes Architecture
--- High Level Design
--- Low Level Design
-Kubernetes Market Share
-	https://newsletter.cote.io/p/kubernetes-marketshare-across-cloud
-Kubernetes vs Docker Swarm
-	- https://circleci.com/blog/docker-swarm-vs-kubernetes/
-	- https://www.freecodecamp.org/news/kubernetes-vs-docker-swarm-what-is-the-difference/
-Kubernetes Architecture
--- High Level Design
--- Low Level Design
-Kubernetes Market Share
-	https://newsletter.cote.io/p/kubernetes-marketshare-across-cloud
-Kubernetes components
-Kubernetes objects
+1) kubernetes components and responsibility
+	controller nodes:
+	 kube-apiserver
+	 kube-control-manager/cloud-control-manager
+	 kube-schduler
+	 calico,flannel(deprecated from 1.18),wavenet etc.,
+	 coreDNS
+	 etcd key-value pair storage
+	 kubelet
+	 kube-proxy
+	 Docker Engine/containerd/cri-etc.,
+	compute nodes:
+	 kubelet
+	 kube-proxy
+	Docker Engine/containerd/cri-etc.,
+
 ```
