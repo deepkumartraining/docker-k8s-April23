@@ -1,4 +1,4 @@
-#Day 20
+# Day 20
 ****************************************************************************************************
 ```
 Kubernetes vs Docker Swarm
@@ -19,5 +19,4 @@ Kubernetes Market Share
 	https://newsletter.cote.io/p/kubernetes-marketshare-across-cloud
 Kubernetes components
 Kubernetes objects
-
 ```
