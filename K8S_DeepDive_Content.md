@@ -28,6 +28,7 @@ kubernetes Deep Dive:
 	static POD deployment
 	Deploying application from Private repository
 	resource allocation like CPU and MEMORY
+	Sidecar containers
 
 4) ReplicationController object (RC)
 	When tuse replication controller?
@@ -37,7 +38,7 @@ kubernetes Deep Dive:
 5) Replica Set object (RS)
 	Difference between Replication Controller and Replica Set
 	Advantages of adding match Labels
-	when tuse replica Set?
+	when to use replica Set?
 
 6) Deployment object (deploy)
 	Advantages of Deployment over POD, RC and RS
@@ -61,8 +62,7 @@ kubernetes Deep Dive:
 	Rollout, Rollback and Rollout History of StatefulSet
 
 9) volumes:
-	Empheimeral
-	and persistent storage differences
+	Empheimeral and persistent storage differences
 	Different types of volume plugins like emptyDir, hostPath, NFS etc.,
 	Do's and Dont's of using volumes for application deployment
 
@@ -76,11 +76,11 @@ kubernetes Deep Dive:
 11) Services (svc)
 	Exposing application running on different object through service
 	Understanding difference between ClusterIP, NodePort, Load Balancing, ExternalIP and ExternalName
-	When tuse these different types of services?
+	When to use these different types of services?
 
 12) secrets and configmap (secret, cm)
-	How tpass sensitive data through secret like certs, password, token etc.,
-	How tpass paintext data through configMap like configuration files, scripts etc.,
+	How to pass sensitive data through secret like certs, password, token etc.,
+	How to pass paintext data through configMap like configuration files, scripts etc.,
 	Using secret in POD object through env and volumes
 	using configMap in POD object through env and volumes
 
@@ -99,14 +99,13 @@ kubernetes Deep Dive:
 	Advantages of using liveness, readiness and startup probes tverify application availability
 
 16) Jobs and CronJobs
-	How tachieve autbackup and restore using CronJobs for application like etcd key-value pair
-	storage
-	for kubernetes cluster
+	How to achieve autbackup and restore using CronJobs for application like etcd key-value pair storage for kubernetes cluster
 	Jobs responsibility
 
 17) calico networking
-	How tmigrate from flannel tcalico?
-	How tuse flannel for POD networking and Calicfor network security
+	flannel network understanding
+	migrate from flannel to calico
+	How to  use flannel for POD networking and Calicfor network security
 	calicoctl operations
 	network policy and global network policy
 
@@ -134,6 +133,5 @@ kubernetes Deep Dive:
 Extra: Docker and Kubernetes Security:
 	Docker Image vulnerability scanning using Trivy tool as part of DevSecOps
 	Kubernetes Cluster scanning using kubescan etc.,
-	Sidecar container
 	Servie Mash
 ```
