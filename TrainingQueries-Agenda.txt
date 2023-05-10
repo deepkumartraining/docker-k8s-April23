@@ -828,10 +828,6 @@ Understanding of Pods concepts in detail
 	- Imperative vs declarative
 
 
-
-
-
-
 Day 26
 *****************************************************************************
 
@@ -840,8 +836,15 @@ Agenda:
 	PODs understanding in details
 	- Understanding common networking and common storage in POD (shared namespaces)
 	- Imperative and declarative deployment
+
 	- kubectl commands executions - create, delete, describe with wide
 	- Sample application deployment using nginx for single container in POD 
+
+POD details:
+	https://kubernetes.io/docs/concepts/workloads/pods/
+
+POD vs Container Vs Clusters:
+	https://enterprisersproject.com/article/2020/9/pod-cluster-container-what-is-difference
 
 
 commands:
@@ -859,7 +862,16 @@ Agenda:
 		- static POD deployment
 		- Deploying application from Private repository
 		- resource allocation like CPU and MEMORY- CPU and Memory allocation
-	Replication controller and replica set
+	
+init containers
+	https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
+
+static pods:
+	https://kubernetes.io/docs/tasks/configure-pod-container/static-pod/
+	
+multi containers
+	https://kubernetes.io/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/
+
 
 Day 28
 *****************************************************************************

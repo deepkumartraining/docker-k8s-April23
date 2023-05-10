@@ -14,4 +14,3 @@
 	- static POD deployment
 	- Deploying application from Private repository
 	- Resource allocation like CPU and MEMORY
-- Replication Controller and Replica Set Understanding
