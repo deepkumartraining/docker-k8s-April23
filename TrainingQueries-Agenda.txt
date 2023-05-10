@@ -788,7 +788,13 @@ containerd-io installation
 Day 24
 *****************************************************************************
 
+
+Container Networking:
+https://kubernetes.io/docs/concepts/cluster-administration/networking/
+https://opensource.com/article/22/6/kubernetes-networking-fundamentals
+
 CNI Providers - 
+
 https://kubernetes.io/docs/concepts/cluster-administration/addons/#networking-and-network-policy
 https://kubevious.io/blog/post/comparing-kubernetes-container-network-interface-cni-providers
 
@@ -803,16 +809,54 @@ Brief about Kubernetes resources
 Start with pods understanding
 
 Agenda for next level of discussions
-understanding of PODS
-
 
 
 Open Question:
 Kubernetes version and Dockerd based version implemnetation
 ContainerD usage instead of dockerd post v1.24
 
-
 Day 25
 *****************************************************************************
 
+Any question from previous session
+
 Understanding of Pods concepts in detail
+	- Imperetive deployment
+	- Declarative Deployment via pod.yaml
+	- understanding of PODS
+	- POD deployment of sample application - Nginx
+	- Imperative vs declarative
+
+
+
+
+commands:
+kubectl run nginx --image=nginx:1.19.0 --restart=Always --labels="app=nginx,environment=dev" --port=80 --dry-run=client -o yaml
+
+
+Day 26
+*****************************************************************************
+
+Agenda:
+	Pod understanding in detail
+	- init pod
+	- standalone poc
+	- multi container in pod
+	- CPU and Memory allocation
+	Replication controller and Replica Set
+
+
+Day 27
+*****************************************************************************
+
+
+Day 28
+*****************************************************************************
+
+
+Day 28
+*****************************************************************************
+
+
+Day 28
+*****************************************************************************
