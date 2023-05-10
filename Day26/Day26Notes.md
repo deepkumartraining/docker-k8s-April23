@@ -2,11 +2,9 @@
 *************************************************************************************
 
 ## References:
-- ![Complete-Notes](https://github.com/deepkumartraining/docker-k8s-April23/blob/main/TrainingQueries-Agenda.txt)
-- ![K8S-Contents](https://github.com/deepkumartraining/docker-k8s-April23/blob/main/K8S_DeepDive_Content.md)
-- ![k8s-resources](https://github.com/deepkumartraining/docker-k8s-April23/blob/main/K8S_DeepDive_Content.md)
-- ![k8s-resources](././k8s_resources)
-- ![multi-container POD](./02-multi-container.yaml)
+- ![Complete-Notes](../TrainingQueries-Agenda.txt)
+- ![K8S-Contents](../K8S_DeepDive_Content.md)
+- ![k8s-resources](../k8s_resources/)
 
 
 ## Agenda - 
