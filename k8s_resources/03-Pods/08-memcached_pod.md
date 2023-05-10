@@ -1,7 +1,7 @@
 # Dockerfile:
 ```
 FROM python:3.6
-MAINTAINER "sudhams reddy duba" dubareddy.383@gamil.com
+MAINTAINER "DK"
 RUN apt update && \
     apt install -y memcached
 RUN pip install pymemcache
