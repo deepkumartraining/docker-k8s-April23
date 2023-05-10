@@ -830,25 +830,36 @@ Understanding of Pods concepts in detail
 
 
 
-commands:
-kubectl run nginx --image=nginx:1.19.0 --restart=Always --labels="app=nginx,environment=dev" --port=80 --dry-run=client -o yaml
 
 
 Day 26
 *****************************************************************************
 
 Agenda:
-	Pod understanding in detail
-	- init pod
-	- standalone poc
-	- multi container in pod
-	- CPU and Memory allocation
-	Replication controller and Replica Set
+	Any Queries from previous session
+	PODs understanding in details
+	- Understanding common networking and common storage in POD (shared namespaces)
+	- Imperative and declarative deployment
+	- kubectl commands executions - create, delete, describe with wide
+	- Sample application deployment using nginx for single container in POD 
+
+
+commands:
+kubectl run nginx --image=nginx:1.19.0 --restart=Always --labels="app=nginx,environment=dev" --port=80 --dry-run=client -o yaml
 
 
 Day 27
 *****************************************************************************
 
+Agenda:
+	Any Queries from previous session
+	PODs understanding in details
+		- Multi-container deployment, one for web application and second for data pull
+		- POD creation with initContainer advantages for pre-request
+		- static POD deployment
+		- Deploying application from Private repository
+		- resource allocation like CPU and MEMORY- CPU and Memory allocation
+	Replication controller and replica set
 
 Day 28
 *****************************************************************************
