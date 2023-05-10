@@ -864,6 +864,14 @@ Agenda:
 Day 28
 *****************************************************************************
 
+## Agenda - 
+Recap/Any query from previous session
+Replication controller and replica set
+	Demo with replication controller
+	Demo with replica set
+Deployment Set description
+	Demo with Deployment Set
+
 
 Day 28
 *****************************************************************************

@@ -1,19 +1,15 @@
-## Day 25
+## Day 28
 *************************************************************************************
 
-## References:
+## Resources References:
 - ![Complete-Notes](../TrainingQueries-Agenda.txt)
 - ![K8S-Contents](../K8S_DeepDive_Content.md)
 - ![k8s-resources](../k8s_resources/)
 
-
 ## Agenda - 
-	- Any Queries from previous session
-	- PODs understanding in details
-		- Understanding common networking and common storage in POD (shared namespaces)
-		- Sample application deployment using nginx for single container in POD
-		- Multi-container deployment, one for web application and second for data pull
-		- POD creation with initContainer advantages for pre-request
-		- static POD deployment
-		- Deploying application from Private repository
-		- resource allocation like CPU and MEMORY
+Recap/Any query from previous session
+Replication controller and replica set
+	Demo with replication controller
+	Demo with replica set
+Deployment Set description
+	Demo with Deployment Set
