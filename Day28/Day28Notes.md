@@ -7,9 +7,9 @@
 - ![k8s-resources](../k8s_resources/)
 
 ## Agenda - 
-Recap/Any query from previous session
-Replication controller and replica set
-	Demo with replication controller
-	Demo with replica set
-Deployment Set description
-	Demo with Deployment Set
+	- Recap/Any query from previous session
+	- Init container deployment with dynamic data
+	- static POD deployment demo
+	- Sidecar containers
+	- Deploying application from Private repository
+	- resource allocation like CPU and MEMORY- CPU and Memory allocation
