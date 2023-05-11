@@ -886,14 +886,22 @@ Day 28
 		- Init container deployment with dynamic data
 		- static POD deployment demo
 		- Sidecar containers
+		- Adapter container
+		- Ambassador container
 		- Deploying application from Private repository
 		- resource allocation like CPU and MEMORY- CPU and Memory allocation
 
-sidecar containers:
+sidecar containers with use case and example:
 	https://www.airplane.dev/blog/kubernetes-sidecar-container
 
-sidecar containers pattern:
+sidecar containers:
 	https://medium.com/bb-tutorials-and-thoughts/kubernetes-learn-sidecar-container-pattern-6d8c21f873d
+
+Adapter containers:
+	https://medium.com/bb-tutorials-and-thoughts/kubernetes-learn-adaptor-container-pattern-97674285983c
+
+Ambassador container pattern
+	https://medium.com/bb-tutorials-and-thoughts/kubernetes-learn-ambassador-container-pattern-bc2e1331bd3a
 
 static pods:
 	https://kubernetes.io/docs/tasks/configure-pod-container/static-pod/
@@ -901,6 +909,10 @@ static pods:
 
 Static Pods and Daemonset:
 	https://medium.com/google-cloud/daemon-sets-static-pods-bf43b10efe97
+
+
+commands
+
 
 
 Day 29

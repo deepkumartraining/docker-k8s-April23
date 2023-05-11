@@ -11,5 +11,7 @@
 	- Init container deployment with dynamic data
 	- static POD deployment demo
 	- Sidecar containers
+	- Adapter containers
+	- Ambassador containers
 	- Deploying application from Private repository
 	- resource allocation like CPU and MEMORY- CPU and Memory allocation
