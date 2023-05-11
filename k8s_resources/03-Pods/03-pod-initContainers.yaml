@@ -22,7 +22,7 @@ spec:
     - wget
     - "-O"
     - "/work-dir/index.html"
-    - https://github.com/<xxxxx>/testcode/blob/master/index.html?raw=true
+    - https://github.com/deepkumartraining/docker-k8s-April23/blob/main/testing/index.html?raw=true
     volumeMounts:
     - name: workdir
       mountPath: "/work-dir"
