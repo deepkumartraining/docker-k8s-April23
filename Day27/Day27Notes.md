@@ -11,6 +11,4 @@
 - PODs understanding in details
 	- Multicontainer deployment, one for web application and second for data pull
 	- POD creation with initContainer advantages for pre-request
-	- static POD deployment
-	- Deploying application from Private repository
-	- Resource allocation like CPU and MEMORY
+	- static POD understanding deployment
