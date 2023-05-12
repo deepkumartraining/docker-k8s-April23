@@ -10,19 +10,19 @@ kind: Pod
 metadata:
   name: static-web
   labels:
-    role: myrole
+    environment: myrole
 spec:
   containers:
+  - name: web
+    image: nginx
+    ports:
     - name: web
-      image: nginx
-      ports:
-        - name: web
-          containerPort: 80
-          protocol: TCP
+      containerPort: 80
+      protocol: TCP
 # Open the service file under "/etc/systemd/system/kubelet.service.d/10-kubeadm.conf"
 # add entry as mentioned below
 # --pod-manifest-path=/etc/kubelet.d/
-# root@workernodeone:/etc/systemd/system/kubelet.service.d# cat 10-kubeadm.conf
+# root@computenode1:/etc/systemd/system/kubelet.service.d# cat 10-kubeadm.conf
 # Note: This dropin only works with kubeadm and kubelet v1.11+
 # [Service]
 # Environment="KUBELET_KUBECONFIG_ARGS=--bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf"
@@ -37,3 +37,5 @@ spec:
 # root@workernodeone:/etc/systemd/system/kubelet.service.d#
 # Execute below commands
 # systemctl daemon-reload and then restart kubelet service #systemctl restart kubelet
+
+# Commands in sequest for execution
