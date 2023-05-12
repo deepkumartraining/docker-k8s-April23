@@ -910,10 +910,14 @@ static pods:
 Static Pods and Daemonset:
 	https://medium.com/google-cloud/daemon-sets-static-pods-bf43b10efe97
 
-
+4ecbdc9c9e1847918692436d0462eda9
 /root/pods/commands_executed_11May23
-static pod
-All the prebuilt default pods are static pods
+
+# Static pod Execution reference:
+--------------------------------------------------------------------------------
+
+# All the prebuilt default pods are static pods
+
 root@controlplane:~# kubectl get po -n kube-system
 NAME                                   READY   STATUS    RESTARTS   AGE
 coredns-558bd4d5db-gwrxw               1/1     Running   6          4d4h
@@ -926,8 +930,10 @@ kube-proxy-zw2rt                       1/1     Running   6          4d3h
 kube-scheduler-controlplane            1/1     Running   6          4d4h
 root@controlplane:~#
 
--- Default location of static pods
+# Default location of static pods
+
 /etc/kubernetes/manifests#
+
 root@controlplane:/etc/kubernetes/manifests# ll
 total 24
 drwxr-xr-x 2 root root 4096 May  7 13:51 ./
@@ -936,35 +942,51 @@ drwxr-xr-x 4 root root 4096 May  7 13:51 ../
 -rw------- 1 root root 3803 May  7 13:51 kube-apiserver.yaml
 -rw------- 1 root root 3316 May  7 13:51 kube-controller-manager.yaml
 -rw------- 1 root root 1385 May  7 13:51 kube-scheduler.yaml
+
 root@controlplane:/etc/kubernetes/manifests# 
 
 We can configure our customized location for static pods and update the mapping accordingly
-Do not touch existing system specific static pods
+Do not touch existing system specific static pods to avoid any cluster related problems
+
 go to computeplane1
-root@computeplanenode1:~# systemctl status kubelet
+
 Check the status of kubelet service
+root@computeplanenode1:~# systemctl status kubelet
+
 create customized location for static pod
 mkdir /etc/kubelet.d
+
 location of kubelet service, update customized static pod location to impact with kubelet
 cd /etc/systemd/system/kubelet.service.d/
 vim 10-kubeadm.conf 
 update in the bottom - customized location
 --pod-manifest-path=/etc/kubelet.d/
+
 Reload systemdaemon for impact
 systemctl daemon-reload
-restart kubelet service
+
+Restart kubelet service for impact with new configuration
 systemctl restart kubelet
+
 check status and reference of static pods
 systemctl status kubelet
+
 navigate to customized location and create need based yaml file
 cd /etc/kubelet.d/
-clear
+
+Create Static pods
 vim static-pod.yaml
+
 This will create by default static pod and controlled by kubelet
 test with kubectl command for delete operations
 Finally clean everything in reverse order
-
-
+remove need based yaml from customized location
+pods should be removed
+remove reference for static pods
+/etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+Reload system daemon-reload
+restart kubelet service
+check status of kubelet service
 
 
 Day 29
