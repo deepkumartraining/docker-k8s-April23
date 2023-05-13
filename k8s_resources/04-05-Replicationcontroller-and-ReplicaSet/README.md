@@ -42,4 +42,58 @@ spec:
   env in (production, staging)
   app notin (frontend, backend)
   qa
+## Commands executed
+```
+mkdir rc-rs
+cd rc-rs/
+clear
+vim rc-basic.yaml
+clear
+kubectl create -f rc-basic.yaml 
+vim rc-basic.yaml
+kubectl create -f rc-basic.yaml 
+clear
+kubect get replicationcontroller
+kubectl get replicationcontroller
+kubectl describe rc myapp-nginx-rc
+kubectl get replicationcontroller
+kubectl get pods
+history
+clear
+ll
+vim rs-basic.yaml
+kubectl create -f rs-basic.yaml 
+vim rs-basic.yaml
+kubectl create -f rs-basic.yaml 
+vim rs-basic.yaml
+kubectl create -f rs-basic.yaml 
+kubectl get replicaset
+kubectl describe replicaset myapp-nginx-rs
+clear
+kubectl describe replicaset myapp-nginx-rs
+kubectl get pods
+kubect get replicaset
+kubectl get replicaset
+clear
+kubectl get replicaset -o wide
+kubectl get services
+curl -I 10.96.0.1
+kubectl get rc -o wide
+clear
+kubectl get rc
+kubectl get rs
+kubectl scale --replicas=6 -f rc-basic.yaml 
+kubectl scale --replicas=6 -f rs-basic.yaml 
+kubectl get rc
+kubectl get rs
+vim rc-basic.yaml 
+kubectl scale --replicas=5 rc myapp-nginx-rc
+kubectl scale --replicas=5 rc myapp-nginx-rs
+kubectl scale --replicas=5 rs myapp-nginx-rs
+clear
+kubectl get rc
+kubectl get rs
+clear
+history | awk '{print substr($0, index($0, $2))}'
+```
   ```

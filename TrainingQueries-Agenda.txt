@@ -995,11 +995,40 @@ Day 29
 	- Deployment set understanding, usage, benefits and Demo
 	- Daemonset understanding, use-cases and Demo
 
+
+Some Key Pointers on Pod, Replication Controller, Replica Set and Deployment:
+
+--Pods:
+	- Pods are a great way for you to deploy an application, but there is some limitation to the pod resource type. A pod is a single entity, and if it fails, it cannot restart itself. This won’t suit most use cases, as we want our applications to be highly available. 
+
+-- Replication controller:
+	- It resolved the problem with availability, The main responsibility of the replication controller is to prevent against failure. It sits above the pod resource type and controls it
+
+	- A ReplicationController ensures that a specified number of pod replicas are running at any one time.
+	- For example:
+	- If there are too many pods, the ReplicationController terminates the extra pods. If there are too few, the ReplicationController starts more pods. Unlike manually created pods, the pods maintained by a ReplicationController are automatically replaced if they fail, are deleted, or are terminated.
+
+-- Replica Set:
+	- ReplicationController:
+	- ReplicationController has scalein and scaleout strategy, where replicaset has the same.
+	- It has Equality based selectors.
+	- It is based on filtering by label keys and values. Matching objects must satisfy all of the specified label constraints.
+
+-- Deployment:
+	- Deployments are an alternative to ReplicaSets, as they are used to manage ReplicaSets . They are handy when it comes to rolling out changes to a set of pods via a ReplicaSet. You can simply roll back to a previous Deployment revision when managing a ReplicaSet using a Deployment. You can also use a Deployment to create a new revision of a ReplicaSet and then migrate existing pods from an older revision into the new revision. After that, the Deployment can take care of cleaning up old, unused ReplicaSets.
+
+
 Reference links:
 
 Pod, Replication Controller and Replica Set in details:
+	
+	https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/
 	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-replicasets-overview/#:~:text=A%20ReplicaSet%20(RS)%20is%20a,contains%20one%20or%20more%20containers.
 	https://www.mirantis.com/blog/kubernetes-replication-controller-replica-set-and-deployments-understanding-replication-options/
+
+Deployment details:
+	https://www.educative.io/blog/kubernetes-deployments-pods-services
+
 
 Daemonset:
 	https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
@@ -1019,6 +1048,7 @@ Day 30
 ## Statefulset
 
 https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
+https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-statefulsets-overview/
 
 
 ## HPA:
