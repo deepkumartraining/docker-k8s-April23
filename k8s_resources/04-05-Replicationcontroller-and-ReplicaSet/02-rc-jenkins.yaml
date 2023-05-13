@@ -27,5 +27,5 @@ spec:
       volumes:
         - name: jenkins-data
           nfs:
-            server: 10.128.0.63
+            server: 10.128.xx.xx
             path: /var/nfs

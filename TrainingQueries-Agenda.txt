@@ -997,17 +997,41 @@ Day 29
 
 Reference links:
 
-Replication Controller and Replica Set in Details: Usage, Difference and implementation
+Pod, Replication Controller and Replica Set in details:
+	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-replicasets-overview/#:~:text=A%20ReplicaSet%20(RS)%20is%20a,contains%20one%20or%20more%20containers.
 	https://www.mirantis.com/blog/kubernetes-replication-controller-replica-set-and-deployments-understanding-replication-options/
 
-
-
+Daemonset:
+	https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
 
 Static Pods and Daemonset:
 	https://medium.com/google-cloud/daemon-sets-static-pods-bf43b10efe97
 
 
-
-
 Day 30
 *****************************************************************************
+
+
+
+
+
+
+## Statefulset
+
+https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
+
+
+## HPA:
+
+#kubectl autoscale deployment.v1.apps/nginx-deployment --min=10 --max=15 --cpu-percent=80
+
+https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/
+
+Images:
+
+https://theithollow.com/wp-content/uploads/2019/01/image-9-1024x375.png
+
+Consideration for large cluster:
+
+
+https://kubernetes.io/docs/setup/best-practices/cluster-large/#:~:text=No%20more%20than%20110%20pods,more%20than%20150%2C000%20total%20pods

@@ -43,6 +43,3 @@ spec:
   app notin (frontend, backend)
   qa
   ```
-
-### Need to address this:
-- https://www.mirantis.com/blog/kubernetes-replication-controller-replica-set-and-deployments-understanding-replication-options/

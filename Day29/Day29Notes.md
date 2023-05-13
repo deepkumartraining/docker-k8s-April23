@@ -6,6 +6,8 @@
 - ![K8S-Contents](../K8S_DeepDive_Content.md)
 - ![k8s-resources](../k8s_resources/)
 - ![Replication-Controller&Replica-Set](../k8s_resources/04-05-Replicationcontroller-and-ReplicaSet/)
+- ![Deployment](../k8s_resources/06-Deployment/)
+- ![Daemonset](../k8s_resources/07-Daemonset/)
 
 ## Agenda -
 	- Recap/Any query from previous session
