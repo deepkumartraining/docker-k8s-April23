@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: ReplicSet
+metadata:
+  name: myapp-nginx-rs-v2
+  labels:
+    app: myapp-nginx-v2
+spec:
+  selector:
+    matchLabels:
+      env: production
+  replicas: 3
+  template:
+    metadata:
+      name: myapp-nginx-pod-v2
+      labels:
+        app: nginx-rs
+        env: production
+    spec:
+      containers:
+      - name: nginx-container-rs-v2
+        image: nginx
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: "0.1"
+            memory: "150Mi"
