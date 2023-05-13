@@ -5,6 +5,7 @@
 - ![Complete-Notes](../TrainingQueries-Agenda.txt)
 - ![K8S-Contents](../K8S_DeepDive_Content.md)
 - ![k8s-resources](../k8s_resources/)
+- ![Pods](../k8s_resources/03-Pods/)
 
 ## Agenda - 
 - Any Queries from previous session

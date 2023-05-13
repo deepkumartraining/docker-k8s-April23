@@ -893,20 +893,15 @@ Day 28
 
 sidecar containers with use case and example:
 	https://www.airplane.dev/blog/kubernetes-sidecar-container
-
 sidecar containers:
 	https://medium.com/bb-tutorials-and-thoughts/kubernetes-learn-sidecar-container-pattern-6d8c21f873d
-
 Adapter containers:
 	https://medium.com/bb-tutorials-and-thoughts/kubernetes-learn-adaptor-container-pattern-97674285983c
-
 Ambassador container pattern
 	https://medium.com/bb-tutorials-and-thoughts/kubernetes-learn-ambassador-container-pattern-bc2e1331bd3a
-
 static pods:
 	https://kubernetes.io/docs/tasks/configure-pod-container/static-pod/
 	https://faun.pub/static-pods-in-kubernetes-29fe8063bf96
-
 Static Pods and Daemonset:
 	https://medium.com/google-cloud/daemon-sets-static-pods-bf43b10efe97
 
@@ -992,12 +987,27 @@ check status of kubelet service
 Day 29
 *****************************************************************************
 ## Agenda -
-		- Recap/Any query from previous session
-		- Replication controller and replica set
-		- Demo with replication controller
-		- Demo with replica set
-		- Deployment Set details
-		- Demo with Deployment Set
+	- Recap/Any query from previous session
+	- Disadvantages with pod based deployments
+	- Replication controller understanding, usage and Demo
+	- replica set understanding, usage/advantage and Demo
+	- Limitation with replication controller and replica set
+	- Deployment set understanding, usage, benefits and Demo
+	- Daemonset understanding, use-cases and Demo
+
+Reference links:
+
+Replication Controller and Replica Set in Details: Usage, Difference and implementation
+	https://www.mirantis.com/blog/kubernetes-replication-controller-replica-set-and-deployments-understanding-replication-options/
+
+
+
+
+Static Pods and Daemonset:
+	https://medium.com/google-cloud/daemon-sets-static-pods-bf43b10efe97
+
+
+
 
 Day 30
 *****************************************************************************
