@@ -28,5 +28,74 @@ Examples:
   kubectl label pods foo bar-
 
 From 1.6 we can do rolling updates.
-#kubectl set image ds/frontend webserver=httpd
+# kubectl set image ds/frontend webserver=httpd
+```
+## Command Executed for Daemonset
+```
+kubectl get nodes
+kubectl get daemonset
+kubectl get daemonset --all
+kubectl get daemonset --all-namespaces
+kubectl get ds kube-proxy -n kube-system
+kubectl create deployment elasticsearch -n kube-system --image=k8s.gcr.io/fluentd-elasticsearch:1.20 --dry-run=client -o yaml
+mkdir daemonset
+cd daemonset/
+kubectl create deployment elasticsearch -n kube-system --image=k8s.gcr.io/fluentd-elasticsearch:1.20 --dry-run=client -o yaml > fluentd.yaml
+vim fluentd.yaml 
+kubectl create -f fluentd.yaml
+vim fluentd.yaml 
+kubectl create -f fluentd.yaml
+kubectl get ds
+kubectl get ds -n kube-system
+kubectl get ds -n kube-system
+kubectl delete ds elasticsearch -n kube-system
+kubectl get ds -n kube-system
+vim fluentd-advanced.yaml
+kubectl create -f fluentd-advanced.yaml 
+kubectl get ds -n kube-system
+kubectl describe ds/fluentd-elasticsearch -n kube-system
+kubectl get pods -n kube-system
+kubectl get ds -n kube-system
+kubectl logs ds fluentd-elasticsearch
+kubectl logs fluentd-elasticsearch-2wgmw
+kubectl describe pods fluentd-elasticsearch-2wgmw
+kubectl logs fluentd-elasticsearch-2wgmw
+kubectl get ds -n kube-system
+kubectl get pods -n kube-system
+kubectl get ds -n kube-system
+kubectl describe ds fluentd-elasticsearch -n kube-system
+kubectl get ds -n kube-system
+kubectl describe ds fluentd-elasticsearch -n kube-system
+kubectl get rs -n kube-system
+kubectl get pods -n kube-system
+kubectl delete pods fluentd-elasticsearch-2wgmw
+kubectl delete pods fluentd-elasticsearch-2wgmw -n kube-system
+kubectl get pods -n kube-system
+kubectl logs fluentd-elasticsearch-f4jss -n kube-system
+vim fluentd-advanced.yaml 
+kubectl apply -f fluentd-advanced.yaml 
+kubect get ds -n kube-system
+kubectl get ds -n kube-system
+kubectl get pods -n kube-system
+kubectl delete pods fluentd-elasticsearch-f4jss -n kube-system
+kubectl delete pods fluentd-elasticsearch-vlqgl -n kube-system
+kubectl get pods -n kube-system
+kubectl get ds -n kube-system
+kubectl delete ds fluentd-elasticsearch -n kube-system
+kubectl get ds -n kube-system
+vim fluentd-02.yaml
+kubectl apply -f fluentd-02.yaml 
+vim fluentd-02.yaml
+kubectl apply -f fluentd-02.yaml 
+kubectl get ds -n kube-system
+kubectl get pods -n kube-system
+kubectl get ds -n kube-system
+clear
+kubectl create clusterrolebinding fluentd --clusterrole=cluster-admin --user=system:serviceaccount:kube-system:default
+vim fluentd-02.yaml
+kubectl apply -f fluentd-02.yaml 
+kubectl get ds -n kube-system
+kubectl get pods -n kube-system
+vim fluentd.yaml 
+history | awk '{print substr($0, index($0, $2))}'
 ```
