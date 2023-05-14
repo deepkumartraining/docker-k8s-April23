@@ -1005,10 +1005,9 @@ Day 29
 	- replica set understanding, usage/advantage and Demo
 	- Limitation with replication controller and replica set
 	- Deployment set understanding, usage, benefits and Demo
-	- Daemonset understanding, use-cases and Demo
-
 
 Some Key Pointers on Pod, Replication Controller, Replica Set and Deployment:
+--------------------------------------------------------------------------------
 
 --Pods:
 	- Pods are a great way for you to deploy an application, but there is some limitation to the pod resource type. A pod is a 
@@ -1038,18 +1037,12 @@ managing a ReplicaSet using a Deployment. You can also use a Deployment to creat
 migrate existing pods from an older revision into the new revision. After that, the Deployment can take care of cleaning 
 up old, unused ReplicaSets.
 
-
 Reference links:
 
 Pod, Replication Controller and Replica Set in details:
-	
-	https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/
-	
-	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-replicasets-overview/#:~:text=A%20ReplicaSet%20(RS)%20is%20
-a,contains%20one%20or%20more%20containers.
-	
-https://www.mirantis.com/blog/kubernetes-replication-controller-replica-set-and-deployments-understanding-replication-optio
-ns/
+	https://www.weave.works/blog/kubernetes-pod-resource-limitations-and-quality-of-service	
+	https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/	
+	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-replicasets-overview/	https://www.mirantis.com/blog/kubernetes-replication-controller-replica-set-and-deployments-understanding-replication-options/
 
 Deployment details:
 	https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
@@ -1065,10 +1058,13 @@ rollout/rollback in details:
 possible warning recieved while updating deployment, fix:
 	https://stackoverflow.com/questions/62831410/usage-of-record-in-kubectl-imperative-commands-in-kubernetes
 
-
 k8s-command-cheatsheet:
 	https://jamesdefabia.github.io/docs/user-guide/kubectl-cheatsheet/
 	https://jamesdefabia.github.io/docs/user-guide/kubectl/kubectl/
+
+Types of Controllers:
+	https://blog.knoldus.com/introduction-to-kube-controller-manager/	
+
 
 Day 30
 *****************************************************************************
@@ -1077,7 +1073,6 @@ Day 30
 	- Daemonset understanding, use-cases and Demo
 	- Statefulset understanding and use-cases
 	- Statefulset Demo
-
 
 Daemonset:
 	https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/

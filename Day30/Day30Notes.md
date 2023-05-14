@@ -5,7 +5,9 @@
 - ![Complete-Notes](../TrainingQueries-Agenda.txt)
 - ![K8S-Contents](../K8S_DeepDive_Content.md)
 - ![k8s-resources](../k8s_resources/)
+- ![k8s-cheatsheet](https://jamesdefabia.github.io/docs/user-guide/kubectl-cheatsheet/)
 - ![Daemonset](../k8s_resources/07-Daemonset/)
+
 
 ## Agenda -
 	- Recap/Any query from previous session
