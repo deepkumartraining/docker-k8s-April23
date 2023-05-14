@@ -8,7 +8,6 @@
 - [k8s-cheatsheet](https://jamesdefabia.github.io/docs/user-guide/kubectl-cheatsheet/)
 - ![Daemonset](../k8s_resources/07-Daemonset/)
 
-
 ## Agenda -
 	- Recap/Any query from previous session
 	- Daemonset understanding, use-cases 
