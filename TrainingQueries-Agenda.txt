@@ -1072,27 +1072,54 @@ k8s-command-cheatsheet:
 
 Day 30
 *****************************************************************************
+## Agenda -
+	- Recap/Any query from previous session
+	- Daemonset understanding, use-cases and Demo
+	- Statefulset understanding and use-cases
+	- Statefulset Demo
+
+
+Daemonset:
+	https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
+
+Statefulset:
+	https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
+	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-statefulsets-overview/
+
+Static Pods and Daemonset:
+	https://medium.com/google-cloud/daemon-sets-static-pods-bf43b10efe97
+
+
+Content in Sequence
+*****************************************************************************
 <Work In Progress - Do Not Refer this section as of now>
 ## Agenda -
 	- Recap/Any query from previous session
 	- Daemonset in detail if required and Daemonset vs statefulset
 	- Statefulset understanding and use-cases
 	- Statefulset Demo
+
 	- Volumes, Types of Volume
 	- Persistent volume, Persistent Volume Claim and storage class
 	- Volume, PV, PVC and Related component demo
+
 	- Secret and Config Maps
 	- Horizontal POD Autoscaling (HPA) - Understanding
 	- HPA Demo
 	- Scheduling and Probes understanding
+
 	- Services understanding in detail
 	- Services Demo
+
 	- Ingress understanding in detail
 	- Ingress Demo
+
 	- Jobs and cronjobs understanding
 	- Jobs and cronjobs demo
+
 	- Networking Concepts - Calico & Flannel, Network policies and operations
 	- Authentication and Authorization
+
 	- Dashboard setup
 	- Helm Chart setup with existing cluster, overview and Demo
 	- Container Security Concepts in detail
@@ -1100,16 +1127,6 @@ Day 30
 	- Service Mesh - Conceptual Understanding
 
 
-## Statefulset
-
-https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
-https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-statefulsets-overview/
-
-Daemonset:
-	https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
-
-Static Pods and Daemonset:
-	https://medium.com/google-cloud/daemon-sets-static-pods-bf43b10efe97
 
 
 
