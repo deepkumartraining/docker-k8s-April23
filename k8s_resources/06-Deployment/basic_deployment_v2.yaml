@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment-02
+  labels:
+    app: nginx-02
+spec:
+  revisionHistoryLimit: 5
+  strategy:
+    type: Recreate
+  replicas: 10 #5 7
+  selector:
+    matchLabels:
+      app: nginx-02
+  template:
+    metadata:
+      labels:
+        app: nginx-02
+    spec:
+      containers:
+      - name: nginx-02
+        image: nginx:1.16 #1.14.2, 1.16.1 1.24
+        ports:
+        - containerPort: 80 
