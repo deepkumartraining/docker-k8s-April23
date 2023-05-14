@@ -69,13 +69,61 @@ root@kubernetesmaster:~#
 ```
 - The RollingUpdateStrategy shows that we have a limit of 1 maxUnavailable — meaning that when we’re updating the Deployment, we can have up to 1 missing pod before it’s replaced, and 1 maxSurge, meaning we can have one extra pod as we scale the new pods back up.
 
-## HPA:
 ```
-#kubectl autoscale deployment.v1.apps/nginx-deployment --min=10 --max=15 --cpu-percent=80
 
-https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/
+## Deployment Set Commands execution reference
 
-Images:
-
-https://theithollow.com/wp-content/uploads/2019/01/image-9-1024x375.png
+kubectl get nodes
+kubectl get deployments
+cd deployments/
+vim deployment-01.yaml 
+vim deployment-01.yaml 
+kubectl apply -f deployment-01.yaml 
+kubectl get deployments
+kubectl get replicaset
+kubectl describe deployments nginx-deployment
+vim deployment-01.yaml 
+cp deployment-01.yaml deployment-01-bkp.yaml
+vim deployment-01.yaml
+clear
+kubectl apply -f deployment-01.yaml 
+kubectl get deployment
+kubectl get replicaset
+kubectl describe deployments nginx-deployment
+clear
+kubectl rollout undo deployment nginx-deployment
+kubectl get replicaset
+kubectl rollout status deployment/nginx-deployment
+kubectl rollout history deployment/nginx-deployment
+kubectl rollout undo deployment nginx-deployment --to-revision=3
+kubectl rollout undo deployment nginx-deployment --to-revision=2
+kubectl get replicaset
+vim deployment-01.yaml 
+kubectl apply -f deployment-01.yaml 
+kubectl get deployments
+vim deployment-02.yaml
+kubectl get deployments
+kubectl create deployment-02.yaml 
+kubectl create -f deployment-02.yaml 
+kubectl get deployments
+vim deployment-02.yaml 
+kubectl apply -f deployment-02.yaml 
+vim deployment-02.yaml 
+kubectl create --save-config -f deployment-02.yaml 
+kubectl apply --save-config -f deployment-02.yaml 
+kubectl apply -f deployment-02.yaml 
+kubectl get deployments
+kubectl describe deployment nginx-deployment-02
+kubctl get rs deployment/nginx-deployment-02
+kubectl get rs deployment/nginx-deployment-02
+kubectl get rs
+kubectl rollout history deployments/nginx-deployment-02
+vim deployment-02.yaml 
+kubectl apply -f deployment-02.yaml --record
+kubectl rollout history deployments/nginx-deployment-02
+kubectl get deploymentset
+kubectl get deployment
+kubectl get rs
+kubectl rollout history deployments/nginx-deployment-02
+history | awk '{print substr($0, index($0, $2))}'```
 ```

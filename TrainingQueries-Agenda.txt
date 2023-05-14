@@ -1027,7 +1027,15 @@ Pod, Replication Controller and Replica Set in details:
 	https://www.mirantis.com/blog/kubernetes-replication-controller-replica-set-and-deployments-understanding-replication-options/
 
 Deployment details:
+	https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 	https://www.educative.io/blog/kubernetes-deployments-pods-services
+
+rollout/rollback in details:
+	https://learnk8s.io/kubernetes-rollbacks
+	https://jamesdefabia.github.io/docs/user-guide/kubectl/kubectl_rollout/
+
+possible warning recieved while updating deployment, fix:
+	https://stackoverflow.com/questions/62831410/usage-of-record-in-kubectl-imperative-commands-in-kubernetes
 
 
 Daemonset:
@@ -1036,6 +1044,9 @@ Daemonset:
 Static Pods and Daemonset:
 	https://medium.com/google-cloud/daemon-sets-static-pods-bf43b10efe97
 
+k8s-command-cheatsheet:
+	https://jamesdefabia.github.io/docs/user-guide/kubectl-cheatsheet/
+	https://jamesdefabia.github.io/docs/user-guide/kubectl/kubectl/
 
 Day 30
 *****************************************************************************
