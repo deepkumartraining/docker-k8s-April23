@@ -24,7 +24,8 @@ K8S - https://killercoda.com/login
 Virtual Box creation - for no cost
 Instance Creation in AWS/VM Creation in GCP
 
-Docker Pricing - https://www.docker.com/pricing/#:~:text=*Docker%20Desktop%20is%20free%20to,than%20%2410%20million%20in%20revenue.
+Docker Pricing - 
+https://www.docker.com/pricing/#:~:text=*Docker%20Desktop%20is%20free%20to,than%20%2410%20million%20in%20revenue.
 https://docs.docker.com/desktop/install/windows-install/
 
 
@@ -34,7 +35,8 @@ Group Creation: VisualPath Operation team will take care
 
 Also, needs to plan for linux
 
-Package updates/Repository mapping/package manager cheetsheet - https://www.cyberciti.biz/tips/linux-debian-package-management-cheat-sheet.html
+Package updates/Repository mapping/package manager cheetsheet - 
+https://www.cyberciti.biz/tips/linux-debian-package-management-cheat-sheet.html
 Host based routing
 Loopback
 Internet connectivity
@@ -205,7 +207,9 @@ docker exec baee9b3f82b3 sh -c 'ls -altr /insideubuntu1'
 
 #--mount
 docker service create \
-    --mount 'type=volume,src=<VOLUME-NAME>,dst=<CONTAINER-PATH>,volume-driver=local,volume-opt=type=nfs,volume-opt=device=<nfs-server>:<nfs-path>,"volume-opt=o=addr=<nfs-address>,vers=4,soft,timeo=180,bg,tcp,rw"'
+    --mount 
+'type=volume,src=<VOLUME-NAME>,dst=<CONTAINER-PATH>,volume-driver=local,volume-opt=type=nfs,volume-opt=device=<nfs-server>:
+<nfs-path>,"volume-opt=o=addr=<nfs-address>,vers=4,soft,timeo=180,bg,tcp,rw"'
     --name myservice \
     <IMAGE>
 
@@ -248,7 +252,9 @@ Key Pointers on Docker Networks:
 
 -Need to explicitly mention host & None n/w during container creation
  
--All ports of the container remain hidden from the host and the host would need to use http://<container-ip>:<port> URL for HTTP communication. However, the host can use the --publish or -p flag to bind a local port with a port of the container to make things
+-All ports of the container remain hidden from the host and the host would need to use http://<container-ip>:<port> URL for 
+HTTP communication. However, the host can use the --publish or -p flag to bind a local port with a port of the container to 
+make things
 
 	-- Port forwarding for publishing ports
 
@@ -346,7 +352,8 @@ Docker compose build
 #Install Docker-compose from official docker page
 https://docs.docker.com/compose/install/other/
 
-curl -SL https://github.com/docker/compose/releases/download/v2.17.2/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+curl -SL https://github.com/docker/compose/releases/download/v2.17.2/docker-compose-linux-x86_64 -o 
+/usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ll /usr/local/bin/docker-compose
 docker-compose --version
@@ -366,7 +373,8 @@ Problem with upgraded docker-compose version
 
 https://geshan.com.np/blog/2021/12/docker-postgres/
 
-postgresql common problem with earlier versions - https://itecnote.com/tecnote/postgresql-how-to-solve-problem-with-empty-docker-entrypoint-initdb-d-postgresql-docker/
+postgresql common problem with earlier versions - 
+https://itecnote.com/tecnote/postgresql-how-to-solve-problem-with-empty-docker-entrypoint-initdb-d-postgresql-docker/
 
 because of version compatibility, needs to downgrade to v1. < v2.0
 
@@ -380,11 +388,13 @@ https://docs.docker.com/compose/reference/
 
 docker run --name db -e POSTGRES_PASSWORD=secrect -e POSTGRES_USER=postgres postgres:14
 
-docker run --name db -v postgres-data:/var/lib/postgresql/data -e POSTGRES_USER=password -e POSTGRES_HOST_AUTH_METHOD=trust postgres:14
+docker run --name db -v postgres-data:/var/lib/postgresql/data -e POSTGRES_USER=password -e POSTGRES_HOST_AUTH_METHOD=trust 
+postgres:14
 volumes:
       - postgres-data:/var/lib/postgresql/data
 
-docker run --name db --rm -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e PGDATA=/var/lib/postgresql/data/pgdata -v /tmp:/var/lib/postgresql/data -it postgres:14
+docker run --name db --rm -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e PGDATA=/var/lib/postgresql/data/pgdata -v 
+/tmp:/var/lib/postgresql/data -it postgres:14
 
 Docker-compose versioning and examples : https://docs.docker.com/compose/compose-file/compose-versioning/
 
@@ -440,7 +450,8 @@ docker lab playground -
 
 Overview of Container Orchestration 
 https://www.ibm.com/topics/container-orchestration
-https://www.redhat.com/en/topics/containers/what-is-container-orchestration#:~:text=Container%20orchestration%20can%20be%20used,storage%2C%20networking%2C%20and%20security
+https://www.redhat.com/en/topics/containers/what-is-container-orchestration#:~:text=Container%20orchestration%20can%20be%20used
+,storage%2C%20networking%2C%20and%20security
 
 https://www.linkedin.com/pulse/top-10-container-orchestration-tools-sandeep-kumar-patel
 https://rafay.co/the-kubernetes-current/container-orchestration-tools-comparison/
@@ -657,7 +668,8 @@ Commands Execute:
 ------------------------------Executed on Docker Lab-----------------------------
 
 docker swarm init --advertise-addr 192.168.0.18
-docker swarm join --token SWMTKN-1-3gy6m9oxuqm2nn0268umwa1p4d8flr58ucccxlmruq9htz8p1d-0twbrre6udrwhvarhvqiy3gur 192.168.0.18:2377
+docker swarm join --token SWMTKN-1-3gy6m9oxuqm2nn0268umwa1p4d8flr58ucccxlmruq9htz8p1d-0twbrre6udrwhvarhvqiy3gur 
+192.168.0.18:2377
 docker node promote node2 -- Promote to Manager
 docker node demote node2 -- Demote to worker from Manager
 docker node update --label-add managernode1  node1
@@ -999,14 +1011,19 @@ Day 29
 Some Key Pointers on Pod, Replication Controller, Replica Set and Deployment:
 
 --Pods:
-	- Pods are a great way for you to deploy an application, but there is some limitation to the pod resource type. A pod is a single entity, and if it fails, it cannot restart itself. This won’t suit most use cases, as we want our applications to be highly available. 
+	- Pods are a great way for you to deploy an application, but there is some limitation to the pod resource type. A pod is a 
+single entity, and if it fails, it cannot restart itself. This won’t suit most use cases, as we want our applications to 
+be highly available. 
 
 -- Replication controller:
-	- It resolved the problem with availability, The main responsibility of the replication controller is to prevent against failure. It sits above the pod resource type and controls it
+	- It resolved the problem with availability, The main responsibility of the replication controller is to prevent against 
+failure. It sits above the pod resource type and controls it
 
 	- A ReplicationController ensures that a specified number of pod replicas are running at any one time.
 	- For example:
-	- If there are too many pods, the ReplicationController terminates the extra pods. If there are too few, the ReplicationController starts more pods. Unlike manually created pods, the pods maintained by a ReplicationController are automatically replaced if they fail, are deleted, or are terminated.
+	- If there are too many pods, the ReplicationController terminates the extra pods. If there are too few, the 
+ReplicationController starts more pods. Unlike manually created pods, the pods maintained by a ReplicationController are 
+automatically replaced if they fail, are deleted, or are terminated.
 
 -- Replica Set:
 	- ReplicationController:
@@ -1015,7 +1032,11 @@ Some Key Pointers on Pod, Replication Controller, Replica Set and Deployment:
 	- It is based on filtering by label keys and values. Matching objects must satisfy all of the specified label constraints.
 
 -- Deployment:
-	- Deployments are an alternative to ReplicaSets, as they are used to manage ReplicaSets . They are handy when it comes to rolling out changes to a set of pods via a ReplicaSet. You can simply roll back to a previous Deployment revision when managing a ReplicaSet using a Deployment. You can also use a Deployment to create a new revision of a ReplicaSet and then migrate existing pods from an older revision into the new revision. After that, the Deployment can take care of cleaning up old, unused ReplicaSets.
+	- Deployments are an alternative to ReplicaSets, as they are used to manage ReplicaSets . They are handy when it comes to 
+rolling out changes to a set of pods via a ReplicaSet. You can simply roll back to a previous Deployment revision when 
+managing a ReplicaSet using a Deployment. You can also use a Deployment to create a new revision of a ReplicaSet and then 
+migrate existing pods from an older revision into the new revision. After that, the Deployment can take care of cleaning 
+up old, unused ReplicaSets.
 
 
 Reference links:
@@ -1023,8 +1044,12 @@ Reference links:
 Pod, Replication Controller and Replica Set in details:
 	
 	https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/
-	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-replicasets-overview/#:~:text=A%20ReplicaSet%20(RS)%20is%20a,contains%20one%20or%20more%20containers.
-	https://www.mirantis.com/blog/kubernetes-replication-controller-replica-set-and-deployments-understanding-replication-options/
+	
+https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-replicasets-overview/#:~:text=A%20ReplicaSet%20(RS)%20is%20
+a,contains%20one%20or%20more%20containers.
+	
+https://www.mirantis.com/blog/kubernetes-replication-controller-replica-set-and-deployments-understanding-replication-optio
+ns/
 
 Deployment details:
 	https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
@@ -1036,7 +1061,6 @@ rollout/rollback in details:
 
 possible warning recieved while updating deployment, fix:
 	https://stackoverflow.com/questions/62831410/usage-of-record-in-kubectl-imperative-commands-in-kubernetes
-
 
 Daemonset:
 	https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
@@ -1050,10 +1074,32 @@ k8s-command-cheatsheet:
 
 Day 30
 *****************************************************************************
-
-
-
-
+<Work In Progress - Do Not Refer this section as of now>
+## Agenda -
+	- Recap/Any query from previous session
+	- Daemonset in detail if required and Daemonset vs statefulset
+	- Statefulset understanding and use-cases
+	- Statefulset Demo
+	- Volumes, Types of Volume
+	- Persistent volume, Persistent Volume Claim and storage class
+	- Volume, PV, PVC and Related component demo
+	- Secret and Config Maps
+	- Horizontal POD Autoscaling (HPA) - Understanding
+	- HPA Demo
+	- Scheduling and Probes understanding
+	- Services understanding in detail
+	- Services Demo
+	- Ingress understanding in detail
+	- Ingress Demo
+	- Jobs and cronjobs understanding
+	- Jobs and cronjobs demo
+	- Networking Concepts - Calico & Flannel, Network policies and operations
+	- Authentication and Authorization
+	- Dashboard setup
+	- Helm Chart setup with existing cluster, overview and Demo
+	- Container Security Concepts in detail
+	- Some popular security implementation in Docker & Kubernetes
+	- Service Mesh - Conceptual Understanding
 
 
 ## Statefulset
@@ -1075,4 +1121,5 @@ https://theithollow.com/wp-content/uploads/2019/01/image-9-1024x375.png
 Consideration for large cluster:
 
 
-https://kubernetes.io/docs/setup/best-practices/cluster-large/#:~:text=No%20more%20than%20110%20pods,more%20than%20150%2C000%20total%20pods
+https://kubernetes.io/docs/setup/best-practices/cluster-large/#:~:text=No%20more%20than%20110%20pods,more%20than%20150%2C000%20
+total%20pods
