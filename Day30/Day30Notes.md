@@ -16,4 +16,4 @@
 	- Daemonset understanding, use-cases 
 	- Daemonset Demo
 	- Statefulset understanding and use-cases
-	- Statefulset Demo
+	- Volumes understanding
