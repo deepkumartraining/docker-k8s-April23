@@ -1045,7 +1045,7 @@ Pod, Replication Controller and Replica Set in details:
 	
 	https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/
 	
-https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-replicasets-overview/#:~:text=A%20ReplicaSet%20(RS)%20is%20
+	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-replicasets-overview/#:~:text=A%20ReplicaSet%20(RS)%20is%20
 a,contains%20one%20or%20more%20containers.
 	
 https://www.mirantis.com/blog/kubernetes-replication-controller-replica-set-and-deployments-understanding-replication-optio
@@ -1055,6 +1055,9 @@ Deployment details:
 	https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 	https://www.educative.io/blog/kubernetes-deployments-pods-services
 
+Deployment Strategies:
+	https://auth0.com/blog/deployment-strategies-in-kubernetes/
+
 rollout/rollback in details:
 	https://learnk8s.io/kubernetes-rollbacks
 	https://jamesdefabia.github.io/docs/user-guide/kubectl/kubectl_rollout/
@@ -1062,11 +1065,6 @@ rollout/rollback in details:
 possible warning recieved while updating deployment, fix:
 	https://stackoverflow.com/questions/62831410/usage-of-record-in-kubectl-imperative-commands-in-kubernetes
 
-Daemonset:
-	https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
-
-Static Pods and Daemonset:
-	https://medium.com/google-cloud/daemon-sets-static-pods-bf43b10efe97
 
 k8s-command-cheatsheet:
 	https://jamesdefabia.github.io/docs/user-guide/kubectl-cheatsheet/
@@ -1106,6 +1104,13 @@ Day 30
 
 https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
 https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-statefulsets-overview/
+
+Daemonset:
+	https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
+
+Static Pods and Daemonset:
+	https://medium.com/google-cloud/daemon-sets-static-pods-bf43b10efe97
+
 
 
 ## HPA:

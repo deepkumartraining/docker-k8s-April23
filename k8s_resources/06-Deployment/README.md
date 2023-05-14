@@ -126,4 +126,6 @@ kubectl get deployment
 kubectl get rs
 kubectl rollout history deployments/nginx-deployment-02
 history | awk '{print substr($0, index($0, $2))}'```
+kubectl edit deployment nginx-deployment
+kubectl rollout status deployment/nginx-deployment
 ```

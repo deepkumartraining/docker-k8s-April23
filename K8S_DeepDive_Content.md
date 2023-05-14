@@ -132,6 +132,6 @@ kubernetes Deep Dive:
 
 Extra: Docker and Kubernetes Security:
 	Docker Image vulnerability scanning using Trivy tool as part of DevSecOps
-	Kubernetes Cluster scanning using kubescan etc.,
-	Servie Mash
+	Kubernetes Cluster scanning using kubescan etc..
+	Service Mash
 ```

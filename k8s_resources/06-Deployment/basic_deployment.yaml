@@ -1,7 +1,7 @@
 #Also a Stateless Application using deployment
 apiVersion: apps/v1
 kind: Deployment
-metadata:
+metadata:  
   name: nginx-deployment-02
   labels:
     app: nginx-02
@@ -16,7 +16,7 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx-02
+        app: nginx-02b
     spec:
       containers:
       - name: nginx-02
