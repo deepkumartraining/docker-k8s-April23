@@ -6,7 +6,10 @@
 - ![K8S-Contents](../K8S_DeepDive_Content.md)
 - ![k8s-resources](../k8s_resources/)
 - [k8s-cheatsheet](https://jamesdefabia.github.io/docs/user-guide/kubectl-cheatsheet/)
-- ![Daemonset](../k8s_resources/07-Daemonset/)
+- ![DaemonSet](../k8s_resources/07-Daemonset/)
+- ![StatefulSet](../k8s_resources/08-StatefulSet/)
+- ![Volume-InDetail](../k8s_resources/09-10-pod-volumes/)
+
 
 ## Agenda -
 	- Recap/Any query from previous session
