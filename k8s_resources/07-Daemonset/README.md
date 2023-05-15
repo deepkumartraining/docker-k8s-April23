@@ -98,4 +98,17 @@ kubectl get ds -n kube-system
 kubectl get pods -n kube-system
 vim fluentd.yaml 
 history | awk '{print substr($0, index($0, $2))}'
+kubectl get ds -n kube-system
+kubectl rollout history ds fluentd-elasticsearch -n kube-system
+cd daemonset/
+vim fluentd-02.yaml 
+kubectl apply -f fluentd-02.yaml --record
+vim fluentd-02.yaml 
+kubectl apply -f fluentd-02.yaml --record
+clear
+kubectl rollout history ds fluentd-elasticsearch -n kube-system
+kubectl rollout undo ds fluentd-elasticsearch -n kube-system
+kubectl rollout history ds fluentd-elasticsearch -n kube-system
+kubectl rollout undo ds fluentd-elasticsearch -n kube-system
+kubectl rollout history ds fluentd-elasticsearch -n kube-system
 ```
