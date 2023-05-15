@@ -4,7 +4,7 @@
 #store logs with tag docker.** into /fluentd/log/docker.*.log (and symlink docker.log)
 #store all other logs into /fluentd/log/data.*.log (and symlink data.log)
 
-#kubectl create clusterrolebinding fluentd --clusterrole=cluster-admin --user=system:serviceaccount:kube-system:default
+# kubectl create clusterrolebinding fluentd --clusterrole=cluster-admin --user=system:serviceaccount:kube-system:default
 
 apiVersion: apps/v1
 kind: DaemonSet

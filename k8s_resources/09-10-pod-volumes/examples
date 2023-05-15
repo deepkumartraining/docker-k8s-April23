@@ -1,15 +1,15 @@
-On-disk files in a Container are ephemeral, which presents some problems for non-trivial applications when running in Containers. First, when a Container crashes, kubelet will restart it, but the files will be lost - the Container starts with a clean state. Second, when running Containers together in a Pod it is often necessary to share files between those Containers.
+#On-disk files in a Container are ephemeral, which presents some problems for non-trivial applications when running in Containers. First, when a Container crashes, kubelet will restart it, but the files will be lost - the Container starts with a clean state. Second, when running Containers together in a Pod it is often necessary to share files between those Containers.
 
 AWS:
 ===
 
-aws ec2 create-volume --availability-zone=eu-west-1a --size=10 --volume-type=gp2
+#aws ec2 create-volume --availability-zone=eu-west-1a --size=10 --volume-type=gp2
 
 Note: Make sure the zone matches the zone you brought up your k8s cluster in AWS
 
 POD:
 
-++
+---
 apiVersion: v1
 kind: Pod
 metadata:
@@ -27,7 +27,8 @@ spec:
     awsElasticBlockStore:
       volumeID: <volume-id>
       fsType: ext4
-++
+
+
 
 
 GoogleCloud:

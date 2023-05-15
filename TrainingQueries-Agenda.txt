@@ -1103,22 +1103,37 @@ for aggregation, processing and routing to any of the supported output destinati
 So to explain in a single word, fluentd is called as log forwarder and fluentbit as log aggregator.
 
 ---------------------------------------------------------------------------------------------------------
-
 Daemonset:
 	https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
 	https://medium.com/kubernetes-tutorials/cluster-level-logging-in-kubernetes-with-fluentd-e59aa2b6093a
+
+Daemonset use case:
+	https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/weave-network-policy/
+	https://www.weave.works/oss/net/#:~:text=Weave%20Net%20is%20a%20powerful,distributed%20virtual%20firewall%20and%20more.
+	https://www.weave.works/blog/weave-net-kubernetes-integration/
+	https://docs.fluentd.org/v/0.12/articles/kubernetes-fluentd
+
+Static Pods and Daemonset:
+	https://medium.com/google-cloud/daemon-sets-static-pods-bf43b10efe97
+
+k8s-command-cheatsheet:
+	https://jamesdefabia.github.io/docs/user-guide/kubectl-cheatsheet/
+	https://jamesdefabia.github.io/docs/user-guide/kubectl/kubectl/
+
+
+Day 31
+*****************************************************************************
+## Agenda -
+	- Recap/Any query from previous session
+	- Volume, PV and PVC in details
+	- Volume, PV and PVC demo
+	- statefulset understanding in detail
+	- Statefulset Demo
 
 Statefulset:
 	https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
 	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-statefulsets-overview/
 
-Static Pods and Daemonset:
-	https://medium.com/google-cloud/daemon-sets-static-pods-bf43b10efe97
-
-
-k8s-command-cheatsheet:
-	https://jamesdefabia.github.io/docs/user-guide/kubectl-cheatsheet/
-	https://jamesdefabia.github.io/docs/user-guide/kubectl/kubectl/
 
 Content in Sequence
 *****************************************************************************
