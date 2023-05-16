@@ -1,3 +1,9 @@
+# Refer below command for instance create via cloud shell or Google Cloud SDK, update need based details. This one is a least cost option
+```
+gcloud compute instances create nfs-server --project=<projectName> --zone=<ZoneName> --boot-disk-size=30GB --image-family=ubuntu-2004-lts --image-project=ubuntu-os-cloud --machine-type=f1-micro --network-interface=network-tier=STANDARD,stack-type=IPV4_ONLY,subnet=default --provisioning-model=STANDARD --tags=nfs
+```
+
+
 # NFS server setup for Kubernetes Volume Backup Storage
 
 ## Manual

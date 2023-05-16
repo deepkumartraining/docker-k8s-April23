@@ -1,31 +1,33 @@
+#NFS based Example - PV
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: nfs-pv
+  name: nfs-test-pv
 spec:
-  storageClassName: nfs-manual
+  storageClassName: nfs-gcp-vm
   capacity:
-    storage: 1Gi
+    storage: 5Gi
   volumeMode: Filesystem #Block
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Delete
   nfs:
-    path: /var/backup
-    server: 192.168.1.120
+    path: /var/nfs/data
+    server: 10.128.0.6
     readOnly: false
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: nfs-pvc
+  name: nfs-test-pvc
 spec:
-  storageClassName: nfs-manual
+  storageClassName: nfs-gcp-vm
   accessModes:
   - ReadWriteMany
   resources:
      requests:
-       storage: 1Gi
+       storage: 5Gi
 ---
 apiVersion: v1
 kind: Pod
@@ -46,7 +48,7 @@ spec:
   volumes:
     - name: nfsvol
       persistentVolumeClaim:
-        claimName: nfs-pvc
+        claimName: nfs-test-pvc
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -70,7 +72,7 @@ spec:
       volumes:
         - name: task-nfs-storage
           persistentVolumeClaim:
-            claimName: nfs-pvc
+            claimName: nfs-test-pvc
       containers:
       - name: nginx
         image: nginx:1.14.2 #1.16.1    jenkins/jenkins:lts
