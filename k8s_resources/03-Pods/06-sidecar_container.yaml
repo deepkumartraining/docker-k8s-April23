@@ -41,7 +41,7 @@ spec:
       hostPort: 8090
       containerPort: 80
   - name: 2nd
-    image: sudhams483/image-pull:latest
+    image: demovis483/image-pull:latest
     volumeMounts:
     - name: html
       mountPath: /image-data

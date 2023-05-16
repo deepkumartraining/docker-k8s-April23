@@ -23,7 +23,7 @@ spec:
               mountPath: /persistentvolumes
           env:
             - name: PROVISIONER_NAME
-              value: sudhamsnfs.com/nfs
+              value: demovisnfs.com/nfs
             - name: NFS_SERVER
               value: <<NFS Server IP>>
             - name: NFS_PATH
