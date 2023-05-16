@@ -1130,39 +1130,56 @@ Day 31
 	- Volumes - downwardApi & Hostpath - Demo
 	- Peristent volume (PV) and Persistent volume claim (PVC)
 	- PV and PVC Data dependencies, use case & Advantages
-	- static vs dynamic provisoning, PVC assignment in deployments, daemonset and statefulSet objects
-	- PV and pvc demo
-	- statefulset understanding and use cases
-	- Statefulset Demo
-	
+		
 Volumes/Persistent Volumes in Kubernetes world:
 	https://kubernetes.io/docs/concepts/storage/volumes/
 	https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 	https://kubernetes.io/docs/concepts/storage/ephemeral-volumes/
 	https://kubernetes.io/docs/concepts/storage/projected-volumes/
 	https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/
+		
+Downgrade API:
+	https://mkdev.me/posts/what-is-kubernetes-downward-api-and-why-you-might-need-it
 	
+Persistent Volume Claim:	
 	https://bluexp.netapp.com/blog/cvo-blg-kubernetes-persistent-volume-claims-explained
 	https://www.digihunch.com/2021/06/kubernetes-storage-explained/
-
-Statefulset:
-	https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
-	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-statefulsets-overview/
-
 
 Day 32
 *****************************************************************************
 ## Agenda -
 	- Recap/Any query from previous session
+	- PV and PVC Data dependencies, use case & Advantages
+	- static vs dynamic provisoning, PVC assignment in deployments, daemonset and statefulSet objects
+	- PV and pvc demo
+	- Storage Classes
 	- statefulset understanding and use cases
 	- Statefulset Demo
-	
+
+
+Persistent Volumes in Kubernetes world:
+	https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+	https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/
+
+Persistent Volume Claim:	
+	https://bluexp.netapp.com/blog/cvo-blg-kubernetes-persistent-volume-claims-explained
+	https://www.digihunch.com/2021/06/kubernetes-storage-explained/
 	
 Statefulset:
 	https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
 	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-statefulsets-overview/
 
+Day 33
+*****************************************************************************
+## Agenda -
+	- Recap/Any query from previous session
+	- statefulset understanding and use cases
+	- Statefulset Demo
+	- Secrets and Config Maps
+	- Horizontal Pod Autoscaling
 
+
+*****************************************************************************
 
 Content in Sequence
 *****************************************************************************
