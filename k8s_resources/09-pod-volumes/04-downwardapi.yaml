@@ -39,7 +39,7 @@ spec:
         done;
       env:
         - name: MY_NAME
-          value: "hello sudheer"
+          value: "hello "
         - name: MY_NODE_NAME
           valueFrom:
             fieldRef:

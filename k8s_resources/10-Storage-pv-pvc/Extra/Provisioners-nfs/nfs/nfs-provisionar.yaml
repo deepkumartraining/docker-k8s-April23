@@ -8,7 +8,7 @@ metadata:
   name: nfs-storage-class
   annotations:
     storageclass.kubernetes.io/is-default-class: "true"
-provisioner: k8ssudheerdemo.com/nfs
+provisioner: k8sdemo.com/nfs
 parameters:
   archiveOnDelete: "false"
 ---
@@ -96,7 +96,7 @@ spec:
               mountPath: /persistentvolumes
           env:
             - name: PROVISIONER_NAME
-              value: k8ssudheerdemo.com/nfs
+              value: k8sdemo.com/nfs
             - name: NFS_SERVER
               value: 10.182.0.6
             - name: NFS_PATH

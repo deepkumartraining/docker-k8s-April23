@@ -14,6 +14,6 @@
 	- PV and PVC Data dependencies, use case & Advantages
 	- static vs dynamic provisoning 
 	- PV and pvc demo - PVC assignment in deployments, daemonset and statefulSet objects
-	- Storage Classes
+	- Storage Classes understanding and examples
 	- statefulset understanding and use cases
 	- Statefulset Demo

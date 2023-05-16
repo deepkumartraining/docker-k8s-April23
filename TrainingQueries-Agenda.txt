@@ -1152,7 +1152,7 @@ Day 32
 	- PV and PVC Data dependencies, use case & Advantages
 	- static vs dynamic provisoning 
 	- PV and pvc demo - PVC assignment in deployments, daemonset and statefulSet objects
-	- Storage Classes
+	- Storage Classes understanding and examples
 	- statefulset understanding and use cases
 	- Statefulset Demo
 
@@ -1160,6 +1160,9 @@ Day 32
 Persistent Volumes in Kubernetes world:
 	https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 	https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/
+
+multiple PVC to Single PV
+	https://docs.openshift.com/container-platform/3.11/install_config/storage_examples/shared_storage.html#:~:text=Once%20a%20PV%20is%20bound,can%20use%20the%20same%20PVC.
 
 Persistent Volume Claim:	
 	https://bluexp.netapp.com/blog/cvo-blg-kubernetes-persistent-volume-claims-explained
