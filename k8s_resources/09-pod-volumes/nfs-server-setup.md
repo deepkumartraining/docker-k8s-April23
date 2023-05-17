@@ -70,8 +70,8 @@ file.
 
 #vi /etc/fstab
 ++
-192.168.0.50:/var/nfs/data    /nfs/general   nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
-192.168.0.50:/home       /nfs/home      nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
+10.128.XX.XX:/var/nfs/data    /nfs/general   nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
+10.128.XX.XX:/home       /nfs/home      nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
 ++
 Save and exit
 

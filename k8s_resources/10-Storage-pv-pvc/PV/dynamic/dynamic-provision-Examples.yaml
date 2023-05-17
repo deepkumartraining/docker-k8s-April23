@@ -1,0 +1,300 @@
+# This example is creating dynamic storage in Google - GCE - Persistent disk
+# Storage Class Defination
+---
+#First example
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+  name: standard
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+  fstype: ext4
+---
+# Second example
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: gold
+provisioner: kubernetes.io/gce-pd
+volumeBindingMode: Immediate
+allowVolumeExpansion: true
+reclaimPolicy: Delete
+parameters:
+  type: pd-standard
+  fstype: ext4
+  replication-type: none
+---
+#Third example
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: standard-rwo
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+volumeBindingMode: WaitForFirstConsumer
+allowedTopologies:
+- matchLabelExpressions:
+  - key: failure-domain.beta.kubernetes.io/zone
+    values:
+    - us-central-1a
+---
+#No need to create pv in case of dynamic provisioning, create PVC directly and it will create mapped PV accordingly
+---
+#First example
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-demo
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: standard-rwo
+---
+#Second example
+kind: PersistentVolumeClaim
+metadata:
+  name: webapps-storage
+spec:
+  storageClassName: gold
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+# Third Example
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: claim-test
+spec:
+  storageClassName: standard      
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+---
+
+#Mapping of PVC in Pod
+---
+#First Example
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-demo
+spec:
+  volumes:
+    - name: pvc-demo-vol
+      persistentVolumeClaim:
+       claimName: pvc-demo
+  containers:
+    - name: pod-demo
+      image: nginx
+      resources:
+        limits:
+          cpu: 10m
+          memory: 80Mi
+        requests:
+          cpu: 10m
+          memory: 80Mi
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: pvc-demo-vol
+---
+#Second example
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web
+spec:
+  containers:
+    - name: web
+      image: nginx
+      volumeMounts:
+      - mountPath: "/usr/share/nginx"
+        name: vol-test
+  volumes:
+    - name: vol-test
+      persistentVolumeClaim:
+        claimName: claim-test
+---
+#Third Example
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-app-pod
+spec:
+  volumes:
+    - name: app-storage
+      persistentVolumeClaim:
+        claimName: app-storage-claim
+  containers:
+    - name: nginx-app-container
+      image: nginx
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: app-storage
+---
+# This particular example create disk first in GCP Disk and later use PV, PVC and mapped with pods, deployments
+#Mapping of PVC in deployment
+#Command for disk creation
+
+gcloud compute disks create gke-pv  --zone=us-central1-a --size=30GB
+
+---
+# PV creation
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: app-storage
+spec:
+  storageClassName: "apps"
+  capacity:
+    storage: 30
+  accessModes:
+    - ReadWriteOnce
+  claimRef:
+    namespace: default
+    name: app-storage-claim
+  gcePersistentDisk:
+    pdName: gke-pv
+    fsType: ext4
+---
+#PVC creation
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: app-storage-claim
+spec:
+  storageClassName: "apps"
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 30
+---
+# Mapping with pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-app-pod
+spec:
+  volumes:
+    - name: app-storage
+      persistentVolumeClaim:
+        claimName: app-storage-claim
+  containers:
+    - name: nginx-app-container
+      image: nginx
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: app-storage
+---
+#Deployment of Jenkins with all need based setups
+# Persistent Volume Claim
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jenkins-pv-claim
+spec:
+  storageClassName: gold
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Gi
+
+# Deployment Config
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins
+  template:
+    metadata:
+      labels:
+        app: jenkins
+    spec:
+      securityContext:
+            fsGroup: 1000 
+            runAsUser: 1000
+      containers:
+        - name: jenkins
+          image: jenkins/jenkins:lts
+          resources:
+            limits:
+              memory: "2Gi"
+              cpu: "1000m"
+            requests:
+              memory: "500Mi"
+              cpu: "500m"
+          ports:
+            - name: httpport
+              containerPort: 8080
+            - name: jnlpport
+              containerPort: 50000
+          livenessProbe:
+            httpGet:
+              path: "/login"
+              port: 8080
+            initialDelaySeconds: 90
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 5
+          readinessProbe:
+            httpGet:
+              path: "/login"
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          volumeMounts:
+            - name: jenkins-data
+              mountPath: /var/jenkins_home         
+      volumes:
+        - name: jenkins-data
+          persistentVolumeClaim:
+              claimName: jenkins-pv-claim
+
+# Service Config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-service
+  annotations:
+      prometheus.io/scrape: 'true'
+      prometheus.io/path:   /
+      prometheus.io/port:   '8080'
+spec:
+  selector: 
+    app: jenkins
+  type: NodePort  
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 32000
+---
