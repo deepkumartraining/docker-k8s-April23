@@ -1,5 +1,5 @@
 
-Day 1 
+Day 1 - 4th April - 2023 # Start date
 **************************************************************************
 Agenda
 Cover background
@@ -10,7 +10,7 @@ Docker Architecture
 Oracle Virtual Box - https://www.virtualbox.org/wiki/Downloads
 Ubuntu Official Image - https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso
 
-Day 2
+Day 2 - 5th April 2023
 ***************************************************************************
 Oracle Virtual Box latest version
 Ubuntu machine setup - 20.04
@@ -66,7 +66,7 @@ ls -l /usr/bin/telnet
 dpkg -S <package name>
 
 
-Day 3
+Day 3 - 6th April 2023
 ********************************************************************************
 
 Any Newcomer - Intro
@@ -84,7 +84,7 @@ https://packages.ubuntu.com/focal/telnet
 
 Play with Linux platform
 
-Day 4
+Day 4 - 7th April 2023
 *************************************************************************************
 Queries from Previous session
 Application pattern – Use Cases
@@ -97,7 +97,7 @@ Docker standalone containers
 
 
 
-Day 5
+Day 5 - 10th April 2023
 ************************************************************************************
 Docker installation from scratch
 
@@ -109,14 +109,14 @@ Need of docker compose
 Docker compose architecture
 Play with Docker Compose
 
-Day 6
+Day 6 - 11th April 2023
 ************************************************************************************
 Need of Docker Swarm
 Container Orchestration
 Docker Swarm Architecture
 Play with Docker Swarm
 
-Day 7  
+Day 7  - 12th April 2023
 ***********************************************************************************
 Any query from previous session
 Docker Commit – Image customization
@@ -127,7 +127,7 @@ Dockerfile writeup
 Dockerfile Build & Push to registry
 
 
-Day 8
+Day 8 - 13th April 2023
 *****************************************************************************************
 DockerFile
 Node-docker
@@ -138,7 +138,7 @@ Docker port expose/publish
 CMD vs Entrypoint
 
 
-Day 9
+Day 9 - 14th April 2023
 ******************************************************************************************
 Docker Volume
 Docker Logging and tracing
@@ -183,7 +183,7 @@ docker exec baee9b3f82b3 sh -c 'ls -altr'
 ll /insideubuntu2
 
 
-Day 10
+Day 10 - 17th April 2023
 *******************************************************************************
 
 share running container with same volume
@@ -222,7 +222,7 @@ Multi Stage build - https://docs.docker.com/build/building/multi-stage/
 Docker Compose Overview - https://docs.docker.com/compose/
 
 
-Day 11 & 12
+Day 11 & 12 - 18th and 19th April 2023
 ****************************************************************************************************
 Docker Network Concepts:
 
@@ -287,7 +287,7 @@ Docker Compose Evolution/Versions/Comparisons
 
 
 
-Day 12
+Day 12 - 20th April 2023
 ****************************************************************************************************
 history | awk '{print substr($0, index($0, $4))}'
 
@@ -342,7 +342,7 @@ systemctl status lightdm
 Design Walkthrough + Fitment to Docker Compose
 
 
-Day 13
+Day 13 - 21st April 2023
 ****************************************************************************************************
 
 Docker compose up
@@ -411,7 +411,7 @@ docker-compose examples:
 https://github.com/docker/awesome-compose
 
 
-Day 14
+Day 14 - 24th April 2023
 ****************************************************************************************************
 
 #Continue with Docker-compose
@@ -432,7 +432,7 @@ nodejs example with docker-compose - https://docs.docker.com/language/nodejs/dev
 compose file description in detail  - https://docs.docker.com/compose/compose-file/03-compose-file/
 
 
-Day 15
+Day 15 - 25th April 2023
 ****************************************************************************************************
 
 Visual Studio Code:
@@ -459,7 +459,7 @@ https://rafay.co/the-kubernetes-current/container-orchestration-tools-comparison
 
 http://thesecretlivesofdata.com/raft/
 
-Day 16
+Day 16 - 26th April 2023
 ****************************************************************************************************
 
 
@@ -475,7 +475,7 @@ https://auth0.com/blog/deployment-strategies-in-kubernetes/
 https://neptune.ai/blog/model-deployment-strategies
 
 
-Day 17
+Day 17 - 27th April 2023
 ****************************************************************************************************
 
 Docker Key Concepts
@@ -516,13 +516,6 @@ http://thesecretlivesofdata.com/raft/
 
 OSI Layer
 
-
-
-
-
-
-
-
 Run docker in swarm mode:
 https://docs.docker.com/engine/swarm/swarm-mode/
 Node join in swarm mode:
@@ -537,7 +530,7 @@ https://medium.com/developers-stacks/play-with-docker-playground-8e659919e3a4
 
 
 
-Day 18
+Day 18 - 28th April 2023
 ******************************************************************************************************************
 
 #Configure Host Only Adapter
@@ -611,7 +604,7 @@ More Manager vs Less Worker
 Docker Swarm Production implementation
 	
 	
-Day 19
+Day 19 - 1st May 2023
 ******************************************************************************************************************
 Queries:
 
@@ -694,7 +687,7 @@ docker service update --replicas 9 redis
 docker service create --name redis --replicas 2 --publish 6379:6379 redis
 
 
-Day 20
+Day 20 - 2nd May 2023
 *****************************************************************************
 Docker Swarm details
 
@@ -743,14 +736,14 @@ docker stack ls
 docker stack ps wordpress
 
 
-Day 21
+Day 21 - 3rd May 2023
 *****************************************************************************
 
 Recap - Docker, Docker Compose, Docker Swarm
 Kubernetes - Intro/Overview
 
 
-Day 22
+Day 22 - 4th May 2023
 *****************************************************************************
 
 Kubernetes vs Docker Swarm
@@ -767,7 +760,7 @@ Kubernetes Key Concepts
 Kubernetes Implementations
 
 
-Day 23
+Day 23 - 5th May 2023
 *****************************************************************************
 
 GCP Free Tier Account - https://www.youtube.com/watch?v=KcHx5dXaDtk
@@ -797,7 +790,7 @@ Calico Network - CNI
 containerd-io installation
 
 
-Day 24
+Day 24 - 8th May 2023
 *****************************************************************************
 
 
@@ -827,7 +820,7 @@ Open Question:
 Kubernetes version and Dockerd based version implemnetation
 ContainerD usage instead of dockerd post v1.24
 
-Day 25
+Day 25 - 9th May 2023
 *****************************************************************************
 
 Any question from previous session
@@ -840,7 +833,7 @@ Understanding of Pods concepts in detail
 	- Imperative vs declarative
 
 
-Day 26
+Day 26 - 10th May 2023
 *****************************************************************************
 
 Agenda:
@@ -863,7 +856,7 @@ commands:
 kubectl run nginx --image=nginx:1.19.0 --restart=Always --labels="app=nginx,environment=dev" --port=80 --dry-run=client -o yaml
 
 
-Day 27
+Day 27 - 11th May 2023
 *****************************************************************************
 
 Agenda:
@@ -890,7 +883,7 @@ use cases:
 	https://linchpiner.github.io/k8s-multi-container-pods.html
 	
 
-Day 28
+Day 28 - May 12th 2023
 *****************************************************************************
 
 ## Agenda - 
@@ -996,7 +989,7 @@ restart kubelet service
 check status of kubelet service
 
 
-Day 29
+Day 29 - 14th May 2023
 *****************************************************************************
 ## Agenda -
 	- Recap/Any query from previous session
@@ -1066,7 +1059,7 @@ Types of Controllers:
 	https://blog.knoldus.com/introduction-to-kube-controller-manager/	
 
 
-Day 30
+Day 30 - 15th May 2023
 *****************************************************************************
 ## Agenda -
 	- Recap/Any query from previous session
@@ -1121,7 +1114,7 @@ k8s-command-cheatsheet:
 	https://jamesdefabia.github.io/docs/user-guide/kubectl/kubectl/
 
 
-Day 31
+Day 31 - 16th May 2023
 *****************************************************************************
 ## Agenda -
 	- Recap/Any query from previous session
@@ -1145,7 +1138,7 @@ Persistent Volume Claim:
 	https://bluexp.netapp.com/blog/cvo-blg-kubernetes-persistent-volume-claims-explained
 	https://www.digihunch.com/2021/06/kubernetes-storage-explained/
 
-Day 32
+Day 32 - 17th May 2023
 *****************************************************************************
 ## Agenda -
 	- Recap/Any query from previous session
@@ -1153,37 +1146,52 @@ Day 32
 	- static vs dynamic provisoning 
 	- access modes, reclaim policies
 	- PV and pvc demo - PVC assignment in pods & deployments, daemonset and statefulSet objects
-	- Storage Classes understanding and examples
-	- statefulset understanding and use cases
-	- Statefulset Demo
+
 
 
 Persistent Volumes in Kubernetes world:
+	https://kubernetes.io/docs/concepts/storage/ephemeral-volumes/
 	https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 	https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/
 
-multiple PVC to Single PV
+multiple PVC to Single PV - Reference
 	https://docs.openshift.com/container-platform/3.11/install_config/storage_examples/shared_storage.html#:~:text=Once%20a%20PV%20is%20bound,can%20use%20the%20same%20PVC.
 
 Persistent Volume Claim:	
 	https://bluexp.netapp.com/blog/cvo-blg-kubernetes-persistent-volume-claims-explained
 	https://www.digihunch.com/2021/06/kubernetes-storage-explained/
 	
-Statefulset:
-	https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
-	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-statefulsets-overview/
-
-Day 33
+	
+Day 33 - 18th May 2023
 *****************************************************************************
 ## Agenda -
+
 	- Recap/Any query from previous session
+	- Storage Classes understanding and examples
 	- statefulset understanding and use cases
+	- Statefulset Demo
+
+Statefulset:
+	https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
+	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-statefulsets-overview/	
+
+Day 34
+*****************************************************************************
+
+- statefulset understanding and use cases
 	- Statefulset Demo
 	- Secrets and Config Maps
 	- Horizontal Pod Autoscaling
 
 
+
 *****************************************************************************
+
+
+
+
+
+
 
 Content in Sequence
 *****************************************************************************
