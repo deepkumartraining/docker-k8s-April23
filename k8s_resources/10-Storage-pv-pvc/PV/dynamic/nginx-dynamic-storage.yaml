@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment-dy
+  labels:
+    app: nginx-dy
+spec:
+  revisionHistoryLimit: 5
+  strategy:
+    type: Recreate
+  replicas: 3
+  selector:
+    matchLabels:
+      app: temp-nginx-dy
+  template:
+    metadata:
+      labels:
+        app: temp-nginx-dy
+    spec:
+      volumes:
+        - name: newvolume
+          persistentVolumeClaim:
+            claimName: claim-dy
+      containers:
+      - name: nginx-dy
+        image: nginx:1.14.2 #1.16.1    jenkins/jenkins:lts
+        ports:
+        - containerPort: 80
+        volumeMounts:
+          - mountPath: "/usr/share/nginx/html"  #/var/jenkins_home
+            name: newvolume
