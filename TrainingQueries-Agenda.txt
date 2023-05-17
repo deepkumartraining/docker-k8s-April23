@@ -1143,6 +1143,7 @@ Day 32 - 17th May 2023
 ## Agenda -
 	- Recap/Any query from previous session
 	- PV and PVC Data dependencies, use case & Advantages
+	- NFS Server Setup and configure as PV/PVC
 	- static vs dynamic provisoning 
 	- access modes, reclaim policies
 	- PV and pvc demo - PVC assignment in pods & deployments, daemonset and statefulSet objects
@@ -1167,7 +1168,8 @@ Day 33 - 18th May 2023
 ## Agenda -
 
 	- Recap/Any query from previous session
-	- Storage Classes understanding and examples
+	- Storage Classes understanding and provisoner details
+	- Storage classes demo
 	- statefulset understanding and use cases
 	- Statefulset Demo
 

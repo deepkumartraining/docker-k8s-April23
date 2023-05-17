@@ -1,4 +1,4 @@
-## Day 32
+## Day 33
 *************************************************************************************
 
 ## Resources References:
@@ -11,8 +11,7 @@
 
 ## Agenda -
 	- Recap/Any query from previous session
-	- PV and PVC Data dependencies, use case & Advantages
-	- static vs dynamic provisoning
-	- NFS Server Setup and configure as PV/PVC 
-	- PV and pvc demo - PVC assignment in deployments, daemonset and statefulSet objects
-	
+	- Storage Classes understanding and provisioner details
+	- Storage classes demo
+	- statefulset understanding and use cases
+	- Statefulset Demo

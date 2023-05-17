@@ -12,7 +12,8 @@
 ## Agenda -
 	- Recap/Any query from previous session
 	- PV and PVC Data dependencies, use case & Advantages
-	- static vs dynamic provisoning
-	- NFS Server Setup and configure as PV/PVC 
+	- static vs dynamic provisoning 
 	- PV and pvc demo - PVC assignment in deployments, daemonset and statefulSet objects
-	
+	- Storage Classes understanding and examples
+	- statefulset understanding and use cases
+	- Statefulset Demo
