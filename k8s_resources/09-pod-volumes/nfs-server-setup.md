@@ -10,8 +10,8 @@ gcloud compute instances create nfs-server --project=<projectName> --zone=<ZoneN
 ```
 NFS server configuration:
 
-Lets say my NFS server IP address: 192.168.0.50
-Client: 192.168.0.51
+Lets say my NFS server IP address: 10.128.XX.XX
+Client: 10.128.XX.XX (Computeplanenode in our demo)
 
 Setup NFS server:
 #apt-get update
@@ -29,8 +29,8 @@ Now export created shared directory:
 #vi/nano /etc/exports
 add below entries based on your configuration
 ++
-/var/nfs/data    192.168.0.51(rw,sync,no_subtree_check)
-/home       192.168.0.51(rw,sync,no_root_squash,no_subtree_check) --> optional
+/var/nfs/data    10.128.XX.XX(rw,sync,no_subtree_check)
+/home       10.128.XX.XX(rw,sync,no_root_squash,no_subtree_check) --> optional
 ++
 
 save and exit
@@ -59,7 +59,7 @@ Setup on Client side:
 Now create on directory to moun the NFS path or we can use /mnt directory to
 mount:
 #mkdir -p /nfs/general
-#mount 192.168.0.50:/var/nfs/data /nfs/general
+#mount 192.128.XX.XX:/var/nfs/data /nfs/general
 
 verify the mounted path to client with below command:
 #df -h
