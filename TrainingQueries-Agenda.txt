@@ -1149,7 +1149,6 @@ Day 32 - 17th May 2023
 	- PV and pvc demo - PVC assignment in pods & deployments, daemonset and statefulSet objects
 
 
-
 Persistent Volumes in Kubernetes world:
 	https://kubernetes.io/docs/concepts/storage/ephemeral-volumes/
 	https://kubernetes.io/docs/concepts/storage/persistent-volumes/
@@ -1161,6 +1160,7 @@ multiple PVC to Single PV - Reference
 Persistent Volume Claim:	
 	https://bluexp.netapp.com/blog/cvo-blg-kubernetes-persistent-volume-claims-explained
 	https://www.digihunch.com/2021/06/kubernetes-storage-explained/
+	https://akomljen.com/kubernetes-persistent-volumes-with-deployment-and-statefulset/
 	
 	
 Day 33 - 18th May 2023
@@ -1168,31 +1168,39 @@ Day 33 - 18th May 2023
 ## Agenda -
 
 	- Recap/Any query from previous session
-	- Storage Classes understanding and provisoner details
+	- Storage Classes understanding and provisioner details
 	- Storage classes demo
 	- statefulset understanding and use cases
 	- Statefulset Demo
 
+Dynamic Provisioning/Storage Classes:
+	https://kubernetes.io/docs/concepts/storage/storage-classes/
+	https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/
+	https://kubernetes.io/docs/concepts/storage/storage-classes/#gce-pd
+	
+	https://devopscube.com/persistent-volume-google-kubernetes-engine/
+
 Statefulset:
 	https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
 	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-statefulsets-overview/	
+	https://akomljen.com/kubernetes-persistent-volumes-with-deployment-and-statefulset/
+
 
 Day 34
 *****************************************************************************
 
-- statefulset understanding and use cases
+## Agenda -
+	- statefulset understanding and use cases
 	- Statefulset Demo
 	- Secrets and Config Maps
 	- Horizontal Pod Autoscaling
 
-
+Statefulset:
+	https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
+	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-statefulsets-overview/	
+	https://akomljen.com/kubernetes-persistent-volumes-with-deployment-and-statefulset/
 
 *****************************************************************************
-
-
-
-
-
 
 
 Content in Sequence

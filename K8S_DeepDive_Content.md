@@ -99,14 +99,11 @@ kubernetes Deep Dive:
 	Advantages of using liveness, readiness and startup probes tverify application availability
 
 16) Jobs and CronJobs
-	How to achieve autbackup and restore using CronJobs for application like etcd key-value pair storage for kubernetes cluster
+	How to achieve auto backup and restore using CronJobs for application like etcd key-value pair storage for kubernetes cluster
 	Jobs responsibility
 
 17) calico networking
 	flannel network understanding
-	migrate from flannel to calico
-	How to  use flannel for POD networking and Calicfor network security
-	calicoctl operations
 	network policy and global network policy
 
 18) authetication and authorization

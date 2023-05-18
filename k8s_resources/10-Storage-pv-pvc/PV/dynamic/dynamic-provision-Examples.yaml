@@ -23,7 +23,7 @@ volumeBindingMode: Immediate
 allowVolumeExpansion: true
 reclaimPolicy: Delete
 parameters:
-  type: pd-standard
+  type: pd-ssd
   fstype: ext4
   replication-type: none
 ---
