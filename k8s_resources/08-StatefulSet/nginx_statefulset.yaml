@@ -59,7 +59,7 @@ spec:
     storage: 500Mi
   accessModes:
     - ReadWriteMany
-  hostpath:
+  hostPath:
     - path: /mnt/backup
       type: DirectoryOrCreate
 ---
