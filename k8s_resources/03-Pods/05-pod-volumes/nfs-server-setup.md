@@ -25,6 +25,11 @@ add below entries based on your configuration
 ++
 /var/nfs/data    10.128.XX.XX(rw,sync,no_subtree_check)
 /home       10.128.XX.XX(rw,sync,no_root_squash,no_subtree_check) --> optional
+/var/nfs/nfsdata0    10.128.XX.XX(rw,sync,no_subtree_check)
+/var/nfs/nfsdata1    10.128.XX.XX(rw,sync,no_subtree_check)
+/var/nfs/nfsdata2    10.128.XX.XX(rw,sync,no_subtree_check)
+/var/nfs/nfsdata3    10.128.XX.XX(rw,sync,no_subtree_check)
+/var/nfs/nfsdata4    10.128.XX.XX(rw,sync,no_subtree_check)
 ++
 
 save and exit
