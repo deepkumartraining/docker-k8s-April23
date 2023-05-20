@@ -160,7 +160,7 @@ replicaset.apps/nfs-server-provisioner-79d64c49bc   1         1         1       
 
 NAME                     READY   AGE   CONTAINERS   IMAGES
 statefulset.apps/mysql   3/3     45s   mysql        mysql:5.7
-root@controlplane:~/statefulset# kubectl run test-pod --rm -ti --image=dubareddy/utils -- bash
+root@controlplane:~/statefulset# kubectl run test-pod --rm -ti --image=trainingxxx/utils -- bash
 If you don't see a command prompt, try pressing enter.
 root@test-pod:/# 
 root@test-pod:/# nslookup mysql-server

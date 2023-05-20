@@ -34,11 +34,11 @@
 ```
 #TLS certs creation and manual verification
 #Copy
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -out app1-ingress-tls.crt -keyout app1-ingress-tls.key -subj "/CN=app1.sudheerdevops.com/O=SudheerDevops"
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -out app2-ingress-tls.crt -keyout app2-ingress-tls.key -subj "/CN=app2.sudheerdevops.com/O=SudheerDevops"
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -out app1-ingress-tls.crt -keyout app1-ingress-tls.key -subj "/CN=app1.trainingxxxxdevops.com/O=trainingxxxxDevops"
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -out app2-ingress-tls.crt -keyout app2-ingress-tls.key -subj "/CN=app2.trainingxxxxdevops.com/O=trainingxxxxDevops"
 
 or
-openssl req -nodes -newkey rsa:2048 -keyout app1-ingress.key -out app1-ingress.csr -subj "/C=GB/ST=London/L=London/O=Global Security/OU=IT Department/CN=app1.sudheerdevops.tld"
+openssl req -nodes -newkey rsa:2048 -keyout app1-ingress.key -out app1-ingress.csr -subj "/C=GB/ST=London/L=London/O=Global Security/OU=IT Department/CN=app1.trainingxxxxdevops.tld"
 Field   Meaning	              Example
 =====================================
 /C=	    Country	              IN
@@ -46,13 +46,13 @@ Field   Meaning	              Example
 /L=	    Location	            Hyderabad
 /O=	    Organization	        Global Security
 /OU=	  Organizational Unit   IT Department
-/CN=	  Common Name           app1.sudheerdevops.com
+/CN=	  Common Name           app1.trainingxxxxdevops.com
 
 kubectl create secret tls app1-ingress-tls --key app1-ingress-tls.key --cert app1-ingress-tls.crt
 kubectl create secret tls app2-ingress-tls --key app2-ingress-tls.key --cert app2-ingress-tls.crt
 
 #Curl example:
-curl -v -k --resolve app1.sudheerdevops.tld:30443:192.168.1.91 https://app1.sudheerdevops.tld/app1
+curl -v -k --resolve app1.trainingxxxxdevops.tld:30443:192.168.1.91 https://app1.trainingxxxxdevops.tld/app1
 ```
 
 ```
@@ -131,25 +131,25 @@ replicaset.apps/app2-nginx-deploy-bb6b979c6    1         1         1       117s 
 root@controlplanenode:~/ingress#
 
 root@controlplanenode:~/ingress# curl 10.104.202.13
-<h1>Welcome to Sudheer Devops <font color=green>APP1</font></h1>
+<h1>Welcome to trainingxxxx Devops <font color=green>APP1</font></h1>
 root@controlplanenode:~/ingress# curl 10.99.177.186
-<h1>Welcome to Sudheer Devops <font color=blue>APP2</font></h1>
+<h1>Welcome to trainingxxxx Devops <font color=blue>APP2</font></h1>
 root@controlplanenode:~/ingress#
 
 root@controlplanenode:~/ingress# kubectl get ing
 NAME                    CLASS    HOSTS                                           ADDRESS   PORTS   AGE
-sudheerdevops-ingress   <none>   app1.sudheerdevops.tld,app2.sudheerdevops.tld             80      58s
-root@controlplanenode:~/ingress# kubectl describe ing sudheerdevops-ingress
-Name:             sudheerdevops-ingress
+trainingxxxxdevops-ingress   <none>   app1.trainingxxxxdevops.tld,app2.trainingxxxxdevops.tld             80      58s
+root@controlplanenode:~/ingress# kubectl describe ing trainingxxxxdevops-ingress
+Name:             trainingxxxxdevops-ingress
 Namespace:        default
 Address:
 Default backend:  default-http-backend:80 (<error: endpoints "default-http-backend" not found>)
 Rules:
   Host                    Path  Backends
   ----                    ----  --------
-  app1.sudheerdevops.tld
+  app1.trainingxxxxdevops.tld
                           /   app1-nginx:80 (10.244.101.73:80)
-  app2.sudheerdevops.tld
+  app2.trainingxxxxdevops.tld
                           /   app2-nginx:80 (10.244.101.72:80)
 Annotations:              <none>
 Events:                   <none>
@@ -161,29 +161,29 @@ Events:                   <none>
 Error 1: Unable to reach domains through ingress controller, logs shows below errors in ingress-controller pod:
 ===
 I0913 12:49:09.947910       9 event.go:282] Event(v1.ObjectReference{Kind:"Pod", Namespace:"ingress-nginx", Name:"ingress-nginx-controller-8cf5559f8-zrhdh", UID:"413cebfd-2fa4-4c9b-8b86-615992e74e82", APIVersion:"v1", ResourceVersion:"2212", FieldPath:""}): type: 'Normal' reason: 'RELOAD' NGINX reload triggered due to a change in configuration
-I0913 13:03:09.589624       9 main.go:101] "successfully validated configuration, accepting" ingress="sudheerdevops-ingress/default"
-**I0913 13:03:09.603754       9 store.go:361] "Ignoring ingress because of error while validating ingress class" ingress="default/sudheerdevops-ingress" error="ingress does not contain a valid IngressClass"**
-I0913 13:40:56.671108       9 store.go:336] "Ignoring ingress because of error while validating ingress class" ingress="default/sudheerdevops-ingress" error="ingress does not contain a valid IngressClass"
-I0913 13:40:56.828181       9 main.go:101] "successfully validated configuration, accepting" ingress="sudheerdevops-ingress/default"
-I0913 13:40:56.863157       9 store.go:361] "Ignoring ingress because of error while validating ingress class" ingress="default/sudheerdevops-ingress" error="ingress does not contain a valid IngressClass"
+I0913 13:03:09.589624       9 main.go:101] "successfully validated configuration, accepting" ingress="trainingxxxxdevops-ingress/default"
+**I0913 13:03:09.603754       9 store.go:361] "Ignoring ingress because of error while validating ingress class" ingress="default/trainingxxxxdevops-ingress" error="ingress does not contain a valid IngressClass"**
+I0913 13:40:56.671108       9 store.go:336] "Ignoring ingress because of error while validating ingress class" ingress="default/trainingxxxxdevops-ingress" error="ingress does not contain a valid IngressClass"
+I0913 13:40:56.828181       9 main.go:101] "successfully validated configuration, accepting" ingress="trainingxxxxdevops-ingress/default"
+I0913 13:40:56.863157       9 store.go:361] "Ignoring ingress because of error while validating ingress class" ingress="default/trainingxxxxdevops-ingress" error="ingress does not contain a valid IngressClass"
 ===
 Fix
 ===
 apiVersion: networking.k8s.io/v1 #extensions/v1beta1
 kind: Ingress
 metadata:
-  name: sudheerdevops-ingress
+  name: trainingxxxxdevops-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /
 ===
 root@controlplanenode:~/ingress# curl -k https://192.168.1.91:32350/app1
-<h1>Welcome to Sudheer Devops <font color=green>APP1</font></h1>
+<h1>Welcome to trainingxxxx Devops <font color=green>APP1</font></h1>
 root@controlplanenode:~/ingress# curl -k https://192.168.1.91:32350/app2
-<h1>Welcome to Sudheer Devops <font color=blue>APP2</font></h1>
+<h1>Welcome to trainingxxxx Devops <font color=blue>APP2</font></h1>
 ===
 root@controlplanenode:~/ingress# kubectl describe ing
-Name:             sudheerdevops-ingress
+Name:             trainingxxxxdevops-ingress
 Namespace:        default
 Address:          192.168.1.91
 Default backend:  default-http-backend:80 (<error: endpoints "default-http-backend" not found>)
@@ -201,12 +201,12 @@ Events:
   Normal  Sync    4m2s (x2 over 4m24s)  nginx-ingress-controller  Scheduled for sync
 root@controlplanenode:~/ingress# kubectl get ing
 NAME                    CLASS    HOSTS   ADDRESS        PORTS   AGE
-sudheerdevops-ingress   <none>   *       192.168.1.91   80      4m35s
+trainingxxxxdevops-ingress   <none>   *       192.168.1.91   80      4m35s
 root@controlplanenode:~/ingress#
 
-root@computeplaneone:~# curl -k --resolve app2.sudheerdevops.tld:32350:192.168.1.91 https://app2.sudheerdevops.tld:32350/app2
-<h1>Welcome to Sudheer Devops <font color=blue>APP2</font></h1>
-root@computeplaneone:~# curl -k --resolve app1.sudheerdevops.tld:32350:192.168.1.91 https://app1.sudheerdevops.tld:32350/app1
-<h1>Welcome to Sudheer Devops <font color=green>APP1</font></h1>
+root@computeplaneone:~# curl -k --resolve app2.trainingxxxxdevops.tld:32350:192.168.1.91 https://app2.trainingxxxxdevops.tld:32350/app2
+<h1>Welcome to trainingxxxx Devops <font color=blue>APP2</font></h1>
+root@computeplaneone:~# curl -k --resolve app1.trainingxxxxdevops.tld:32350:192.168.1.91 https://app1.trainingxxxxdevops.tld:32350/app1
+<h1>Welcome to trainingxxxx Devops <font color=green>APP1</font></h1>
 root@computeplaneone:~#
 ```

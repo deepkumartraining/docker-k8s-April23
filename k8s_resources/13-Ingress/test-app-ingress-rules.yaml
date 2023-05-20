@@ -1,13 +1,13 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: sudheerdevops-ingress
+  name: trainingxxxxdevops-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: app1.sudheerdevops.com
+  - host: app1.trainingxxxxdevops.com
     http:
       paths:
       - path: /
@@ -17,7 +17,7 @@ spec:
             name: app1-nginx
             port:
               number: 80
-  - host: app2.sudheerdevops.com
+  - host: app2.trainingxxxxdevops.com
     http:
       paths:
       - path: /
@@ -31,16 +31,16 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: sudheerdevops-ingress
+  name: trainingxxxxdevops-ingress
 spec:
   rules:
-  - host: app1.sudheerdevops.tld
+  - host: app1.trainingxxxxdevops.tld
     http:
       paths:
       - backend:
           serviceName: app1-nginx
           servicePort: 80
-  - host: app2.sudheerdevops.tld
+  - host: app2.trainingxxxxdevops.tld
     http:
       paths:
       - backend:
@@ -73,10 +73,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - app.sudheerdevops.tld
-    secretName: sudheer-client-certs
+    - app.trainingxxxxdevops.tld
+    secretName: trainingxxxx-client-certs
   rules:
-  - host: app.sudheerdevops.tld
+  - host: app.trainingxxxxdevops.tld
     http:
       paths:
       - backend:

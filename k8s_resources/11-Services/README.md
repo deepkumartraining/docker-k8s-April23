@@ -29,7 +29,7 @@ Service without selector:
 apiVersion: v1
 kind: Service
 metadata:
-  name: sudheer-demo
+  name: trainingxxxx-demo
 spec:
   ports:
     - protocol: TCP
@@ -40,7 +40,7 @@ Endpoint for the above service:
 apiVersion: v1
 kind: Endpoints
 metadata:
-  name: sudheer-demo
+  name: trainingxxxx-demo
 subsets:
   - addresses:
       - ip: 10.244.101.116 --> POD IP address which needs to be added for service LB

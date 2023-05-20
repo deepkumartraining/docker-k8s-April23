@@ -51,7 +51,7 @@ spec:
 # kubectl expose deployment nginx --name headlessservice --cluster-ip=None
 # kubectl expose deployment nginx --name nginxclusterip --port=80  --target-port=80
 
-# kubectl run --generator=run-pod/v1 --rm utils -it --image dubareddy/utils:latest bash
+# kubectl run --generator=run-pod/v1 --rm utils -it --image trainingxxx/utils:latest bash
 
 #Once you login to pod execute command "host headlessservice" and for loop to check loadbalance
 

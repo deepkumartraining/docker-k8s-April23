@@ -23,7 +23,7 @@ spec:
         volumeMounts:
         - name: webdata
           mountPath: "/webdata"
-        command: ["/bin/sh", "-c", 'echo "<h1>Welcome to Sudheer Devops <font color=green>APP1</font></h1>" > /webdata/index.html']
+        command: ["/bin/sh", "-c", 'echo "<h1>Welcome to trainingxxxx Devops <font color=green>APP1</font></h1>" > /webdata/index.html']
       containers:
       - image: nginx
         name: nginx
@@ -56,7 +56,7 @@ spec:
         volumeMounts:
         - name: webdata
           mountPath: "/webdata"
-        command: ["/bin/sh", "-c", 'echo "<h1>Welcome to Sudheer Devops <font color=blue>APP2</font></h1>" > /webdata/index.html']
+        command: ["/bin/sh", "-c", 'echo "<h1>Welcome to trainingxxxx Devops <font color=blue>APP2</font></h1>" > /webdata/index.html']
       containers:
       - image: nginx
         name: nginx

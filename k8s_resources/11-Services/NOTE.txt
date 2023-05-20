@@ -16,7 +16,7 @@ Proxy-mode: ipvs. In this mode, kube-proxy watches the services and endpoints an
 Testing of headless service:
 
 Inside busybox pod:
-kubectl run --generator=run-pod/v1 --rm utils -it --image dubareddy/utils bash
+kubectl run --generator=run-pod/v1 --rm utils -it --image trainingxxx/utils bash
 for i in $(seq 1 10) ; do curl headless-service; done
 curl -v headless-service
 
