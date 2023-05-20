@@ -1234,14 +1234,23 @@ Statefulset:
 	https://akomljen.com/kubernetes-persistent-volumes-with-deployment-and-statefulset/
 
 HPA:
-	#kubectl autoscale deployment.v1.apps/nginx-deployment --min=10 --max=15 --cpu-percent=80
+	
+	https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
+	https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+	https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/	
+	https://www.kubecost.com/kubernetes-autoscaling/kubernetes-hpa/
+	https://www.digitalocean.com/community/tutorials/how-to-configure-kubernetes-horizontal-pod-autoscaler-using-metrics-server
+	
+
+Services:
 	https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/
 	Images:
 	https://theithollow.com/wp-content/uploads/2019/01/image-9-1024x375.png
 	Consideration for large cluster:
 	https://kubernetes.io/docs/setup/best-practices/cluster-large/#:~:text=No%20more%20than%20110%20pods,more%20than%20150%2C000%20total%20pods
 
-Services:
+
+
 
 Ingress
 
