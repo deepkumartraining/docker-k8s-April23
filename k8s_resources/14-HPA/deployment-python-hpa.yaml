@@ -1,0 +1,91 @@
+---
+# Deployment for PHP app
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-apache
+spec:
+  selector:
+    matchLabels:
+      run: php-apache
+  template:
+    metadata:
+      labels:
+        run: php-apache
+    spec:
+      containers:
+      - name: php-apache
+        image: registry.k8s.io/hpa-example
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+---
+#Service creation for target PHP app
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-apache
+  labels:
+    run: php-apache
+spec:
+  ports:
+  - port: 80
+  selector:
+    run: php-apache
+
+# Imperative CPU based autoscaling creation
+#kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+
+# You can use "hpa" or "horizontalpodautoscaler"; either name works OK.
+# kubectl get hpa
+
+#Output
+#NAME         REFERENCE                     TARGET    MINPODS   MAXPODS   REPLICAS   AGE
+#php-apache   Deployment/php-apache/scale   0% / 50%  1         10        1          18s
+
+# Run this in a separate terminal
+# so that the load generation continues and you can carry on with the rest of the steps
+#kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+
+# type Ctrl+C to end the watch when you're ready
+# kubectl get hpa php-apache --watch
+
+#NAME         REFERENCE                     TARGET      MINPODS   MAXPODS   REPLICAS   AGE
+#php-apache   Deployment/php-apache/scale   305% / 50%  1         10        1          3m
+
+#Within a minute or so, you should see the higher CPU load; for example:
+
+#NAME         REFERENCE                     TARGET      MINPODS   MAXPODS   REPLICAS   AGE
+#php-apache   Deployment/php-apache/scale   305% / 50%  1         10        1          3m
+#and then, more replicas. For example:
+
+#NAME         REFERENCE                     TARGET      MINPODS   MAXPODS   REPLICAS   AGE
+#php-apache   Deployment/php-apache/scale   305% / 50%  1         10        7          3m
+
+#kubectl get deployment php-apache
+
+#NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+#php-apache   7/7      7           7           19m
+
+#In the terminal where you created the Pod that runs a busybox image, terminate the load generation by typing <Ctrl> + C.
+
+#Then verify the result state (after a minute or so):
+
+# type Ctrl+C to end the watch when you're ready
+#kubectl get hpa php-apache --watch
+#The output is similar to:
+
+#NAME         REFERENCE                     TARGET       MINPODS   MAXPODS   REPLICAS   AGE
+#php-apache   Deployment/php-apache/scale   0% / 50%     1         10        1          11m
+#and the Deployment also shows that it has scaled down:
+
+#kubectl get deployment php-apache
+#NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+#php-apache   1/1     1            1           27m
+#Once CPU utilization dropped to 0, the HPA automatically scaled the number of replicas back down to 1.
+
+#Autoscaling the replicas may take a few minutes.
