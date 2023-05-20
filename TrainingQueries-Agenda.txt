@@ -1233,6 +1233,9 @@ Statefulset:
 	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-statefulsets-overview/	
 	https://akomljen.com/kubernetes-persistent-volumes-with-deployment-and-statefulset/
 
+Metrics server problem reference:
+	https://github.com/kubernetes-sigs/metrics-server/issues/300
+
 HPA:
 	
 	https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
@@ -1240,7 +1243,7 @@ HPA:
 	https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/	
 	https://www.kubecost.com/kubernetes-autoscaling/kubernetes-hpa/
 	https://www.digitalocean.com/community/tutorials/how-to-configure-kubernetes-horizontal-pod-autoscaler-using-metrics-server
-	
+	https://faun.pub/kubernetes-horizontal-pod-autoscaler-hpa-bb789b3070e4
 
 Services:
 	https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/

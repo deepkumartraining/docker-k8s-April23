@@ -58,3 +58,24 @@ Testing load on HPA:
 kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
 kubectl run -it --rm load-generator --image=busybox /bin/sh
 while true; do wget -q -O- http://php-apache; done
+
+
+# Expected output
+
+root@controlplane:~# kubectl get hpa php-apache --watch
+NAME         REFERENCE               TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
+php-apache   Deployment/php-apache   0%/50%    1         10        1          47m
+php-apache   Deployment/php-apache   245%/50%   1         10        1          48m
+php-apache   Deployment/php-apache   245%/50%   1         10        4          48m
+php-apache   Deployment/php-apache   245%/50%   1         10        5          48m
+php-apache   Deployment/php-apache   43%/50%    1         10        5          49m
+php-apache   Deployment/php-apache   53%/50%    1         10        5          50m
+php-apache   Deployment/php-apache   48%/50%    1         10        5          51m
+php-apache   Deployment/php-apache   60%/50%    1         10        5          52m
+php-apache   Deployment/php-apache   60%/50%    1         10        6          52m
+php-apache   Deployment/php-apache   32%/50%    1         10        6          53m
+php-apache   Deployment/php-apache   0%/50%     1         10        6          54m
+php-apache   Deployment/php-apache   0%/50%     1         10        6          58m
+php-apache   Deployment/php-apache   0%/50%     1         10        4          58m
+php-apache   Deployment/php-apache   0%/50%     1         10        4          59m
+php-apache   Deployment/php-apache   0%/50%     1         10        1          59m
