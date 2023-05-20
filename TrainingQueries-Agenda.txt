@@ -1220,6 +1220,15 @@ Day 35 - 21st May 2023
 	- Ingress understanding in detail
 	- Demo - Services and Ingress
 
+
+Secrets:
+	https://kubernetes.io/docs/concepts/configuration/secret/
+	https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/
+	https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-config-file/
+	https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/
+	https://www.devopsschool.com/blog/explained-kubernetes-secret-with-example/
+
+
 	
 # HPA:
 
