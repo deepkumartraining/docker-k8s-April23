@@ -37,7 +37,7 @@ data:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: dapi-test-pod
+  name: test-pod-cm
 spec:
   containers:
     - name: test-container

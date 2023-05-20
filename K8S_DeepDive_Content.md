@@ -116,7 +116,7 @@ kubernetes Deep Dive:
 
 19) Dashboard
 	deployment of kubernetes dashboard and creating kubernetes object through dashboard
-	How tauthenticate tdashboard through token and kubeconfig
+	How to authenticate to dashboard through token and kubeconfig
 
 20) Task:
 	a. wordpress and database application deployment

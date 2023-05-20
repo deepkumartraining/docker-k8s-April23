@@ -12,8 +12,8 @@ spec:
   accessModes:
     - ReadWriteOnce
   nfs:
-    server: <NFS Server IP>
-    path: "/var/backup/data0"
+    server: 10.128.0.6
+    path: "/var/nfs/data0"
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -29,8 +29,8 @@ spec:
   accessModes:
     - ReadWriteOnce
   nfs:
-    server: <NFS Server IP>
-    path: "/var/backup/data1"
+    server: 10.128.0.6
+    path: "/var/nfs/data1"
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -45,8 +45,8 @@ spec:
   accessModes:
     - ReadWriteOnce
   nfs:
-    server: <NFS Server IP>
-    path: "/var/backup/data2"
+    server: 10.128.0.6
+    path: "/var/nfs/data3"
 ---
 apiVersion: v1
 kind: Service
