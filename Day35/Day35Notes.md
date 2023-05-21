@@ -10,8 +10,8 @@
 - ![ConfigMap-Secret](../k8s_resources/12-Secrets-ConfigMap/)
 - ![HPA](../k8s_resources/14-HPA/)
 - ![Services](../k8s_resources/11-Services/)
+- ![Services-Arch](../src/images/services-k8s.png)
 - ![Ingress](../k8s_resources/13-Ingress/)
-
 
 ## Agenda -
 	- Recap/Any query from previous session

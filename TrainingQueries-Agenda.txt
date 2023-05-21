@@ -1220,27 +1220,26 @@ Day 35 - 21st May 2023
 	- Ingress understanding in detail
 	- Demo - Services and Ingress
 
-
 Secrets:
 	https://kubernetes.io/docs/concepts/configuration/secret/
 	https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/
 	https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-config-file/
-	https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/
 	https://www.devopsschool.com/blog/explained-kubernetes-secret-with-example/
 
 Statefulset:
 	https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
 	https://sysdig.com/learn-cloud-native/kubernetes-101/kubernetes-statefulsets-overview/	
 	https://akomljen.com/kubernetes-persistent-volumes-with-deployment-and-statefulset/
+	https://www.golinuxcloud.com/kubernetes-statefulsets/
+	https://loft.sh/blog/kubernetes-statefulset-examples-and-best-practices/
 
 Metrics server problem reference:
 	https://github.com/kubernetes-sigs/metrics-server/issues/300
 
 HPA:
-	
 	https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
 	https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
-	https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/	
+	https://www.cloudzero.com/blog/horizontal-vs-vertical-scaling
 	https://www.kubecost.com/kubernetes-autoscaling/kubernetes-hpa/
 	https://www.digitalocean.com/community/tutorials/how-to-configure-kubernetes-horizontal-pod-autoscaler-using-metrics-server
 	https://faun.pub/kubernetes-horizontal-pod-autoscaler-hpa-bb789b3070e4
@@ -1251,8 +1250,6 @@ Services:
 	https://theithollow.com/wp-content/uploads/2019/01/image-9-1024x375.png
 	Consideration for large cluster:
 	https://kubernetes.io/docs/setup/best-practices/cluster-large/#:~:text=No%20more%20than%20110%20pods,more%20than%20150%2C000%20total%20pods
-
-
 
 
 Ingress

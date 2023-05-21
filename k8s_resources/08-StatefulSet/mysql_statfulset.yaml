@@ -1,5 +1,3 @@
-/var/backup 192.168.1.0/24(rw,sync,no_subtree_check,no_root_squash)
-
 root@containerdmanager:~# ls -l /var/backup
 total 12
 drwxr-xr-x 5 999 root 4096 Aug 16 14:25 data0

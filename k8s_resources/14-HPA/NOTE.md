@@ -1,14 +1,12 @@
 #kubectl autoscale deployment.v1.apps/nginx-deployment --min=10 --max=15 --cpu-percent=80
 
-Metrics server needs to setup prior to HPA as that will help to gather metrics for pods
+Metrics server needs to setup prior to HPA as that will help to gather metrics for pods & nodes
 
 https://github.com/kubernetes-sigs/metrics-server
 
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.6/components.yaml
 
 Release: https://github.com/kubernetes-sigs/metrics-server/releases
-
-
 
 
 # Note: 
