@@ -1214,12 +1214,10 @@ Day 35 - 21st May 2023
 ## Agenda -
 	- Recap/Any query from previous session
 	- statefulset Demo with localhost and NFS
+	- Secret Demo - Example with Volume mounting
 	- Autoscaling - Horizontal and Vertical - Understanding
 	- Demo - Horizontal Pod Autoscaling - Imperative & Declarative
-	- Services understanding in Detail
-	- Ingress understanding in detail
-	- Demo - Services and Ingress
-
+	
 Secrets:
 	https://kubernetes.io/docs/concepts/configuration/secret/
 	https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/
@@ -1232,17 +1230,28 @@ Statefulset:
 	https://akomljen.com/kubernetes-persistent-volumes-with-deployment-and-statefulset/
 	https://www.golinuxcloud.com/kubernetes-statefulsets/
 	https://loft.sh/blog/kubernetes-statefulset-examples-and-best-practices/
+	https://kubernetes.io/docs/tutorials/stateful-application/cassandra/
 
 Metrics server problem reference:
 	https://github.com/kubernetes-sigs/metrics-server/issues/300
 
 HPA:
+	Types - CPU, Memory or Customized Metrics based
 	https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
 	https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
 	https://www.cloudzero.com/blog/horizontal-vs-vertical-scaling
 	https://www.kubecost.com/kubernetes-autoscaling/kubernetes-hpa/
 	https://www.digitalocean.com/community/tutorials/how-to-configure-kubernetes-horizontal-pod-autoscaler-using-metrics-server
 	https://faun.pub/kubernetes-horizontal-pod-autoscaler-hpa-bb789b3070e4
+
+
+Day 36 - 22nd May 2023
+*****************************************************************************
+## Agenda -
+	- Recap/Any query from previous session
+	- Services understanding in Detail
+	- Ingress understanding in detail
+	- Demo
 
 Services:
 	https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/
@@ -1251,18 +1260,57 @@ Services:
 	Consideration for large cluster:
 	https://kubernetes.io/docs/setup/best-practices/cluster-large/#:~:text=No%20more%20than%20110%20pods,more%20than%20150%2C000%20total%20pods
 
+Ingress:
 
-Ingress
+Reference Links:
 
-Day 36 - 22nd May 2023
+Day 37 - 23rd May 2023
+*****************************************************************************
+## Agenda -
+	- Ingress understanding in detail
+	- Ingress implementation in real world
+	- Service and Ingress based implementation
+	- Demo
+
+Reference Links:
+
+Day 38 - 24th May 2023
+*****************************************************************************
+## Agenda -
+	- Scheduling understanding
+	- Type of scheduling in details - NodeSelector, PodAffinity, PodAntiAfinity and nodeAfinity
+	- Probes in detail - Readiness and Liveliness
+	- Probe advantages and protocols
+	- Jobs and Cron Jobs
+
+Reference Links:
+
+Day 39 - 25th May 2023
+*****************************************************************************
+## Agenda -
+	- Dashboarding/Helm Chart overview
+	- Deploy monitoring via Helm Chart
+	- Configuration of Helm Chart, Advantages
+	- Security understanding - Third party open source tools
+	- Security in details in containerization environment
+	- Security - Authorization options
+
+Reference Links:
+
+Day 40 - 26th May 2023
 *****************************************************************************
 
+## Agenda -
+	- Recap/Any query from previous session
+	- Git - Architecture and advantage
+	- Git - Command reference
+	- DevOps - Architecture reference (Microservice) in K8s way
+	- GitOps - Architecture Diagram Reference
+	- ArgoCD - Generic Understanding
+	- ServiceMesh - Reference architecture and usage, links to share
+	
+Reference Links:
 
-*****************************************************************************
-
-
-
-- Statefulset Demo
 
 
 
@@ -1270,12 +1318,7 @@ Content in Sequence
 *****************************************************************************
 <Work In Progress - Do Not Refer this section as of now>
 ## Agenda -
-	- Statefulset understanding and use-cases
-	- Statefulset Demo
 
-	
-	- Horizontal POD Autoscaling (HPA) - Understanding
-	- HPA Demo
 	- Scheduling and Probes understanding
 
 	- Services understanding in detail
@@ -1297,3 +1340,7 @@ Content in Sequence
 	- Service Mesh - Conceptual Understanding
 
 
+Extra:
+	- Deploy Jenkins with Svc and Ingress
+	- Deploy mysql based apps on K8S
+	- Networking concepts - Network Policy and others
