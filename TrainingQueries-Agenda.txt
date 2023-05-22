@@ -1257,8 +1257,7 @@ Services:
 	https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/
 	Images:
 	https://theithollow.com/wp-content/uploads/2019/01/image-9-1024x375.png
-	Consideration for large cluster:
-	https://kubernetes.io/docs/setup/best-practices/cluster-large/#:~:text=No%20more%20than%20110%20pods,more%20than%20150%2C000%20total%20pods
+	
 
 Ingress:
 
@@ -1273,6 +1272,15 @@ Day 37 - 23rd May 2023
 	- Demo
 
 Reference Links:
+
+Ingress:
+	https://kubernetes.io/docs/concepts/services-networking/ingress/
+	https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/
+	https://devopscube.com/kubernetes-ingress-tutorial/
+	https://devopscube.com/setup-ingress-kubernetes-nginx-controller/
+	https://www.ibm.com/cloud/blog/kubernetes-ingress
+	https://www.bmc.com/blogs/kubernetes-ingress/
+	
 
 Day 38 - 24th May 2023
 *****************************************************************************

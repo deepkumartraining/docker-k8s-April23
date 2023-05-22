@@ -1,5 +1,5 @@
 # Services
-- Service is way to communicate the backend PODs using Loadbalancer which is inbuild functionality of kubernetes, insteed of using external loadbalancer
+- Service is way to communicate the backend PODs using Loadbalancer which is inbuild functionality of kubernetes, instead of using external loadbalancer
 - Service can also be created in two ways: Headless and Normal(clusterIP)
 - Services identify backend PODs based on **Endpoints object** created while using **Selector**
 - Services can handle PODs with Selector(automatically --> default) and without selector(Manual creation of Endpoint with help of ExternalName etc.,)
