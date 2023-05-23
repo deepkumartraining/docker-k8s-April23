@@ -1,7 +1,7 @@
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1 #rbac.authorization.k8s.io/v1beta1
 metadata:
-  namespace: sudheer
+  namespace: Training
   name: deployment-manager
 rules:
 - apiGroups: ["", "extensions", "apps"]
@@ -12,7 +12,7 @@ kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1 #rbac.authorization.k8s.io/v1beta1
 metadata:
   name: deployment-manager-binding
-  namespace: sudheer
+  namespace: Training
 subjects:
 - kind: User     #Group, ServiceAccount
   name: employee

@@ -86,4 +86,3 @@ Usage:
   kubectl create cronjob NAME --image=image --schedule='0/5 * * * ?' -- [COMMAND] [args...] [flags] [options]
 
 Use "kubectl options" for a list of global command-line options (applies to all commands).
-

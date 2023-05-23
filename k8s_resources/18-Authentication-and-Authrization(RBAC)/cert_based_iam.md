@@ -1,11 +1,11 @@
 # RBAC using user certificates:
 ```
-kubectl create namespace sudheer
+kubectl create namespace Training
 openssl genrsa -out employee.key 2048
-openssl req -new -key employee.key -out employee.csr -subj "/CN=employee/O=sudheer"
+openssl req -new -key employee.key -out employee.csr -subj "/CN=employee/O=Training"
 openssl x509 -req -in employee.csr -CA CA_LOCATION/ca.crt -CAkey CA_LOCATION/ca.key -CAcreateserial -out employee.crt -days 500
 kubectl config set-credentials employee --client-certificate=employee.crt --client-key=employee.key
-kubectl config set-context employee-context --cluster=kubernetes --namespace=sudheer --user=employee
+kubectl config set-context employee-context --cluster=kubernetes --namespace=Training --user=employee
 kubectl --context=employee-context get pods
 ```
 
@@ -16,8 +16,8 @@ kubectl get secret default-token-hjcdh -n default -o "jsonpath={.data['ca\.crt']
 ```
 - Update the above entries as mentioned below:
 ```
-kubectl config set-credentials sudheer --token=<token>
-kubectl config set-context sudheer-context --cluster=kubernetes --namespace=default --user=sudheer
+kubectl config set-credentials Training --token=<token>
+kubectl config set-context Training-context --cluster=kubernetes --namespace=default --user=Training
 ```
 - Update the client-key-date as well in the config file under (~/.kube/config --> default path)
 ```

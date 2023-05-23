@@ -1,5 +1,5 @@
 # Kubernetes Scheduling Control
-**Pods/Worklods will be launched by default on any fesiable nodes based on default scheduler like "kube-scheculer" based on resource calculation and other algorithem.**
+**Pods/Worklods will be launched by default on any fesiable nodes based on default scheduler like "kube-scheduler" based on resource calculation and other algorithem.**
 - In order to control the Pods/Workloads to get launched on sepcific compute nodes, we use different schduler control options as discussed below.
 - Use cases of Manual Pod-to-Node Scheduling:
   - **Running pods on nodes with dedicated hardware:** Some Kubernetes apps may have specific hardware requirements. For example, pods running ML jobs require performant GPUs instead of CPUs, while Elasticsearch pods would be more efficient on SSDs than HDDs. Thus, the best practice for any resource-aware K8s cluster management is to assign pods to the nodes with the right hardware.
