@@ -1250,8 +1250,7 @@ Day 36 - 22nd May 2023
 ## Agenda -
 	- Recap/Any query from previous session
 	- Services understanding in Detail
-	- Ingress understanding in detail
-	- Demo
+	- Ingress understanding
 
 Services:
 	https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/
@@ -1270,29 +1269,35 @@ Day 37 - 23rd May 2023
 *****************************************************************************
 ## Agenda -
 	- Recap/Any query from previous session
-	- Metallb based load balancer configuration - Bare Metal Kubernetes setup
+	- Problem faced with KubeAdm setup during externalIP assignment for Services - LB
+	- Metallb based load balancer configuration - Bare Metal Kubernetes 
+	- GKE - GCP Managed Cluster creation - 3 nodes
+	- Cheapest option for GKE cluster creation/Free Tier reference
 	- Ingress understanding in detail
-	- Ingress implementation in real world
-	- Service and Ingress based implementation
-	- Demo
+	- Network policy understanding and fitment with ingress and Egress
+	- Ingress implementation in real world, examples
+	- Service and Ingress based implementation - Demo
+	- Ingress controller setup - Nginx-ingress controller
+	- DNS readiness for ingress based setups/Free tier (DuckDNS)
 
 Reference Links:
 
 Problem faced in Kubeadm cluster related to external IP assignment:
 	https://stackoverflow.com/questions/67600909/how-to-add-external-gcp-loadbalancer-to-kubespray-cluster
 
-Fix applied but it will take some time to analyze,debug and fix
+Fix applied but it will take some time to analyze,debug and fix. Will work later on and update
 
-GKE Cluster setup:
+GKE Cluster setup From Console:
 	https://cloud.google.com/free/docs/free-cloud-features#free-tier-usage-limits
 	https://www.fairwinds.com/blog/how-to-build-a-kubernetes-cluster-in-gke
 
-Commands for GKE Cluster shell
+GKE Cluster setup via CLI:
 
 	Open Cloud Shell
 	Authenticate project with below command:
 		gcloud config set project <Project Name>
 	Create Cluster by executing below command (This is the cheapest option i could find):
+		# First Example
 		gcloud container clusters create cheap-cluster \
 		--zone us-central1-a \
 		--node-locations us-central1-a \
@@ -1301,63 +1306,83 @@ Commands for GKE Cluster shell
 		--max-nodes=2 \
 		--num-nodes=2
 
-# Another Example
-	gcloud container clusters create k8s-training\
-	  --machine-type e2-small \
-	  --num-nodes 2 \
-	  --max-nodes=2 \
-	  --zone us-central1-a \
-	  --node-locations us-central1-a \	
-	  --cluster-version 1.23.17-gke.1700
+		# Another Example
+		gcloud container clusters create k8s-training\
+		--machine-type e2-small \
+		--num-nodes 2 \
+		--max-nodes=2 \
+		--zone us-central1-a \
+		--node-locations us-central1-a \	
+		--cluster-version 1.23.17-gke.1700
 
-	kubectl create clusterrolebinding cluster-admin-binding \
-	  --clusterrole=cluster-admin \
-	  --user=deep.training23@gmail.com
+		#Optional
+		kubectl create clusterrolebinding cluster-admin-binding \
+		--clusterrole=cluster-admin \
+		--user=<email-id>@gmail.com
 
-Service deployment on GKE - 2 Tier application with ClusterIP and LoadBalancer:
-	https://www.fairwinds.com/blog/how-to-deploy-multi-tiered-web-application-with-kubernetes
-Nodeport based validation:
-	https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/NodePort.md
-	https://medium.com/@harsz89/exposing-service-with-nodeport-type-in-gke-76892652984c
+Ingress understanding in detail:
+	https://kubernetes.io/docs/concepts/services-networking/ingress/
+	https://devopscube.com/kubernetes-ingress-tutorial/	
+	https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/
+	https://devopscube.com/setup-ingress-kubernetes-nginx-contr	oller/
+	https://www.ibm.com/cloud/blog/kubernetes-ingress
+	https://www.bmc.com/blogs/kubernetes-ingress/
 
-Networking Policies:
+Source to destination traffic with ingress
+
+	Enduser -> DNS -> LB -> Ingress Rules -> Rules filteration -> Service -> Pod
+
+	With Ingress
+	www.example.com/payment
+	www.example.com/Auth
+
+	In absence of Ingress
+	www.paymentexample.com
+	www.authexample.com
+
+Networking Policies for traffic filteration/control:
 	https://kubernetes.io/docs/concepts/services-networking/network-policies/
 	https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy/
 	https://reuvenharrison.medium.com/an-introduction-to-kubernetes-network-policies-for-security-people-ba92dd4c809d
 
-Ingress:
-	https://kubernetes.io/docs/concepts/services-networking/ingress/
-	https://devopscube.com/kubernetes-ingress-tutorial/	
-	https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/
-	https://devopscube.com/setup-ingress-kubernetes-nginx-controller/
-	https://www.ibm.com/cloud/blog/kubernetes-ingress
-	https://www.bmc.com/blogs/kubernetes-ingress/
+Service deployment on GKE - 2 Tier application with ClusterIP and LoadBalancer:
+	https://www.fairwinds.com/blog/how-to-deploy-multi-tiered-web-application-with-kubernetes
+	https://github.com/FairwindsOps/k8s-workshop/tree/master/assembly_required
 
-Ingress practical Example (Need DNS Binding for end to end testing):
+Nodeport based - Demo:
+	https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/NodePort.md
+	https://medium.com/@harsz89/exposing-service-with-nodeport-type-in-gke-76892652984c
+
+Ingress Controller based setup/demo -(Need DNS Binding for end to end testing):
 	https://spacelift.io/blog/kubernetes-ingress
 	https://www.devopsschool.com/tutorial/kubernetes/kubernetes-ingress-tutorial.html
 
 Free DNS provider (Not sure about security around these):
 	https://www.makeuseof.com/tag/5-best-dynamic-dns-providers-can-lookup-free-today/
-	
 	Probably testing with this - https://www.duckdns.org/index.jsp
 	
 Day 38 - 24th May 2023
 *****************************************************************************
+
 ## Agenda -
+	- Recap/Any query from previous session
 	- Scheduling understanding
-	- Type of scheduling in details - NodeSelector, PodAffinity, PodAntiAfinity and nodeAfinity
+		- Type of scheduling in details - NodeSelector, PodAffinity, PodAntiAfinity nodeAfinity and Taint and Toleration
 	- Probes in detail - Readiness and Liveliness
-	- Probe advantages and protocols
-	- Jobs and Cron Jobs
-	- Authorization and Authentications
+		- Probe advantages and protocols
+	- Jobs and Cron Jobs, responsibility
+	- Authentications and Authorization - Role, Rolebinding, ClusterRole & ClusterRoleBinding
+		- Role Back Access Control (RBAC) & ABAC
+		- User, Service Accounts & Certs
 
 Reference Links:
 
 Day 39 - 25th May 2023
 *****************************************************************************
 ## Agenda -
-	- Dashboarding/Helm Chart overview
+	- Recap/Any query from previous session
+	- Kubernetes Dashboarding with Killercode
+	- Helm Chart overview
 	- Deploy monitoring via Helm Chart
 	- Configuration of Helm Chart, Advantages
 	- Security understanding - Third party open source tools
@@ -1390,12 +1415,7 @@ Content in Sequence
 
 	- Scheduling and Probes understanding
 
-	- Services understanding in detail
-	- Services Demo
-
-	- Ingress understanding in detail
-	- Ingress Demo
-
+	
 	- Jobs and cronjobs understanding
 	- Jobs and cronjobs demo
 

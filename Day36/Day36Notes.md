@@ -1,4 +1,4 @@
-## Day 32
+## Day 36
 *************************************************************************************
 
 ## Resources References:
@@ -8,7 +8,6 @@
 - [k8s-cheatsheet](https://jamesdefabia.github.io/docs/user-guide/kubectl-cheatsheet/)
 - ![Services](../k8s_resources/11-Services/)
 - ![Services-Arch](../src/images/services-k8s.png)
-- ![Ingress](../k8s_resources/13-Ingress/)
 
 ## Agenda -
 	- Recap/Any query from previous session
