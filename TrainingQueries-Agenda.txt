@@ -1257,7 +1257,10 @@ Services:
 	https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/
 	Images:
 	https://theithollow.com/wp-content/uploads/2019/01/image-9-1024x375.png
-	
+	https://www.harness.io/blog/kubernetes-services-explained
+	https://blog.knoldus.com/what-is-headless-service-setup-a-service-in-kubernetes/
+
+myapp.com (LB) -> nodeip:nodeport(30008) -> pod:clusterIP (80)
 
 Ingress:
 
@@ -1266,6 +1269,8 @@ Reference Links:
 Day 37 - 23rd May 2023
 *****************************************************************************
 ## Agenda -
+	- Recap/Any query from previous session
+	- Metallb based load balancer configuration - Bare Metal Kubernetes setup
 	- Ingress understanding in detail
 	- Ingress implementation in real world
 	- Service and Ingress based implementation
@@ -1273,15 +1278,70 @@ Day 37 - 23rd May 2023
 
 Reference Links:
 
+Problem faced in Kubeadm cluster related to external IP assignment:
+	https://stackoverflow.com/questions/67600909/how-to-add-external-gcp-loadbalancer-to-kubespray-cluster
+
+Fix applied but it will take some time to analyze,debug and fix
+
+GKE Cluster setup:
+	https://cloud.google.com/free/docs/free-cloud-features#free-tier-usage-limits
+	https://www.fairwinds.com/blog/how-to-build-a-kubernetes-cluster-in-gke
+
+Commands for GKE Cluster shell
+
+	Open Cloud Shell
+	Authenticate project with below command:
+		gcloud config set project <Project Name>
+	Create Cluster by executing below command (This is the cheapest option i could find):
+		gcloud container clusters create cheap-cluster \
+		--zone us-central1-a \
+		--node-locations us-central1-a \
+		--cluster-version 1.23.17-gke.1700 \
+		--machine-type=e2-small \
+		--max-nodes=2 \
+		--num-nodes=2
+
+# Another Example
+	gcloud container clusters create k8s-training\
+	  --machine-type e2-small \
+	  --num-nodes 2 \
+	  --max-nodes=2 \
+	  --zone us-central1-a \
+	  --node-locations us-central1-a \	
+	  --cluster-version 1.23.17-gke.1700
+
+	kubectl create clusterrolebinding cluster-admin-binding \
+	  --clusterrole=cluster-admin \
+	  --user=deep.training23@gmail.com
+
+Service deployment on GKE - 2 Tier application with ClusterIP and LoadBalancer:
+	https://www.fairwinds.com/blog/how-to-deploy-multi-tiered-web-application-with-kubernetes
+Nodeport based validation:
+	https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/NodePort.md
+	https://medium.com/@harsz89/exposing-service-with-nodeport-type-in-gke-76892652984c
+
+Networking Policies:
+	https://kubernetes.io/docs/concepts/services-networking/network-policies/
+	https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy/
+	https://reuvenharrison.medium.com/an-introduction-to-kubernetes-network-policies-for-security-people-ba92dd4c809d
+
 Ingress:
 	https://kubernetes.io/docs/concepts/services-networking/ingress/
+	https://devopscube.com/kubernetes-ingress-tutorial/	
 	https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/
-	https://devopscube.com/kubernetes-ingress-tutorial/
 	https://devopscube.com/setup-ingress-kubernetes-nginx-controller/
 	https://www.ibm.com/cloud/blog/kubernetes-ingress
 	https://www.bmc.com/blogs/kubernetes-ingress/
-	
 
+Ingress practical Example (Need DNS Binding for end to end testing):
+	https://spacelift.io/blog/kubernetes-ingress
+	https://www.devopsschool.com/tutorial/kubernetes/kubernetes-ingress-tutorial.html
+
+Free DNS provider (Not sure about security around these):
+	https://www.makeuseof.com/tag/5-best-dynamic-dns-providers-can-lookup-free-today/
+	
+	Probably testing with this - https://www.duckdns.org/index.jsp
+	
 Day 38 - 24th May 2023
 *****************************************************************************
 ## Agenda -
@@ -1290,6 +1350,7 @@ Day 38 - 24th May 2023
 	- Probes in detail - Readiness and Liveliness
 	- Probe advantages and protocols
 	- Jobs and Cron Jobs
+	- Authorization and Authentications
 
 Reference Links:
 

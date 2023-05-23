@@ -1,9 +1,9 @@
-#MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
-#we can follow the instructions specified in the document or else we can
-#download the yaml file and modified the parameters based on our requirement.
-#https://metallb.universe.tf/installation/
+# MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
+# we can follow the instructions specified in the document or else we can
+# download the yaml file and modified the parameters based on our requirement.
+# https://metallb.universe.tf/installation/
 #kubectl apply -f https://raw.githubusercontent.com/google/metallb/v0.8.1/manifests/metallb.yaml
-#After This follow the configurations steps specified: https://metallb.universe.tf/configuration/
+# After This follow the configurations steps specified: https://metallb.universe.tf/configuration/
 #kubectl expose deploy nginx --port 80 --type Loadbalancer
 
 apiVersion: kubeproxy.config.k8s.io/v1alpha1

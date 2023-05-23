@@ -1,13 +1,13 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: trainingxxxxdevops-ingress
+  name: training-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: app1.trainingxxxxdevops.com
+  - host: app1.training.com
     http:
       paths:
       - path: /
@@ -17,7 +17,7 @@ spec:
             name: app1-nginx
             port:
               number: 80
-  - host: app2.trainingxxxxdevops.com
+  - host: app2.training.com
     http:
       paths:
       - path: /
@@ -31,16 +31,16 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: trainingxxxxdevops-ingress
+  name: training1-ingress
 spec:
   rules:
-  - host: app1.trainingxxxxdevops.tld
+  - host: app1.training1.tld
     http:
       paths:
       - backend:
           serviceName: app1-nginx
           servicePort: 80
-  - host: app2.trainingxxxxdevops.tld
+  - host: app2.training1.tld
     http:
       paths:
       - backend:
