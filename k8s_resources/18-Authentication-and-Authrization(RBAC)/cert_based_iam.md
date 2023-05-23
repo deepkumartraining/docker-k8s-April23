@@ -54,8 +54,8 @@ current-context: mynamespace
 ```
 - Set new contexts to your kubectl to communicate with as mentioned below.
 ```
-root@kubernetesmaster:~# kubectl config set-context sudhams-context
-Context "sudhams-context" modified.
+root@kubernetesmaster:~# kubectl config set-context Training-context
+Context "Training-context" modified.
 root@kubernetesmaster:~#
 
 or
@@ -67,8 +67,8 @@ kubectl config set-context $(kubectl config current-context) --namespace=mynames
 ```
 root@kubernetesmaster:~# kubectl config set-credentials cluster-admin --username=admin --password=dGVzdDEyMwo=
 User "cluster-admin" set.
-root@kubernetesmaster:~# kubectl config set-context sudhams-context --cluster=scratch --namespace=default --user=admin
-Context "usersudhams-context" created.
+root@kubernetesmaster:~# kubectl config set-context Training-context --cluster=scratch --namespace=default --user=admin
+Context "userTraining-context" created.
 root@kubernetesmaster:~#
 ```
 

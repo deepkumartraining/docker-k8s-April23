@@ -87,7 +87,7 @@ metadata:
     nginx: basictest
 spec:
   nodeSelector:
-    app: sudhams
+    app: Training
   containers:
   - name: nginx-c1
     image: nginx
