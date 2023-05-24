@@ -1,4 +1,17 @@
-# This document will cover issue for fixing of externalIP - Pending in case of load Balancer svc type setup in KubeAdm way, this is required for exposing of services to outside
+# ExternalIP - Pending State - Fix
+This document will cover issue for fixing of externalIP - Pending in case of load Balancer svc type setup in KubeAdm way, this is required for exposing of services to outside
+
+## Issue Reference:
+
+```
+#$ kubectl describe svc frontend
+...
+Events:
+  Type     Reason                  Age   From                Message
+  ----     ------                  ----  ----                -------
+  Normal   EnsuringLoadBalancer    9s    service-controller  Ensuring load balancer
+  Warning  SyncLoadBalancerFailed  1s    service-controller  Error syncing load balancer: failed to ensure load balancer: no node tags supplied and also failed to parse the given lists of hosts for tags. Abort creating firewall rule
+```
 
 # Steps:
 
