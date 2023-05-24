@@ -1371,9 +1371,7 @@ Day 38 - 24th May 2023
 	- Probes in detail - Readiness and Liveliness
 		- Probe advantages and protocols
 	- Jobs and Cron Jobs, responsibility
-	- Authentications and Authorization - Role, Rolebinding, ClusterRole & ClusterRoleBinding
-		- Role Back Access Control (RBAC) & ABAC
-		- User, Service Accounts & Certs
+
 
 Reference Links:
 	
@@ -1389,8 +1387,8 @@ Probes - Readiness & Liveliness:
 	https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/
 	https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
 	https://faun.pub/the-difference-between-liveness-readiness-and-startup-probes-781bd3141079
-	https://stackoverflow.com/questions/55423405/k8s-livenessprobe-vs-readinessprobe/70454597#70454597
 	https://medium.com/@AADota/kubernetes-liveness-and-readiness-probes-difference-1b659c369e17
+	https://stackoverflow.com/questions/55423405/k8s-livenessprobe-vs-readinessprobe/70454597#70454597
 
 Jobs & Cron Jobs:
 	https://kubernetes.io/docs/concepts/workloads/controllers/job/
@@ -1398,7 +1396,24 @@ Jobs & Cron Jobs:
 	https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
 	https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/
 	https://devopscube.com/create-kubernetes-jobs-cron-jobs/
-	
+
+
+Day 39 - 25th May 2023
+*****************************************************************************
+## Agenda -
+	- Recap/Any query from previous session
+	- Authentications and Authorization - Role, Rolebinding, ClusterRole & ClusterRoleBinding
+		- Role Back Access Control (RBAC) & ABAC
+		- User, Service Accounts & Certs
+	- Kubernetes Dashboarding with Killercoda
+	- Helm Chart overview
+	- Deploy monitoring via Helm Chart
+	- Configuration of Helm Chart, Advantages
+	- Security understanding - Third party open source tools
+	- Security Concepts around containerization technology
+
+Reference Links:
+
 Authentications and Authorization:
 	https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 	https://learnk8s.io/auth-authz
@@ -1408,23 +1423,10 @@ Authentications and Authorization:
 	https://unofficial-kubernetes.readthedocs.io/en/latest/admin/authorization/rbac/
 
 
-Day 39 - 25th May 2023
-*****************************************************************************
-## Agenda -
-	- Recap/Any query from previous session
-	- Kubernetes Dashboarding with Killercode
-	- Helm Chart overview
-	- Deploy monitoring via Helm Chart
-	- Configuration of Helm Chart, Advantages
-	- Security understanding - Third party open source tools
-	- Security in details in containerization environment
-	- Security - Authorization options
 
-Reference Links:
 
 Day 40 - 26th May 2023
 *****************************************************************************
-
 ## Agenda -
 	- Recap/Any query from previous session
 	- Git - Architecture and advantage
