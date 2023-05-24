@@ -25,9 +25,31 @@ Tag your nodes with hostname in Network tags, for example in our POC setup we ha
 # Second: 
 Provide right IAM permission to default compute service account, refer below image for reference
 
+![IAM-Acces](/k8s_resources/src/images/IAM-Access.JPG)
+
 # Third: 
 Create/update firewall rule to allow access of service from outside/internet
 
-# Fourth: 
-Update kube-controller-manager and kube-api-server with cloud provider in target manifest file, in our case it is --cloudprovider=gce. Refer image for reference
+![Firewall-Rules](/k8s_resources/src/images/Firewall-Rules-Allow-HttpAccess.JPG)
 
+# Fourth: 
+Update kube-controller-manager and kube-api-server on controller node with cloud provider in target manifest file, in our case it is --cloudprovider=gce. Refer image for reference
+
+```
+Manifest location
+...
+root@controlplane:/etc/kubernetes/manifests# pwd
+/etc/kubernetes/manifests
+root@controlplane:/etc/kubernetes/manifests# ll
+total 24
+drwxr-xr-x 2 root root 4096 May 24 02:24 ./
+drwxr-xr-x 4 root root 4096 May  7 13:51 ../
+-rw------- 1 root root 2144 May  7 13:51 etcd.yaml
+-rw------- 1 root root 3830 May 20 15:58 kube-apiserver.yaml
+-rw------- 1 root root 3343 May 20 15:51 kube-controller-manager.yaml
+-rw------- 1 root root 1385 May  7 13:51 kube-scheduler.yaml
+root@controlplane:/etc/kubernetes/manifests# 
+```
+
+![ControllerManager-ManifestFile-Update](/k8s_resources/src/images/cloudProvider-kubecontrollermanager.JPG)
+![ApiServer-ManifestFile-Update](/k8s_resources/src/images/cloudprovider-kubeapiserver.JPG)
