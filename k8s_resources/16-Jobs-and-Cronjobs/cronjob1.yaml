@@ -20,12 +20,10 @@ spec:
             - date; echo Hello from the Kubernetes cluster
           restartPolicy: OnFailure
 
-we need to run backup on weekend at 3am
+#we need to run backup on weekend at 3am
 
 30 2 * * 6,0
-
 0 3 * * 6,0
-
 5 columns
 
 1 column --> Minutes (0-59)

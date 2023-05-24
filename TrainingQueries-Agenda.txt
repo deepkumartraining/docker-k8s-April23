@@ -1376,6 +1376,37 @@ Day 38 - 24th May 2023
 		- User, Service Accounts & Certs
 
 Reference Links:
+	
+Scheduling links:
+	https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/
+	https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes/
+	https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes-using-node-affinity/
+	https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/
+	https://thenewstack.io/a-deep-dive-into-kubernetes-scheduling/
+	https://www.cncf.io/blog/2021/07/27/advanced-kubernetes-pod-to-node-scheduling/
+
+Probes - Readiness & Liveliness:
+	https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/
+	https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+	https://faun.pub/the-difference-between-liveness-readiness-and-startup-probes-781bd3141079
+	https://stackoverflow.com/questions/55423405/k8s-livenessprobe-vs-readinessprobe/70454597#70454597
+	https://medium.com/@AADota/kubernetes-liveness-and-readiness-probes-difference-1b659c369e17
+
+Jobs & Cron Jobs:
+	https://kubernetes.io/docs/concepts/workloads/controllers/job/
+	https://kubernetes.io/docs/concepts/workloads/controllers/ttlafterfinished/
+	https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
+	https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/
+	https://devopscube.com/create-kubernetes-jobs-cron-jobs/
+	
+Authentications and Authorization:
+	https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+	https://learnk8s.io/auth-authz
+	https://learnk8s.io/rbac-kubernetes
+	https://learnk8s.io/microservices-authentication-kubernetes
+	https://octopus.com/blog/k8s-rbac-roles-and-bindings
+	https://unofficial-kubernetes.readthedocs.io/en/latest/admin/authorization/rbac/
+
 
 Day 39 - 25th May 2023
 *****************************************************************************
@@ -1404,8 +1435,6 @@ Day 40 - 26th May 2023
 	- ServiceMesh - Reference architecture and usage, links to share
 	
 Reference Links:
-
-
 
 
 Content in Sequence
