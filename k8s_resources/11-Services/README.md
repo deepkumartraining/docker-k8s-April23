@@ -7,7 +7,7 @@
 ## Different values supported for type in service spec:
 - ClusterIP(default), NodePort, LoadBalancer, EnternalName, ExternalIP, Healess (ClusterIP: None)
 
-![Services](../src/images/services-k8s.png)
+![Services](/k8s_resources/src/images/services-k8s.png)
 
 - Supported Protocols:
 ```
