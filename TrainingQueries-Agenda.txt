@@ -1442,7 +1442,7 @@ Day 40 - 26th May 2023
 	- Recap/Any query from previous session
 	- Git - Architecture and advantage
 	- Git - Command reference
-	- DevSecOps in Cloud Native Way
+	- DevSecOps in Kubernetes way
 	- DevOps - Architecture reference (Microservice) in K8s way
 	- GitOps - Architecture Diagram Reference
 	- ArgoCD - Understanding
@@ -1455,6 +1455,8 @@ https://docs.github.com/en/get-started/working-with-subversion-on-github/what-ar
 
 https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
 https://www.gitkraken.com/learn/git/best-practices/git-branch-strategy
+
+https://dev.to/doabledanny/git-cheat-sheet-50-commands-free-pdf-and-poster-4gcn
 
 Content in Sequence
 *****************************************************************************
