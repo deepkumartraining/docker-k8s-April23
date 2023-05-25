@@ -1456,6 +1456,9 @@ Git Branching Strategy:
 	https://www.gitkraken.com/learn/git/best-practices/git-branch-strategy
 	https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
 
+DevSecOps Pipeline Example:
+	https://loves.cloud/creating-a-fully-automated-devsecops-ci-cd-pipeline/
+
 Popular Container Scaning tools:
 	https://geekflare.com/container-security-scanners/
 
@@ -1488,11 +1491,3 @@ Extra:
 	- Networking concepts - Network Policy and others - Done
 	- Kubernetes Dashboard via Killercoda - Refer Killercoda Examples	
 	
-	Feedback - https://www.allcounted.com/s?did=3oabxpr6rboah&lang=en_US
-	
-	
-deep.aws2022@gmail.com,
-kapiljune16@googlemail.com,
-igormborohoul@gmail.com,
-mujahidms@gmail.com,
-nag2014ct@gmail.com

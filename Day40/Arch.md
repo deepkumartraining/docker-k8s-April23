@@ -12,6 +12,15 @@
 
 ![DevOps-EndToEnd-Flow](/k8s_resources/src/images/DevOps_Architecture.png)
 
+### DevSecOps - End To End - CICD Flow
+
+![DevSecOps-EndToEnd-Flow](/k8s_resources/src/images/DevSecOps01.png)
+
+![DevSecOps-EndToEnd-Flow](/k8s_resources/src/images/DevSecOps02.png)
+
+![DevSecOps-EndToEnd-Flow](/k8s_resources/src/images/DevSecOps03.png)
+
+
 ### Microservice Deployment Flow to Kubernetes Platform
 
 ![Microservice-EndToEnd-Flow](/k8s_resources/src/images/Microservice_Deployment_Kubernetes.png)
