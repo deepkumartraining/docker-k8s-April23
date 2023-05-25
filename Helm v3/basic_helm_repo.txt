@@ -1,7 +1,5 @@
 How to install charts through helm command?
-
 First we need to decide from which repo we want to download and install the application chart.
-
 If we need to search from helm hub repo, it will list all matched charts for keyword mysql for example:
 
 root@kubernetesmanager:~# helm search hub mysql

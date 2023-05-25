@@ -19,7 +19,7 @@ kubectl delete node [node_name]
 How to Join a new node to the k8s cluster?
 
 root@kubernetesmaster:~# kubeadm token create --print-join-command
-kubeadm join 192.168.0.50:6443 --token j4rqsy.413k5c4go1o04y69     --discovery-token-ca-cert-hash sha256:35c5f6a92ae5fa3077ad60a8fda8483ad653a27fbf32e5ede7fa38df97291c2d
+kubeadm join <ip> --token <Token> --discovery-token-ca-cert-hash sha256:<token>
 root@kubernetesmaster:~#
 
 

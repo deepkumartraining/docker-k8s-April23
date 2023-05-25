@@ -1,4 +1,4 @@
-#Kubernetes Dashboarding setup
+# Kubernetes Dashboarding setup
 
 
 kubectl apply -f /root/dashboard.yaml
@@ -13,7 +13,7 @@ args:
 - --enable-insecure-login
 - --insecure-bind-address=0.0.0.0
 
-#Service needs to created for dashboard
+# Service needs to created for dashboard
 ---
 kind: Service
 apiVersion: v1
@@ -35,7 +35,7 @@ kubectl -n kubernetes-dashboard create sa admin-user
 kubectl create clusterrolebinding admin-user --clusterrole cluster-admin --serviceaccount kubernetes-dashboard:admin-user
 kubectl -n kubernetes-dashboard create token admin-user
 
-#Copy Token for dashboard setup
+# Copy Token for dashboard setup
 
 
 kubectl -n kubernetes-dashboard port-forward service/kubernetes-dashboard 9090:9090 --address 0.0.0.0
