@@ -16,8 +16,6 @@
 
 ![DevSecOps-EndToEnd-Flow](/k8s_resources/src/images/DevSecOps01.png)
 
-![DevSecOps-EndToEnd-Flow](/k8s_resources/src/images/DevSecOps02.png)
-
 ![DevSecOps-EndToEnd-Flow](/k8s_resources/src/images/DevSecOps03.png)
 
 
