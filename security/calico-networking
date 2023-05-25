@@ -82,13 +82,11 @@ Now add annotation to the namespace create above:
 
 #kubectl annotate namespace external-ns "cni.projectcalico.org/ipv4pools"=‘[“external-pool"]’
 
-
 Pool will be applied at per-namespace, per-node and per-pod
 
 Note:
 1)The address must be within a configured Calico IP pool and not currently in use. The annotation must be present when the pod is created; adding it later has no effect.
 2)currently only a single IP address is supported per-pod using this annotation
-
 
 Reference: 
 https://docs.projectcalico.org/reference/resources/ippool
