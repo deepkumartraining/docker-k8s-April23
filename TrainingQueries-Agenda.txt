@@ -1440,23 +1440,44 @@ Day 40 - 26th May 2023
 *****************************************************************************
 ## Agenda -
 	- Recap/Any query from previous session
-	- Git - Architecture and advantage
-	- Git - Command reference
-	- DevSecOps in Kubernetes way
-	- DevOps - Architecture reference (Microservice) in K8s way
-	- GitOps - Architecture Diagram Reference
-	- ArgoCD - Understanding
-	- ServiceMesh - Reference architecture and usage, links to share
+	- Git - Architecture and advantage - 10 minute
+	- Git - Command reference - 2 minutes
+	- DevSecOps in Kubernetes way - 30 minutes
+	- DevOps - Architecture reference (Microservice) in K8s way - 20 Minutes
+	- GitOps - Architecture Diagram Reference - 20 Minutes
+	- ArgoCD - Understanding - 10 Minutes
+	- ServiceMesh - Reference architecture and usage, links to share - 10 Minutes
 	
 Reference Links:
 
-https://dev.to/doabledanny/git-cheat-sheet-50-commands-free-pdf-and-poster-4gcn
-https://docs.github.com/en/get-started/working-with-subversion-on-github/what-are-the-differences-between-subversion-and-git#:~:text=SVN%20is%20configured%20to%20assume,SVN%20on%20the%20same%20project.
+Central vs Distributed version control System:
+	https://docs.github.com/en/get-started/working-with-subversion-on-github/what-are-the-differences-between-subversion-and-git#:~:text=SVN%20is%20configured%20to%20assume,SVN%20on%20the%20same%20project.
+	
+Git Branching Strategy:
+	https://www.flagship.io/git-branching-strategies/
+	https://www.gitkraken.com/learn/git/best-practices/git-branch-strategy
+	https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+	
+Git Command Cheat sheet with Example:
+	https://dev.to/doabledanny/git-cheat-sheet-50-commands-free-pdf-and-poster-4gcn
+	https://dev.to/doabledanny/git-cheat-sheet-50-commands-free-pdf-and-poster-4gcn
 
-https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
-https://www.gitkraken.com/learn/git/best-practices/git-branch-strategy
+Popular Container Scaning tools:
+	https://geekflare.com/container-security-scanners/
 
-https://dev.to/doabledanny/git-cheat-sheet-50-commands-free-pdf-and-poster-4gcn
+GitOps vs DevOps
+	https://blog.hubspot.com/website/gitops-vs-devops
+	
+ArgoCD:
+	https://argo-cd.readthedocs.io/en/stable/operator-manual/architecture/
+	
+GitLab vs ArgoCD:
+	https://about.gitlab.com/competition/argo/
+
+Service Mesh:
+	https://avinetworks.com/glossary/kubernetes-service-mesh/
+	https://istio.io/latest/about/service-mesh/
+	https://platform9.com/blog/kubernetes-service-mesh-a-comparison-of-istio-linkerd-and-consul/
 
 Content in Sequence
 *****************************************************************************
