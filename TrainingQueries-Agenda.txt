@@ -1404,22 +1404,19 @@ Day 39 - 25th May 2023
 	- Authentications and Authorization - Role, Rolebinding, ClusterRole & ClusterRoleBinding
 		- Role Back Access Control (RBAC) & ABAC
 		- User, Service Accounts & Certs
-	- Kubernetes Dashboarding with Killercoda
 	- Helm Chart overview
 	- Deploy monitoring via Helm Chart
 	- Configuration of Helm Chart, Advantages
-	- Security understanding - Third party open source tools
-	- Security Concepts around containerization technology
 
 Reference Links:
 
-
-user
-group - dev/admin/test
-role - permission/authorization
-service account:
-	Project to project communication
-	Application to app communication
+Authentication Concepts
+	user
+	group - dev/admin/test
+	role - permission/authorization
+	service account:
+		Project to project communication
+		Application to app communication
 
 Authentications and Authorization:
 	https://kubernetes.io/docs/reference/access-authn-authz/rbac/
@@ -1434,19 +1431,21 @@ Helm Chart:
 	https://www.cncf.io/blog/2020/08/26/why-do-devops-engineers-love-helm/
 	https://medium.com/buildpiper/the-benefits-of-using-helm-ad2755118a4e
 	https://platform9.com/blog/kubernetes-helm-why-it-matters/
-	
+	https://bitnami.com/stack/mysql/helm
 
+	
 Day 40 - 26th May 2023
 *****************************************************************************
 ## Agenda -
 	- Recap/Any query from previous session
-	- Git - Architecture and advantage - 10 minute
-	- Git - Command reference - 2 minutes
+	- Git - Architecture and advantage - 10 minutes
+	- Git - Command reference - 5 minutes
 	- DevSecOps in Kubernetes way - 30 minutes
-	- DevOps - Architecture reference (Microservice) in K8s way - 20 Minutes
+	- More In Security - Container Scaning Options - 5 minutes
+	- DevOps - Architecture reference (Microservice) in K8s way - 15 Minutes
 	- GitOps - Architecture Diagram Reference - 20 Minutes
-	- ArgoCD - Understanding - 10 Minutes
-	- ServiceMesh - Reference architecture and usage, links to share - 10 Minutes
+	- ArgoCD - Understanding - 15 Minutes
+	- ServiceMesh - Reference architecture and usage, links to share - 15 Minutes
 	
 Reference Links:
 
@@ -1457,10 +1456,6 @@ Git Branching Strategy:
 	https://www.flagship.io/git-branching-strategies/
 	https://www.gitkraken.com/learn/git/best-practices/git-branch-strategy
 	https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
-	
-Git Command Cheat sheet with Example:
-	https://dev.to/doabledanny/git-cheat-sheet-50-commands-free-pdf-and-poster-4gcn
-	https://dev.to/doabledanny/git-cheat-sheet-50-commands-free-pdf-and-poster-4gcn
 
 Popular Container Scaning tools:
 	https://geekflare.com/container-security-scanners/
@@ -1479,34 +1474,18 @@ Service Mesh:
 	https://istio.io/latest/about/service-mesh/
 	https://platform9.com/blog/kubernetes-service-mesh-a-comparison-of-istio-linkerd-and-consul/
 
+
 Content in Sequence
 *****************************************************************************
 <Work In Progress - Do Not Refer this section as of now>
 ## Agenda -
 
-	- Scheduling and Probes understanding
-
-	
-	- Jobs and cronjobs understanding
-	- Jobs and cronjobs demo
-
-	- Networking Concepts - Calico & Flannel, Network policies and operations
-	- Authentication and Authorization
-
-	- Dashboard setup
-	- Helm Chart setup with existing cluster, overview and Demo
-	- Container Security Concepts in detail
-	- Some popular security implementation in Docker & Kubernetes
-	- Service Mesh - Conceptual Understanding
-
 
 Extra:
-	- Deploy Jenkins with Svc and Ingress
-	- Deploy mysql based apps on K8S
-	- Networking concepts - Network Policy and others
-	
-	
-	
+	- Deploy Jenkins with Svc and Ingress - Updated in K8S-Resources setion
+	- Deploy mysql based apps on K8S - Links shared to perform via Helm
+	- Networking concepts - Network Policy and others - Done
+	- Kubernetes Dashboard via Killercoda
 	
 	Feedback - https://www.allcounted.com/s?did=3oabxpr6rboah&lang=en_US
 	
