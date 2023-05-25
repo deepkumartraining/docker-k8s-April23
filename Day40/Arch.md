@@ -20,6 +20,6 @@
 
 ![GitOps-Pipeline](/k8s_resources/src/images/gitops_cd_pipeline.png)
 
-![GitOps-Pipeline1](/k8s_resources/src/images/GitOps_01.jpg)
+![GitOps-Pipeline1](/k8s_resources/src/images/GitOps.jpg)
 
 
