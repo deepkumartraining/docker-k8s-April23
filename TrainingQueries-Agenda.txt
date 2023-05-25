@@ -1431,8 +1431,7 @@ Helm Chart:
 	https://www.cncf.io/blog/2020/08/26/why-do-devops-engineers-love-helm/
 	https://medium.com/buildpiper/the-benefits-of-using-helm-ad2755118a4e
 	https://platform9.com/blog/kubernetes-helm-why-it-matters/
-	https://bitnami.com/stack/mysql/helm
-
+	
 	
 Day 40 - 26th May 2023
 *****************************************************************************
@@ -1483,9 +1482,11 @@ Content in Sequence
 
 Extra:
 	- Deploy Jenkins with Svc and Ingress - Updated in K8S-Resources setion
+		https://devopscube.com/setup-jenkins-on-kubernetes-cluster/
 	- Deploy mysql based apps on K8S - Links shared to perform via Helm
+		https://bitnami.com/stack/mysql/helm
 	- Networking concepts - Network Policy and others - Done
-	- Kubernetes Dashboard via Killercoda
+	- Kubernetes Dashboard via Killercoda - Refer Killercoda Examples	
 	
 	Feedback - https://www.allcounted.com/s?did=3oabxpr6rboah&lang=en_US
 	

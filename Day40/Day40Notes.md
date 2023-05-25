@@ -7,6 +7,7 @@
 - ![k8s-resources](../k8s_resources/)
 - ![k8s-cheatsheet](https://jamesdefabia.github.io/docs/user-guide/kubectl-cheatsheet/)
 - ![Architecture Diagrams](Arch.md)
+- ![Security](../security/)	
 
 
 ## Agenda -
