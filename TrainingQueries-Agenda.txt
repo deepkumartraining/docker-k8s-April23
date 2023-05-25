@@ -1397,7 +1397,6 @@ Jobs & Cron Jobs:
 	https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/
 	https://devopscube.com/create-kubernetes-jobs-cron-jobs/
 
-
 Day 39 - 25th May 2023
 *****************************************************************************
 ## Agenda -
@@ -1414,6 +1413,14 @@ Day 39 - 25th May 2023
 
 Reference Links:
 
+
+user
+group - dev/admin/test
+role - permission/authorization
+service account:
+	Project to project communication
+	Application to app communication
+
 Authentications and Authorization:
 	https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 	https://learnk8s.io/auth-authz
@@ -1422,8 +1429,12 @@ Authentications and Authorization:
 	https://octopus.com/blog/k8s-rbac-roles-and-bindings
 	https://unofficial-kubernetes.readthedocs.io/en/latest/admin/authorization/rbac/
 
-
-
+Helm Chart:
+	https://www.freecodecamp.org/news/what-is-a-helm-chart-tutorial-for-kubernetes-beginners/#:~:text=yaml%3A%20This%20is%20where%20you,dependencies%20using%20the%20dependencies%20key.
+	https://www.cncf.io/blog/2020/08/26/why-do-devops-engineers-love-helm/
+	https://medium.com/buildpiper/the-benefits-of-using-helm-ad2755118a4e
+	https://platform9.com/blog/kubernetes-helm-why-it-matters/
+	
 
 Day 40 - 26th May 2023
 *****************************************************************************
@@ -1431,13 +1442,19 @@ Day 40 - 26th May 2023
 	- Recap/Any query from previous session
 	- Git - Architecture and advantage
 	- Git - Command reference
+	- DevSecOps in Cloud Native Way
 	- DevOps - Architecture reference (Microservice) in K8s way
 	- GitOps - Architecture Diagram Reference
-	- ArgoCD - Generic Understanding
+	- ArgoCD - Understanding
 	- ServiceMesh - Reference architecture and usage, links to share
 	
 Reference Links:
 
+https://dev.to/doabledanny/git-cheat-sheet-50-commands-free-pdf-and-poster-4gcn
+https://docs.github.com/en/get-started/working-with-subversion-on-github/what-are-the-differences-between-subversion-and-git#:~:text=SVN%20is%20configured%20to%20assume,SVN%20on%20the%20same%20project.
+
+https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+https://www.gitkraken.com/learn/git/best-practices/git-branch-strategy
 
 Content in Sequence
 *****************************************************************************
@@ -1464,3 +1481,15 @@ Extra:
 	- Deploy Jenkins with Svc and Ingress
 	- Deploy mysql based apps on K8S
 	- Networking concepts - Network Policy and others
+	
+	
+	
+	
+	Feedback - https://www.allcounted.com/s?did=3oabxpr6rboah&lang=en_US
+	
+	
+deep.aws2022@gmail.com,
+kapiljune16@googlemail.com,
+igormborohoul@gmail.com,
+mujahidms@gmail.com,
+nag2014ct@gmail.com
