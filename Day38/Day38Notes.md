@@ -5,7 +5,7 @@
 - ![Complete-Notes](../TrainingQueries-Agenda.txt)
 - ![K8S-Contents](../K8S_DeepDive_Content.md)
 - ![k8s-resources](../k8s_resources/)
-- [k8s-cheatsheet](https://jamesdefabia.github.io/docs/user-guide/kubectl-cheatsheet/)
+- [k8s-cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 - ![Schedulling](../k8s_resources/15-Scheduling/)
 - ![Probes](../k8s_resources/15-Probes/)
 - ![Jobs-CronJobs](../k8s_resources/16-Jobs-and-Cronjobs/)

@@ -5,7 +5,7 @@
 - ![Complete-Notes](../TrainingQueries-Agenda.txt)
 - ![K8S-Contents](../K8S_DeepDive_Content.md)
 - ![k8s-resources](../k8s_resources/)
-- [k8s-cheatsheet](https://jamesdefabia.github.io/docs/user-guide/kubectl-cheatsheet/)
+- [k8s-cheatsheet](hhttps://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 - ![Dashboard-k8s](../k8s_resources/11-Services/) #Killercode
 - ![Helm-Chart](../k8s_resources/13-Ingress/)
 
