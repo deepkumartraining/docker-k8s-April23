@@ -1481,17 +1481,23 @@ Service Mesh:
 	https://platform9.com/blog/kubernetes-service-mesh-a-comparison-of-istio-linkerd-and-consul/
 
 
-Content in Sequence
+Some more POCs
 *****************************************************************************
-<Work In Progress - Do Not Refer this section as of now>
-## Agenda -
 
 
 Extra:
-	- Deploy Jenkins with Svc and Ingress - Updated in K8S-Resources setion
+	Deploy Jenkins with Svc and Ingress - Updated in K8S-Resources setion
 		https://devopscube.com/setup-jenkins-on-kubernetes-cluster/
-	- Deploy mysql based apps on K8S - Links shared to perform via Helm
+	Deploy mysql based apps on K8S - Links shared to perform via Helm
 		https://bitnami.com/stack/mysql/helm
-	- Networking concepts - Network Policy and others - Done
-	- Kubernetes Dashboard via Killercoda - Refer Killercoda Examples	
+	Networking concepts - Network Policy and others - Done
+	Kubernetes Dashboard via Killercoda - Refer Killercoda Examples
+	Kubernetes concepts POCs with Examples:
+		https://github.com/deepkumartraining/scenario-examples
+		https://github.com/deepkumartraining/kubernetes-examples
+		https://github.com/deepkumartraining/examples
+		https://github.com/deepkumartraining/k8s-workshop
+		https://github.com/deepkumartraining/kubernetes-example-voting-app
+		https://github.com/deepkumartraining/GKE-EXPOSE-SERVICES
+		https://github.com/deepkumartraining/deploy-to-kubernetes
 	
