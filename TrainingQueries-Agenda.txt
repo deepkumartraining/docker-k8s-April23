@@ -1439,9 +1439,9 @@ Day 40 - 26th May 2023
 	- Recap/Any query from previous session
 	- Git - Architecture and advantage - 10 minutes
 	- Git - Command reference - 5 minutes
+	- DevOps - Architecture reference (Microservice) in K8s way - 15 Minutes
 	- DevSecOps in General and Kubernetes way - 30 minutes
 	- More In Security - Container Scaning Options - 10 minutes
-	- DevOps - Architecture reference (Microservice) in K8s way - 15 Minutes
 	- GitOps - Architecture Diagram Reference - 20 Minutes
 	- ArgoCD - Understanding - 15 Minutes
 	- ServiceMesh - Reference architecture and usage, links to share - 15 Minutes
@@ -1463,6 +1463,9 @@ DevSecOps Pipeline Example:
 Popular Container Scaning tools:
 	https://geekflare.com/container-security-scanners/
 
+Kube Bench:
+	https://devopscube.com/kube-bench-guide/
+	
 GitOps vs DevOps
 	https://blog.hubspot.com/website/gitops-vs-devops
 	

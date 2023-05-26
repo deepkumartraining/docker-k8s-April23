@@ -1,4 +1,4 @@
-### What is DevsecOps?
+### What is DevSecOps?
 There is an exhaustive list of security measures that a security administrator needs to take before and after a release is performed. This number expands when it comes to a large organization that has multiple applications and a higher tendency to get attacked. Now, consider the fact that all these considerations need to be accounted for before each release. How much time and effort would have to go into ensuring the security of a system? This is a major problem when considering that a lengthy security audit process will make a well-defined and automated DevOps process useless. The aim of automated test and release pipelines is to release fast and consistently. This means that the development team would have already released another version of the application by the time the lengthy security audit process is completed. Once this version is audited and readied for release, two more versions will be out. You can imagine the extent of the problem here.
 
 ### How does DevSecOps fix this problem?
